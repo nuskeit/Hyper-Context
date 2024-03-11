@@ -1,0 +1,17 @@
+{
+	"boardNode": null,
+	"options": {
+		"group": {
+			"spacingY": 200
+		},
+		"node": {
+			"spacingX": 200
+		},
+		"connection": {
+			"offsetStart": 0,
+			"offsetEnd": 50,
+			"curveDistributionCoeficient": 0.5,
+			"fixedStart": 0
+		}
+	}
+}

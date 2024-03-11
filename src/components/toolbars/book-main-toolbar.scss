@@ -1,0 +1,16 @@
+.book-main-toolbar {
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+
+	div {
+		 margin: .2rem;
+		margin-right: 0;
+
+		button {
+			// background-color: #333;
+			// color: #aaa;
+			font-size: 1rem;
+		}
+	}
+}

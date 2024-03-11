@@ -1,0 +1,17 @@
+.section-component{
+	padding: .3rem;
+
+	.section-image{
+		display: block;
+		overflow: hidden;
+
+		img{
+			height: 7rem;
+		}
+	}
+
+	.section-text{
+		font-family: 'Courier New', Courier, monospace;
+	}
+
+}

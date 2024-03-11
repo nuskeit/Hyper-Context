@@ -1,0 +1,28 @@
+.edit-mode-button {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    width: 4rem;
+    height: 4rem;
+    font-size: .8rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: black;
+    border-radius: .3rem;
+    border: solid #a20 .2rem;
+    background-image: URL(../../assets/icons/edit-1.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+
+   
+}
+
+.selected {
+    border-color: #292;
+    background-image: URL(../../assets/icons/edit-2.png);
+}
+
+

@@ -1,0 +1,1445 @@
+{
+	"boardNode": {
+		"key": "boardNode-key",
+		"name": "Adrian Nuske",
+		"title": "Software Engineer",
+		"viewBox": [
+			10,
+			22,
+			0,
+			0
+		],
+		"nodes": [
+			{
+				"key": "root",
+				"name": "Creativity",
+				"title": "Creativity",
+				"nodeType": "NODE",
+				"tech": [],
+				"shortText": "short text",
+				"fullStory": {
+					"textBlocks": [
+						{
+							"images": [
+								{
+									"image": "http://localhost:5173/src/assets/nodes/cartoon010.png",
+									"width": 20,
+									"float": "auto",
+									"caption": "nice photo!"
+								}
+							],
+							"title": "First Section Title",
+							"text": "Some text"
+						}
+					]
+				},
+				"thumbnail": "http://localhost:5173/src/assets/nodes/4.png",
+				"images": [],
+				"x": 0,
+				"y": 0,
+				"width": 532,
+				"height": 578,
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.5
+					}
+				}
+			},
+			{
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon002.png",
+				"fullStory": {
+					"textBlocks": [
+						{
+							"title": "Little Red Riding Hood",
+							"images": [
+								{
+									"image": "http://localhost:5173/src/assets/nodes/cartoon008.png",
+									"float": "left",
+									"width": 60,
+									"caption": "first image to caption"
+								},
+								{
+									"image": "http://localhost:5173/src/assets/nodes/cartoon004.png",
+									"float": "auto",
+									"width": 30,
+									"caption": "nice image"
+								},
+								{
+									"image": "http://localhost:5173/src/assets/nodes/cartoon008.png",
+									"float": "auto",
+									"width": 20,
+									"caption": "the little one"
+								}
+							],
+							"text": "Once upon a time there was a sweet little girl. Everyone who saw her liked her, but most of all her grandmother, who did not know what to give the child next. Once she gave her a little cap made of red velvet. Because it suited her so well, and she wanted to wear it all the time, she came to be known as Little Red Riding Hood. One day her mother said to her: \"Come Little Red Riding Hood. Here is a piece of cake and a bottle of wine. Take them to your grandmother. She is sick and weak, and they will do her well. Mind your manners and give her my greetings. Behave yourself on the way, and do not leave the path, or you might fall down and break the glass, and then there will be nothing for your sick grandmother.\"\n\n\t\t\t\t\t\t\tLittle Red Riding Hood promised to obey her mother. The grandmother lived out in the woods, a half hour from the village. When Little Red Riding Hood entered the woods a wolf came up to her. She did not know what a wicked animal he was, and was not afraid of him. \"Good day to you, Little Red Riding Hood.\" - \"Thank you, wolf.\" - \"Where are you going so early, Little Red Riding Hood?\" - \"To grandmother's.\" - \"And what are you carrying under your apron?\" - \"Grandmother is sick and weak, and I am taking her some cake and wine. We baked yesterday, and they should give her strength.\" - \"Little Red Riding Hood, just where does your grandmother live?\" - \"Her house is a good quarter hour from here in the woods, under the three large oak trees. There's a hedge of hazel bushes there. You must know the place,\" said Little Red Riding Hood. The wolf thought to himself: \"Now there is a tasty bite for me. Just how are you going to catch her?\" Then he said: \"Listen, Little Red Riding Hood, haven't you seen the beautiful flowers that are blossoming in the woods? Why don't you go and take a look? And I don't believe you can hear how beautifully the birds are singing. You are walking along as though you were on your way to school in the village. It is very beautiful in the woods.\"\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<br \/> <br \/> <br \/>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tLittle Red Riding Hood opened her eyes and saw the sunlight breaking through the trees and how the ground was covered with beautiful flowers. She thought: \"If a take a bouquet to grandmother, she will be very pleased. Anyway, it is still early, and I'll be home on time.\" And she ran off into the woods looking for flowers. Each time she picked one she thought that she could see an even more beautiful one a little way off, and she ran after it, going further and further into the woods. But the wolf ran straight to the grandmother's house and knocked on the door. \"Who's there?\" - \"Little Red Riding Hood. I'm bringing you some cake and wine. Open the door for me.\" - \"Just press the latch,\" called out the grandmother. \"I'm too weak to get up.\" The wolf pressed the latch, and the door opened. He stepped inside, went straight to the grandmother's bed, and ate her up. Then he took her clothes, put them on, and put her cap on his head. He got into her bed and pulled the curtains shut.\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tLittle Red Riding Hood had run after flowers, and did not continue on her way to grandmother's until she had gathered all that she could carry. When she arrived, she found, to her surprise, that the door was open. She walked into the parlor, and everything looked so strange that she thought: \"Oh, my God, why am I so afraid? I usually like it at grandmother's.\" Then she went to the bed and pulled back the curtains. Grandmother was lying there with her cap pulled down over her face and looking very strange. \"Oh, grandmother, what big ears you have!\" - \"All the better to hear you with.\" - \"Oh, grandmother, what big eyes you have!\" - \"All the better to see you with.\" - \"Oh, grandmother, what big hands you have!\" - \"All the better to grab you with!\" - \"Oh, grandmother, what a horribly big mouth you have!\" - \"All the better to eat you with!\" And with that he jumped out of bed, jumped on top of poor Little Red Riding Hood, and ate her up.\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tAs soon as the wolf had finished this tasty bite, he climbed back into bed, fell asleep, and began to snore very loudly. A huntsman was just passing by. He thought it strange that the old woman was snoring so loudly, so he decided to take a look. He stepped inside, and in the bed there lay the wolf that he had been hunting for such a long time. \"He has eaten the grandmother, but perhaps she still can be saved. I won't shoot him,\" thought the huntsman. So he took a pair of scissors and cut open his belly. He had cut only a few strokes when he saw the red cap shining through. He cut a little more, and the girl jumped out and cried: \"Oh, I was so frightened! It was so dark inside the wolf's body!\" And then the grandmother came out alive as well. Then Little Red Riding Hood fetched some large heavy stones. They filled the wolf's body with them, and when he woke up and tried to run away, the stones were so heavy that he fell down dead.\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tThe three of them were happy. <b>The huntsman</b> took the wolf's pelt. The grandmother ate the cake and drank the wine that Little Red Riding Hood had brought. And Little Red Riding Hood thought to herself: \"As long as I live, I will never leave the path and run off into the woods by myself if mother tells me not to.\"\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tThey also tell how Little Red Riding Hood was taking some baked things to her grandmother another time, when another wolf spoke to her and wanted her to leave the path. But Little Red Riding Hood took care and went straight to grandmother's. She told her that she had seen the wolf, and that he had wished her a good day, but had stared at her in a wicked manner. \"If we hadn't been on a public road, he would have eaten me up,\" she said. \"Come,\" said the grandmother. \"Let's lock the door, so he can't get in.\" Soon afterward the wolf knocked on the door and called out: \"Open up, grandmother. It's Little Red Riding Hood, and I'm bringing you some baked things.\" They remained silent, and did not open the door. The wicked one walked around the house several times, and finally jumped onto the roof. He wanted to wait until Little Red Riding Hood went home that evening, then follow her and eat her up in the darkness. But the grandmother saw what he was up to. There was a large stone trough in front of the house. \"Fetch a bucket, Little Red Riding Hood,\" she said. \"Yesterday I cooked some sausage. Carry the water that I boiled them with to the trough.\" Little Red Riding Hood carried water until the large, large trough was clear full. The smell of sausage arose into the wolf's nose. He sniffed and looked down, stretching his neck so long that he could no longer hold himself, and he began to slide. He slid off the roof, fell into the trough, and drowned. And Little Red Riding Hood returned home happily and safely."
+						},
+						{
+							"title": "Appendix",
+							"images": [
+								{
+									"image": "http://localhost:5173/src/assets/nodes/cartoon010.png",
+									"float": "auto",
+									"width": 60,
+									"caption": "the little one"
+								}
+							],
+							"text": "A young girl, Little Red Riding Hood, sets off through the woods to visit her sick grandmother. Along the way, she meets a wolf. The wolf rushes ahead of her to her grandmothers home, where he impersonates Little Red Riding Hood to gain access. The wolf eats the grandmother. When Red arrives, the wolf pretends to be her grandmother and eats her too.\n\n\t\t\t\t\t\t\tEarlier versions end the tale here. No happily-ever-after for Red or her grandmother. Recent versions, including the version by the Brothers Grimm, have Red and her grandmother survive and defeat the wolf.\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tIn the Brothers Grimm version, a huntsman kills the wolf and frees Red and her grandmother. It then tells a brief tale of another trip through the woods resulting in Red and her grandmother besting a wolf on their own."
+						}
+					]
+				},
+				"width": 200,
+				"height": 200,
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.5
+					}
+				},
+				"key": "0001",
+				"name": "Education",
+				"tech": [],
+				"shortText": "short text",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0002",
+				"name": "Formal",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon003.png",
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.5,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0003",
+				"name": "Informal",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon011.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0004",
+				"name": "Education Timeline",
+				"width": 1800,
+				"height": 150,
+				"nodeType": "TIMELINE"
+			},
+			{
+				"key": "0005",
+				"name": "YouTube",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/youtube.png"
+				],
+				"nodeType": "TIMED",
+				"start": 1210302000,
+				"end": 1683601200
+			},
+			{
+				"key": "0022",
+				"name": "Stack Overflow",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/stack-overflow.png"
+				],
+				"nodeType": "TIMED",
+				"start": 1020913200,
+				"end": 1683601200
+			},
+			{
+				"key": "0023",
+				"name": "Telefonica",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/telefonica.png"
+				],
+				"nodeType": "TIMED",
+				"start": 1431140400,
+				"end": 1588993200
+			},
+			{
+				"key": "0024",
+				"name": "Timed's child telefonica",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon002.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0025",
+				"name": "Timed's child telefonica",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon010.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0006",
+				"name": "Education Sub Timeline 1 of 2",
+				"width": 1000,
+				"height": 150,
+				"nodeType": "TIMELINE",
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.9
+					}
+				}
+			},
+			{
+				"key": "0007",
+				"name": "ESPN",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/youtube.png"
+				],
+				"nodeType": "TIMED",
+				"start": 326689200,
+				"end": 957841200
+			},
+			{
+				"key": "0008",
+				"name": "Movistar",
+				"height": 70,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/stack-overflow.png"
+				],
+				"nodeType": "TIMED",
+				"start": 484455600,
+				"end": 894682800
+			},
+			{
+				"key": "0009",
+				"name": "Telefonica",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/telefonica.png"
+				],
+				"nodeType": "TIMED",
+				"start": 799988400,
+				"end": 1115607600,
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.9
+					}
+				}
+			},
+			{
+				"key": "0010",
+				"name": "Timed's child telefonica",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon010.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0011",
+				"name": "Timed's child telefonica",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon008.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0012",
+				"name": "Education Sub Timeline 2 of 2",
+				"width": 800,
+				"height": 350,
+				"nodeType": "TIMELINE"
+			},
+			{
+				"key": "0013",
+				"name": "tl2-A",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/youtube.png"
+				],
+				"nodeType": "TIMED",
+				"start": 326789200,
+				"end": 959841200
+			},
+			{
+				"key": "0014",
+				"name": "tl2-B",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/stack-overflow.png"
+				],
+				"nodeType": "TIMED",
+				"start": 684155600,
+				"end": 806682800
+			},
+			{
+				"key": "0015",
+				"name": "tl2-C",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/stack-overflow.png"
+				],
+				"nodeType": "TIMED",
+				"start": 584150000,
+				"end": 706682800
+			},
+			{
+				"key": "0016",
+				"name": "tl2-D",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/stack-overflow.png"
+				],
+				"nodeType": "TIMED",
+				"start": 404155600,
+				"end": 796682800
+			},
+			{
+				"key": "0017",
+				"name": "tl2-E",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/stack-overflow.png"
+				],
+				"nodeType": "TIMED",
+				"start": 554155600,
+				"end": 996682800
+			},
+			{
+				"key": "0018",
+				"name": "tl2-F",
+				"height": 88,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/stack-overflow.png"
+				],
+				"nodeType": "TIMED",
+				"start": 484155600,
+				"end": 896682800
+			},
+			{
+				"key": "0018b",
+				"name": "tl2-Fb",
+				"height": 40,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/stack-overflow.png"
+				],
+				"nodeType": "TIMED",
+				"start": 906682800,
+				"end": 996682800
+			},
+			{
+				"key": "0019",
+				"name": "tl2-G",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/telefonica.png"
+				],
+				"nodeType": "TIMED",
+				"start": 799988400,
+				"end": 1115607600
+			},
+			{
+				"key": "0020",
+				"name": "Timed's child telefonica",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon000.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0021",
+				"name": "Timed's child telefonica",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon006.png",
+				"nodeType": "NODE"
+			},
+			{
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon010.png",
+				"width": 300,
+				"height": 300,
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.5
+					}
+				},
+				"key": "0026",
+				"name": "Experience",
+				"tech": [],
+				"shortText": "Little Red Riding Hood opened her eyes and saw the sunlight breaking through the trees and how the ground was covered with beautiful flowers. She thought: \"If a take a bouquet to grandmother, she will be very pleased.\"",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0027",
+				"name": "Experience Timeline",
+				"width": 2400,
+				"height": 150,
+				"nodeType": "TIMELINE"
+			},
+			{
+				"key": "0028",
+				"name": "Clarin",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/clarin.png"
+				],
+				"fullStory": {
+					"textBlocks": [
+						{
+							"title": "Clarin's Full Story",
+							"images": [
+								{
+									"image": "http://localhost:5173/src/assets/nodes/cartoon000.png",
+									"float": "auto",
+									"width": 30,
+									"caption": "nice image"
+								},
+								{
+									"image": "http://localhost:5173/src/assets/nodes/cartoon004.png",
+									"float": "auto",
+									"width": 50,
+									"caption": "the little one"
+								}
+							],
+							"text": "Near a great forest there lived a poor woodcutter and his wife, and his two children; the boy's name was Hansel and the girl's Grethel. They had very little to bite or to sup, and once, when there was great dearth in the land, the man could not even gain the daily bread. As he lay in bed one night thinking of this, and turning and tossing, he sighed heavily, and said to his wife, \"What will become of us? we cannot even feed our children; there is nothing left for ourselves.\"\n\t\n\t\t\t\t\t\t\t\t\t\t\t\"I will tell you what, husband,\" answered the wife; \"we will take the children early in the morning into the forest, where it is thickest; we will make them a fire, and we will give each of them a piece of bread, then we will go to our work and leave them alone; they will never find the way home again, and we shall be quit of them.\"\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\"No, wife,\" said the man, \"I cannot do that; I cannot find in my heart to take my children into the forest and to leave them there alone; the wild animals would soon come and devour them.\" - \"O you fool,\" said she, \"then we will all four starve; you had better get the coffins ready,\" and she left him no peace until he consented. \"But I really pity the poor children,\" said the man.\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tThe two children had not been able to sleep for hunger, and had heard what their step-mother had said to their father. Grethel wept bitterly, and said to Hansel, \"It is all over with us.\"\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\"Do be quiet, Grethel,\" said Hansel, \"and do not fret; 1 will manage something.\" And when the parents had gone to sleep he got up, put on his little coat, opened the back door, and slipped out. The moon was shining brightly, and the white flints that lay in front of the house glistened like pieces of silver. Hansel stooped and filled the little pocket of his coat as full as it would hold. Then he went back again, and said to Grethel, \"Be easy, dear little sister, and go to sleep quietly; God will not forsake us,\" and laid himself down again in his bed. When the day was breaking, and before the sun had risen, the wife came and awakened the two children, saying, \"Get up, you lazy bones; we are going into the forest to cut wood.\" Then she gave each of them a piece of bread, and said, \"That is for dinner, and you must not eat it before then, for you will get no more.\" Grethel carried the bread under her apron, for Hansel had his pockets full of the flints. Then they set off all together on their way to the forest. When they had gone a little way Hansel stood still and looked back towards the house, and this he did again and again, till his father said to him, \"Hansel, what are you looking at? take care not to forget your legs.\"\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\"O father,\" said Hansel, \"lam looking at my little white kitten, who is sitting up on the roof to bid me good-bye.\" - \"You young fool,\" said the woman, \"that is not your kitten, but the sunshine on the chimney-pot.\" Of course Hansel had not been looking at his kitten, but had been taking every now and then a flint from his pocket and dropping it on the road. When they reached the middle of the forest the father told the children to collect wood to make a fire to keep them, warm; and Hansel and Grethel gathered brushwood enough for a little mountain j and it was set on fire, and when the flame was burning quite high the wife said, \"Now lie down by the fire and rest yourselves, you children, and we will go and cut wood; and when we are ready we will come and fetch you.\"\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tSo Hansel and Grethel sat by the fire, and at noon they each ate their pieces of bread. They thought their father was in the wood all the time, as they seemed to hear the strokes of the axe: but really it was only a dry branch hanging to a withered tree that the wind moved to and fro. So when they had stayed there a long time their eyelids closed with weariness, and they fell fast asleep.\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tWhen at last they woke it was night, and Grethel began to cry, and said, \"How shall we ever get out of this wood? \"But Hansel comforted her, saying, \"Wait a little while longer, until the moon rises, and then we can easily find the way home.\" And when the full moon got up Hansel took his little sister by the hand, and followed the way where the flint stones shone like silver, and showed them the road. They walked on the whole night through, and at the break of day they came to their father's house. They knocked at the door, and when the wife opened it and saw that it was Hansel and Grethel she said, \"You naughty children, why did you sleep so long in the wood? we thought you were never coming home again!\" But the father was glad, for it had gone to his heart to leave them both in the woods alone.\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tNot very long after that there was again great scarcity in those parts, and the children heard their mother say at night in bed to their father, \"Everything is finished up; we have only half a loaf, and after that the tale comes to an end. The children must be off; we will take them farther into the wood this time, so that they shall not be able to find the way back again; there is no other way to manage.\" The man felt sad at heart, and he thought, \"It would better to share one's last morsel with one's children.\" But the wife would listen to nothing that he said, but scolded and reproached him. He who says A must say B too, and when a man has given in once he has to do it a second time.\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tBut the children were not asleep, and had heard all the talk. When the parents had gone to sleep Hansel got up to go out and get more flint stones, as he did before, but the wife had locked the door, and Hansel could not get out; but he comforted his little sister, and said, \"Don't cry, Grethel, and go to sleep quietly, and God will help us.\" Early the next morning the wife came and pulled the children out of bed. She gave them each a little piece of \"bread -less than before; and on the way to the wood Hansel crumbled the bread in his pocket, and often stopped to throw a crumb on the ground. \"Hansel, what are you stopping behind and staring for?\" said the father.\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\"I am looking at my little pigeon sitting on the roof, to say good-bye to me,\" answered Hansel. \"You fool,\" said the wife, \"that is no pigeon, but the morning sun shining on the chimney pots.\" Hansel went on as before, and strewed bread crumbs all along the road. The woman led the children far into the wood, where they had never been before in all their lives. And again there was a large fire made, and the mother said, \"Sit still there, you children, and when you are tired you can go to sleep; we are going into the forest to cut wood, and in the evening, when we are ready to go home we will come and fetch you.\"\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tSo when noon came Grethel shared her bread with Hansel, who had strewed his along the road. Then they went to sleep, and the evening passed, and no one came for the poor children. When they awoke it was dark night, and Hansel comforted his little sister, and said, \"Wait a little, Grethel, until the moon gets up, then we shall be able to see the way home by the crumbs of bread that I have scattered along it.\"\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tSo when the moon rose they got up, but they could find no crumbs of bread, for the birds of the woods and of the fields had come and picked them up. Hansel thought they might find the way all the same, but they could not. They went on all that night, and the next day from the morning until the evening, but they could not find the way out of the wood, and they were very hungry, for they had nothing to eat but the few berries they could pick up. And when they were so tired that they could no longer drag themselves along, they lay down under a tree and fell asleep.\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tIt was now the third morning since they had left their father's house. They were always trying to get back to it, but instead of that they only found themselves farther in the wood, and if help had not soon come they would have been starved.\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tAbout noon they saw a pretty snow-white bird sitting on a bough, and singing so sweetly that they stopped to listen. And when he had finished the bird spread his wings and flew before them, and they followed after him until they came to a little house, and the bird perched on the roof, and when they came nearer they saw that the house was built of bread, and roofed with cakes; and the window was of transparent sugar. \"We will have some of this,\" said Hansel, \"and make a fine meal. I will eat a piece of the roof, Grethel, and you can have some of the window-that will taste sweet.\" So Hansel reached up and broke off a bit of the roof, just to see how it tasted, and Grethel stood by the window and gnawed at it. Then they heard a thin voice call out from inside,\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\"Nibble, nibble, like a mouse,\n\t\t\t\t\t\t\t\t\t\t\tWho is nibbling at my house?\"\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tAnd the children answered,\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\"Never mind, It is the wind.\"\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tAnd they went on eating, never disturbing themselves. Hansel, who found that the roof tasted very nice, took down a great piece of it, and Grethel pulled out a large round window-pane, and sat her down and began upon it.\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tThen the door opened, and an aged woman came out, leaning upon a crutch. Hansel and Grethel felt very frightened, and let fall what they had in their hands. The old woman, however, nodded her head, and said, \"Ah, my dear children, how come you here? you must come indoors and stay with me, you will be no trouble.\" So she took them each by the hand, and led them into her little house. And there they found a good meal laid out, of milk and pancakes, with sugar, apples, and nuts. After that she showed them two little white beds, and Hansel and Grethel laid themselves down on them, and thought they were in heaven.\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tThe old woman, although her behaviour was so kind, was a wicked witch, who lay in wait for children, and had built the little house on purpose to entice them. When they were once inside she used to kill them, cook them, and eat them, and then it was a feast day with her. The witch's eyes were red, and she could not see very far, but she had a keen scent, like the beasts, and knew very well when human creatures were near. When she knew that Hansel and Grethel were coming, she gave a spiteful laugh, and said triumphantly, \"I have them, and they shall not escape me!\"\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tEarly in the morning, before the children were awake, she got up to look at them, and as they lay sleeping so peacefully with round rosy cheeks, she said to herself, \"What a fine feast I shall have!\" Then she grasped Hansel with her withered hand, and led him into a little stable, and shut him up behind a grating; and call and scream as he might, it was no good. Then she went back to Grethel and shook her, crying, \"Get up, lazy bones; fetch water, and cook something nice for your brother; he is outside in the stable, and must be fattened up. And when he is fat enough I will eat him.\" Grethel began to weep bitterly, but it was of no use, she had to do what the wicked witch bade her. And so the best kind of victuals was cooked for poor Hansel, while Grethel got nothing but crab-shells.\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tEach morning the old woman visited the little stable, and cried, \"Hansel, stretch out your finger, that I may tell if you will soon be fat enough.\" Hansel, however, used to hold out a little bone, and the old woman, who had weak eyes, could not see what it was, and supposing it to be Hansel's finger, wondered very much that it was not getting fatter.\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tWhen four weeks had passed and Hansel seemed to remain so thin, she lost patience and could wait no longer. \"Now then, Grethel,\" cried she to the little girl; \"be quick and draw water; be Hansel fat or be he lean, tomorrow I must kill and cook him.\" Oh what a grief for the poor little sister to have to fetch water, and how the tears flowed down over her cheeks! \"Dear God, pray help us!\" cried she; \"if we had been devoured by wild beasts in the wood at least we should have died together.\"\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\"Spare me your lamentations,\" said the old woman; \"they are of no avail.\" Early next morning Grethel had to get up, make the fire, and fill the kettle. \"First we will do the baking,\" said the old woman; \"I nave heated the oven already, and kneaded the dough.\" She pushed poor Grethel towards the oven, out of which the flames were already shining.\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\"Creep in,\" said the witch, \"and see if it is properly hot, so that the bread may be baked.\" And Grethel once in, she meant to shut the door upon her and let her be baked, and then she would have eaten her. But Grethel perceived her intention, and said, \"I don't know how to do it: how shall I get in?\"\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\"Stupid goose,\" said the old woman, \"the opening is big enough, do you see? I could get in myself!\" and she stooped down and put her head in the oven's mouth. Then Grethel gave her a push, so that she went in farther, and she shut the iron door upon her, and put up the bar. Oh how frightfully she howled! but Grethel ran away, and left the wicked witch to burn miserably.\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tGrethel went straight to Hansel, opened the stable-door, and cried, \"Hansel, we are free! the old witch is dead!\" Then out flew Hansel like a bird from its cage as soon as the door is opened. How rejoiced they both were! how they fell each on the other's neck! and danced about, and kissed each other! And as they had nothing more to fear they went over all the old witch's house, and in every corner there stood chests of pearls and precious stones. \"This is something better than flint stones,\" said Hansel, as he filled his pockets, and Grethel, thinking she also would like to carry something home with her, filled her apron full. i! Now, away we go,\" said Hansel, \"if we only can get out of the witch's wood.\" When they had journeyed a few hours they came to a great piece of water. \"We can never get across this,\" said Hansel, \"I see no stepping-stones and no bridge.\"\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\"And there is no boat either,\" said Grethel; \"but here comes a white duck; if I ask her she will help us over.\" So she cried,\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\"Duck, duck, here we stand,\n\t\t\t\t\t\t\t\t\t\t\tHansel and Grethel, on the land,\n\t\t\t\t\t\t\t\t\t\t\tStepping-stones and bridge we lack,\n\t\t\t\t\t\t\t\t\t\t\tCarry us over on your nice white back.\"\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\tAnd the duck came accordingly, and Hansel got upon her and told his sister to come too. \"No,\" answered Grethel, \"that would be too hard upon the duck; we can go separately, one after the other.\" And that was how it was managed, and after that they went on happily, until they came to the wood, and the way grew more and more familiar, till at last they saw in the distance their father's house. Then they ran till they came up to it, rushed in at the door, and fell on their father's neck. The man had not had a quiet hour since he left his children in the wood; but the wife was dead. And when Grethel opened her apron the pearls and precious stones were scattered all over the room, and Hansel took one handful after another out of his pocket. Then was all care at an end, and they lived in great joy together. My tale is done, there runs a mouse, whosoever catches it, may make himself a big fur cap out of it."
+						}
+					]
+				},
+				"nodeType": "TIMED",
+				"start": 1052449200,
+				"end": 1115607600
+			},
+			{
+				"key": "0029",
+				"name": "Overall Experience",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon005.png",
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.5,
+						"fixedStart": 200,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0030",
+				"name": "Achievements",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon010.png",
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0,
+						"fixedStart": 200,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0031",
+				"name": "Projects",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon004.png",
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0,
+						"fixedStart": 200,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0032",
+				"name": "Projects' child",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon007.png",
+				"options": {
+					"connection": {
+						"fixedStart": 200,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0033",
+				"name": "Projects' child's child",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon006.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0034",
+				"name": "References",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon004.png",
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.65,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0035",
+				"name": "ESPN",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/espn-dark.png"
+				],
+				"nodeType": "TIMED",
+				"start": 1210302000,
+				"end": 1356058800
+			},
+			{
+				"key": "0036",
+				"name": "Disney",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/disney.png"
+				],
+				"nodeType": "TIMED",
+				"start": 1280302000,
+				"end": 1304910000
+			},
+			{
+				"key": "0037",
+				"name": "Telefonica",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/telefonica.png"
+				],
+				"nodeType": "TIMED",
+				"start": 957841200,
+				"end": 1052449200
+			},
+			{
+				"key": "0038",
+				"name": "telef. child 1",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon002.png",
+				"options": {
+					"connection": {
+						"fixedStart": 330,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0039",
+				"name": "telef. child 2",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon012.png",
+				"options": {
+					"connection": {
+						"fixedStart": 330,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0040",
+				"name": "telef. child 3",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon007.png",
+				"options": {
+					"connection": {
+						"fixedStart": 330,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0041",
+				"name": "telef. child 4",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon002.png",
+				"options": {
+					"connection": {
+						"fixedStart": 330,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0042",
+				"name": "telef. child 5",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon010.png",
+				"options": {
+					"connection": {
+						"fixedStart": 330,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0043",
+				"name": "telef. child 6",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon009.png",
+				"options": {
+					"connection": {
+						"fixedStart": 330,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0044",
+				"name": "telef. child 8",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon005.png",
+				"options": {
+					"connection": {
+						"fixedStart": 330,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0045",
+				"name": "telef. child 8",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon008.png",
+				"options": {
+					"connection": {
+						"fixedStart": 330,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0046",
+				"name": "telef. child 9",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon002.png",
+				"options": {
+					"connection": {
+						"fixedStart": 330,
+						"offsetStart": -25
+					}
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0047",
+				"name": "Movistar",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/movistar.png"
+				],
+				"nodeType": "TIMED",
+				"start": 1020913200,
+				"end": 1044071600
+			},
+			{
+				"key": "0048",
+				"name": "OSBA",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/osba.png"
+				],
+				"nodeType": "TIMED",
+				"start": 989377200,
+				"end": 1273374000
+			},
+			{
+				"key": "0049",
+				"name": "Disney Company",
+				"height": 50,
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/logos/disney.png"
+				],
+				"fullStory": {
+					"textBlocks": [
+						{
+							"title": "Disney's Full Story",
+							"images": [
+								{
+									"image": "http://localhost:5173/src/assets/nodes/cartoon004.png",
+									"float": "auto",
+									"width": 30,
+									"caption": "nice image"
+								},
+								{
+									"image": "http://localhost:5173/src/assets/nodes/cartoon011.png",
+									"float": "auto",
+									"width": 50,
+									"caption": "the little one"
+								}
+							],
+							"text": "Near a great forest there lived a poor woodcutter and his wife, and his two children; the boy's name was Hansel and the girl's Grethel. They had very little to bite or to sup, and once, when there was great dearth in the land, the man could not even gain the daily bread. As he lay in bed one night thinking of this, and turning and tossing, he sighed heavily, and said to his wife, \"What will become of us? we cannot even feed our children; there is nothing left for ourselves.\"\n\n\t\t\t\t\t\t\t\t\t\t\"I will tell you what, husband,\" answered the wife; \"we will take the children early in the morning into the forest, where it is thickest; we will make them a fire, and we will give each of them a piece of bread, then we will go to our work and leave them alone; they will never find the way home again, and we shall be quit of them.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"No, wife,\" said the man, \"I cannot do that; I cannot find in my heart to take my children into the forest and to leave them there alone; the wild animals would soon come and devour them.\" - \"O you fool,\" said she, \"then we will all four starve; you had better get the coffins ready,\" and she left him no peace until he consented. \"But I really pity the poor children,\" said the man.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tThe two children had not been able to sleep for hunger, and had heard what their step-mother had said to their father. Grethel wept bitterly, and said to Hansel, \"It is all over with us.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"Do be quiet, Grethel,\" said Hansel, \"and do not fret; 1 will manage something.\" And when the parents had gone to sleep he got up, put on his little coat, opened the back door, and slipped out. The moon was shining brightly, and the white flints that lay in front of the house glistened like pieces of silver. Hansel stooped and filled the little pocket of his coat as full as it would hold. Then he went back again, and said to Grethel, \"Be easy, dear little sister, and go to sleep quietly; God will not forsake us,\" and laid himself down again in his bed. When the day was breaking, and before the sun had risen, the wife came and awakened the two children, saying, \"Get up, you lazy bones; we are going into the forest to cut wood.\" Then she gave each of them a piece of bread, and said, \"That is for dinner, and you must not eat it before then, for you will get no more.\" Grethel carried the bread under her apron, for Hansel had his pockets full of the flints. Then they set off all together on their way to the forest. When they had gone a little way Hansel stood still and looked back towards the house, and this he did again and again, till his father said to him, \"Hansel, what are you looking at? take care not to forget your legs.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"O father,\" said Hansel, \"lam looking at my little white kitten, who is sitting up on the roof to bid me good-bye.\" - \"You young fool,\" said the woman, \"that is not your kitten, but the sunshine on the chimney-pot.\" Of course Hansel had not been looking at his kitten, but had been taking every now and then a flint from his pocket and dropping it on the road. When they reached the middle of the forest the father told the children to collect wood to make a fire to keep them, warm; and Hansel and Grethel gathered brushwood enough for a little mountain j and it was set on fire, and when the flame was burning quite high the wife said, \"Now lie down by the fire and rest yourselves, you children, and we will go and cut wood; and when we are ready we will come and fetch you.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tSo Hansel and Grethel sat by the fire, and at noon they each ate their pieces of bread. They thought their father was in the wood all the time, as they seemed to hear the strokes of the axe: but really it was only a dry branch hanging to a withered tree that the wind moved to and fro. So when they had stayed there a long time their eyelids closed with weariness, and they fell fast asleep.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tWhen at last they woke it was night, and Grethel began to cry, and said, \"How shall we ever get out of this wood? \"But Hansel comforted her, saying, \"Wait a little while longer, until the moon rises, and then we can easily find the way home.\" And when the full moon got up Hansel took his little sister by the hand, and followed the way where the flint stones shone like silver, and showed them the road. They walked on the whole night through, and at the break of day they came to their father's house. They knocked at the door, and when the wife opened it and saw that it was Hansel and Grethel she said, \"You naughty children, why did you sleep so long in the wood? we thought you were never coming home again!\" But the father was glad, for it had gone to his heart to leave them both in the woods alone.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tNot very long after that there was again great scarcity in those parts, and the children heard their mother say at night in bed to their father, \"Everything is finished up; we have only half a loaf, and after that the tale comes to an end. The children must be off; we will take them farther into the wood this time, so that they shall not be able to find the way back again; there is no other way to manage.\" The man felt sad at heart, and he thought, \"It would better to share one's last morsel with one's children.\" But the wife would listen to nothing that he said, but scolded and reproached him. He who says A must say B too, and when a man has given in once he has to do it a second time.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tBut the children were not asleep, and had heard all the talk. When the parents had gone to sleep Hansel got up to go out and get more flint stones, as he did before, but the wife had locked the door, and Hansel could not get out; but he comforted his little sister, and said, \"Don't cry, Grethel, and go to sleep quietly, and God will help us.\" Early the next morning the wife came and pulled the children out of bed. She gave them each a little piece of \"bread -less than before; and on the way to the wood Hansel crumbled the bread in his pocket, and often stopped to throw a crumb on the ground. \"Hansel, what are you stopping behind and staring for?\" said the father.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"I am looking at my little pigeon sitting on the roof, to say good-bye to me,\" answered Hansel. \"You fool,\" said the wife, \"that is no pigeon, but the morning sun shining on the chimney pots.\" Hansel went on as before, and strewed bread crumbs all along the road. The woman led the children far into the wood, where they had never been before in all their lives. And again there was a large fire made, and the mother said, \"Sit still there, you children, and when you are tired you can go to sleep; we are going into the forest to cut wood, and in the evening, when we are ready to go home we will come and fetch you.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tSo when noon came Grethel shared her bread with Hansel, who had strewed his along the road. Then they went to sleep, and the evening passed, and no one came for the poor children. When they awoke it was dark night, and Hansel comforted his little sister, and said, \"Wait a little, Grethel, until the moon gets up, then we shall be able to see the way home by the crumbs of bread that I have scattered along it.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tSo when the moon rose they got up, but they could find no crumbs of bread, for the birds of the woods and of the fields had come and picked them up. Hansel thought they might find the way all the same, but they could not. They went on all that night, and the next day from the morning until the evening, but they could not find the way out of the wood, and they were very hungry, for they had nothing to eat but the few berries they could pick up. And when they were so tired that they could no longer drag themselves along, they lay down under a tree and fell asleep.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tIt was now the third morning since they had left their father's house. They were always trying to get back to it, but instead of that they only found themselves farther in the wood, and if help had not soon come they would have been starved.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tAbout noon they saw a pretty snow-white bird sitting on a bough, and singing so sweetly that they stopped to listen. And when he had finished the bird spread his wings and flew before them, and they followed after him until they came to a little house, and the bird perched on the roof, and when they came nearer they saw that the house was built of bread, and roofed with cakes; and the window was of transparent sugar. \"We will have some of this,\" said Hansel, \"and make a fine meal. I will eat a piece of the roof, Grethel, and you can have some of the window-that will taste sweet.\" So Hansel reached up and broke off a bit of the roof, just to see how it tasted, and Grethel stood by the window and gnawed at it. Then they heard a thin voice call out from inside,\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"Nibble, nibble, like a mouse,\n\t\t\t\t\t\t\t\t\t\tWho is nibbling at my house?\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tAnd the children answered,\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"Never mind, It is the wind.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tAnd they went on eating, never disturbing themselves. Hansel, who found that the roof tasted very nice, took down a great piece of it, and Grethel pulled out a large round window-pane, and sat her down and began upon it.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tThen the door opened, and an aged woman came out, leaning upon a crutch. Hansel and Grethel felt very frightened, and let fall what they had in their hands. The old woman, however, nodded her head, and said, \"Ah, my dear children, how come you here? you must come indoors and stay with me, you will be no trouble.\" So she took them each by the hand, and led them into her little house. And there they found a good meal laid out, of milk and pancakes, with sugar, apples, and nuts. After that she showed them two little white beds, and Hansel and Grethel laid themselves down on them, and thought they were in heaven.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tThe old woman, although her behaviour was so kind, was a wicked witch, who lay in wait for children, and had built the little house on purpose to entice them. When they were once inside she used to kill them, cook them, and eat them, and then it was a feast day with her. The witch's eyes were red, and she could not see very far, but she had a keen scent, like the beasts, and knew very well when human creatures were near. When she knew that Hansel and Grethel were coming, she gave a spiteful laugh, and said triumphantly, \"I have them, and they shall not escape me!\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tEarly in the morning, before the children were awake, she got up to look at them, and as they lay sleeping so peacefully with round rosy cheeks, she said to herself, \"What a fine feast I shall have!\" Then she grasped Hansel with her withered hand, and led him into a little stable, and shut him up behind a grating; and call and scream as he might, it was no good. Then she went back to Grethel and shook her, crying, \"Get up, lazy bones; fetch water, and cook something nice for your brother; he is outside in the stable, and must be fattened up. And when he is fat enough I will eat him.\" Grethel began to weep bitterly, but it was of no use, she had to do what the wicked witch bade her. And so the best kind of victuals was cooked for poor Hansel, while Grethel got nothing but crab-shells.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tEach morning the old woman visited the little stable, and cried, \"Hansel, stretch out your finger, that I may tell if you will soon be fat enough.\" Hansel, however, used to hold out a little bone, and the old woman, who had weak eyes, could not see what it was, and supposing it to be Hansel's finger, wondered very much that it was not getting fatter.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tWhen four weeks had passed and Hansel seemed to remain so thin, she lost patience and could wait no longer. \"Now then, Grethel,\" cried she to the little girl; \"be quick and draw water; be Hansel fat or be he lean, tomorrow I must kill and cook him.\" Oh what a grief for the poor little sister to have to fetch water, and how the tears flowed down over her cheeks! \"Dear God, pray help us!\" cried she; \"if we had been devoured by wild beasts in the wood at least we should have died together.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"Spare me your lamentations,\" said the old woman; \"they are of no avail.\" Early next morning Grethel had to get up, make the fire, and fill the kettle. \"First we will do the baking,\" said the old woman; \"I nave heated the oven already, and kneaded the dough.\" She pushed poor Grethel towards the oven, out of which the flames were already shining.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"Creep in,\" said the witch, \"and see if it is properly hot, so that the bread may be baked.\" And Grethel once in, she meant to shut the door upon her and let her be baked, and then she would have eaten her. But Grethel perceived her intention, and said, \"I don't know how to do it: how shall I get in?\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"Stupid goose,\" said the old woman, \"the opening is big enough, do you see? I could get in myself!\" and she stooped down and put her head in the oven's mouth. Then Grethel gave her a push, so that she went in farther, and she shut the iron door upon her, and put up the bar. Oh how frightfully she howled! but Grethel ran away, and left the wicked witch to burn miserably.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tGrethel went straight to Hansel, opened the stable-door, and cried, \"Hansel, we are free! the old witch is dead!\" Then out flew Hansel like a bird from its cage as soon as the door is opened. How rejoiced they both were! how they fell each on the other's neck! and danced about, and kissed each other! And as they had nothing more to fear they went over all the old witch's house, and in every corner there stood chests of pearls and precious stones. \"This is something better than flint stones,\" said Hansel, as he filled his pockets, and Grethel, thinking she also would like to carry something home with her, filled her apron full. i! Now, away we go,\" said Hansel, \"if we only can get out of the witch's wood.\" When they had journeyed a few hours they came to a great piece of water. \"We can never get across this,\" said Hansel, \"I see no stepping-stones and no bridge.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"And there is no boat either,\" said Grethel; \"but here comes a white duck; if I ask her she will help us over.\" So she cried,\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"Duck, duck, here we stand,\n\t\t\t\t\t\t\t\t\t\tHansel and Grethel, on the land,\n\t\t\t\t\t\t\t\t\t\tStepping-stones and bridge we lack,\n\t\t\t\t\t\t\t\t\t\tCarry us over on your nice white back.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tAnd the duck came accordingly, and Hansel got upon her and told his sister to come too. \"No,\" answered Grethel, \"that would be too hard upon the duck; we can go separately, one after the other.\" And that was how it was managed, and after that they went on happily, until they came to the wood, and the way grew more and more familiar, till at last they saw in the distance their father's house. Then they ran till they came up to it, rushed in at the door, and fell on their father's neck. The man had not had a quiet hour since he left his children in the wood; but the wife was dead. And when Grethel opened her apron the pearls and precious stones were scattered all over the room, and Hansel took one handful after another out of his pocket. Then was all care at an end, and they lived in great joy together. My tale is done, there runs a mouse, whosoever catches it, may make himself a big fur cap out of it."
+						}
+					]
+				},
+				"nodeType": "TIMED",
+				"start": 1115607600,
+				"end": 1241838000
+			},
+			{
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon004.png",
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.75
+					}
+				},
+				"key": "0050",
+				"name": "Entertainment",
+				"tech": [],
+				"shortText": "short text",
+				"width": 400,
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0051",
+				"name": "Personality",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon006.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0052",
+				"name": "Jokes",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon001.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0053",
+				"name": "Fairy Tale",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon000.png"
+				],
+				"fullStory": {
+					"textBlocks": [
+						{
+							"title": "Hansel & Grethel",
+							"images": [
+								{
+									"image": "http://localhost:5173/src/assets/nodes/cartoon006.png",
+									"float": "auto",
+									"width": 30,
+									"caption": "nice image"
+								},
+								{
+									"image": "http://localhost:5173/src/assets/nodes/cartoon010.png",
+									"float": "auto",
+									"width": 50,
+									"caption": "the little one"
+								}
+							],
+							"text": "Near a great forest there lived a poor woodcutter and his wife, and his two children; the boy's name was Hansel and the girl's Grethel. They had very little to bite or to sup, and once, when there was great dearth in the land, the man could not even gain the daily bread. As he lay in bed one night thinking of this, and turning and tossing, he sighed heavily, and said to his wife, \"What will become of us? we cannot even feed our children; there is nothing left for ourselves.\"\n\n\t\t\t\t\t\t\t\t\t\t\"I will tell you what, husband,\" answered the wife; \"we will take the children early in the morning into the forest, where it is thickest; we will make them a fire, and we will give each of them a piece of bread, then we will go to our work and leave them alone; they will never find the way home again, and we shall be quit of them.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"No, wife,\" said the man, \"I cannot do that; I cannot find in my heart to take my children into the forest and to leave them there alone; the wild animals would soon come and devour them.\" - \"O you fool,\" said she, \"then we will all four starve; you had better get the coffins ready,\" and she left him no peace until he consented. \"But I really pity the poor children,\" said the man.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tThe two children had not been able to sleep for hunger, and had heard what their step-mother had said to their father. Grethel wept bitterly, and said to Hansel, \"It is all over with us.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"Do be quiet, Grethel,\" said Hansel, \"and do not fret; 1 will manage something.\" And when the parents had gone to sleep he got up, put on his little coat, opened the back door, and slipped out. The moon was shining brightly, and the white flints that lay in front of the house glistened like pieces of silver. Hansel stooped and filled the little pocket of his coat as full as it would hold. Then he went back again, and said to Grethel, \"Be easy, dear little sister, and go to sleep quietly; God will not forsake us,\" and laid himself down again in his bed. When the day was breaking, and before the sun had risen, the wife came and awakened the two children, saying, \"Get up, you lazy bones; we are going into the forest to cut wood.\" Then she gave each of them a piece of bread, and said, \"That is for dinner, and you must not eat it before then, for you will get no more.\" Grethel carried the bread under her apron, for Hansel had his pockets full of the flints. Then they set off all together on their way to the forest. When they had gone a little way Hansel stood still and looked back towards the house, and this he did again and again, till his father said to him, \"Hansel, what are you looking at? take care not to forget your legs.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"O father,\" said Hansel, \"lam looking at my little white kitten, who is sitting up on the roof to bid me good-bye.\" - \"You young fool,\" said the woman, \"that is not your kitten, but the sunshine on the chimney-pot.\" Of course Hansel had not been looking at his kitten, but had been taking every now and then a flint from his pocket and dropping it on the road. When they reached the middle of the forest the father told the children to collect wood to make a fire to keep them, warm; and Hansel and Grethel gathered brushwood enough for a little mountain j and it was set on fire, and when the flame was burning quite high the wife said, \"Now lie down by the fire and rest yourselves, you children, and we will go and cut wood; and when we are ready we will come and fetch you.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tSo Hansel and Grethel sat by the fire, and at noon they each ate their pieces of bread. They thought their father was in the wood all the time, as they seemed to hear the strokes of the axe: but really it was only a dry branch hanging to a withered tree that the wind moved to and fro. So when they had stayed there a long time their eyelids closed with weariness, and they fell fast asleep.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tWhen at last they woke it was night, and Grethel began to cry, and said, \"How shall we ever get out of this wood? \"But Hansel comforted her, saying, \"Wait a little while longer, until the moon rises, and then we can easily find the way home.\" And when the full moon got up Hansel took his little sister by the hand, and followed the way where the flint stones shone like silver, and showed them the road. They walked on the whole night through, and at the break of day they came to their father's house. They knocked at the door, and when the wife opened it and saw that it was Hansel and Grethel she said, \"You naughty children, why did you sleep so long in the wood? we thought you were never coming home again!\" But the father was glad, for it had gone to his heart to leave them both in the woods alone.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tNot very long after that there was again great scarcity in those parts, and the children heard their mother say at night in bed to their father, \"Everything is finished up; we have only half a loaf, and after that the tale comes to an end. The children must be off; we will take them farther into the wood this time, so that they shall not be able to find the way back again; there is no other way to manage.\" The man felt sad at heart, and he thought, \"It would better to share one's last morsel with one's children.\" But the wife would listen to nothing that he said, but scolded and reproached him. He who says A must say B too, and when a man has given in once he has to do it a second time.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tBut the children were not asleep, and had heard all the talk. When the parents had gone to sleep Hansel got up to go out and get more flint stones, as he did before, but the wife had locked the door, and Hansel could not get out; but he comforted his little sister, and said, \"Don't cry, Grethel, and go to sleep quietly, and God will help us.\" Early the next morning the wife came and pulled the children out of bed. She gave them each a little piece of \"bread -less than before; and on the way to the wood Hansel crumbled the bread in his pocket, and often stopped to throw a crumb on the ground. \"Hansel, what are you stopping behind and staring for?\" said the father.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"I am looking at my little pigeon sitting on the roof, to say good-bye to me,\" answered Hansel. \"You fool,\" said the wife, \"that is no pigeon, but the morning sun shining on the chimney pots.\" Hansel went on as before, and strewed bread crumbs all along the road. The woman led the children far into the wood, where they had never been before in all their lives. And again there was a large fire made, and the mother said, \"Sit still there, you children, and when you are tired you can go to sleep; we are going into the forest to cut wood, and in the evening, when we are ready to go home we will come and fetch you.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tSo when noon came Grethel shared her bread with Hansel, who had strewed his along the road. Then they went to sleep, and the evening passed, and no one came for the poor children. When they awoke it was dark night, and Hansel comforted his little sister, and said, \"Wait a little, Grethel, until the moon gets up, then we shall be able to see the way home by the crumbs of bread that I have scattered along it.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tSo when the moon rose they got up, but they could find no crumbs of bread, for the birds of the woods and of the fields had come and picked them up. Hansel thought they might find the way all the same, but they could not. They went on all that night, and the next day from the morning until the evening, but they could not find the way out of the wood, and they were very hungry, for they had nothing to eat but the few berries they could pick up. And when they were so tired that they could no longer drag themselves along, they lay down under a tree and fell asleep.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tIt was now the third morning since they had left their father's house. They were always trying to get back to it, but instead of that they only found themselves farther in the wood, and if help had not soon come they would have been starved.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tAbout noon they saw a pretty snow-white bird sitting on a bough, and singing so sweetly that they stopped to listen. And when he had finished the bird spread his wings and flew before them, and they followed after him until they came to a little house, and the bird perched on the roof, and when they came nearer they saw that the house was built of bread, and roofed with cakes; and the window was of transparent sugar. \"We will have some of this,\" said Hansel, \"and make a fine meal. I will eat a piece of the roof, Grethel, and you can have some of the window-that will taste sweet.\" So Hansel reached up and broke off a bit of the roof, just to see how it tasted, and Grethel stood by the window and gnawed at it. Then they heard a thin voice call out from inside,\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"Nibble, nibble, like a mouse,\n\t\t\t\t\t\t\t\t\t\tWho is nibbling at my house?\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tAnd the children answered,\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"Never mind, It is the wind.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tAnd they went on eating, never disturbing themselves. Hansel, who found that the roof tasted very nice, took down a great piece of it, and Grethel pulled out a large round window-pane, and sat her down and began upon it.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tThen the door opened, and an aged woman came out, leaning upon a crutch. Hansel and Grethel felt very frightened, and let fall what they had in their hands. The old woman, however, nodded her head, and said, \"Ah, my dear children, how come you here? you must come indoors and stay with me, you will be no trouble.\" So she took them each by the hand, and led them into her little house. And there they found a good meal laid out, of milk and pancakes, with sugar, apples, and nuts. After that she showed them two little white beds, and Hansel and Grethel laid themselves down on them, and thought they were in heaven.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tThe old woman, although her behaviour was so kind, was a wicked witch, who lay in wait for children, and had built the little house on purpose to entice them. When they were once inside she used to kill them, cook them, and eat them, and then it was a feast day with her. The witch's eyes were red, and she could not see very far, but she had a keen scent, like the beasts, and knew very well when human creatures were near. When she knew that Hansel and Grethel were coming, she gave a spiteful laugh, and said triumphantly, \"I have them, and they shall not escape me!\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tEarly in the morning, before the children were awake, she got up to look at them, and as they lay sleeping so peacefully with round rosy cheeks, she said to herself, \"What a fine feast I shall have!\" Then she grasped Hansel with her withered hand, and led him into a little stable, and shut him up behind a grating; and call and scream as he might, it was no good. Then she went back to Grethel and shook her, crying, \"Get up, lazy bones; fetch water, and cook something nice for your brother; he is outside in the stable, and must be fattened up. And when he is fat enough I will eat him.\" Grethel began to weep bitterly, but it was of no use, she had to do what the wicked witch bade her. And so the best kind of victuals was cooked for poor Hansel, while Grethel got nothing but crab-shells.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tEach morning the old woman visited the little stable, and cried, \"Hansel, stretch out your finger, that I may tell if you will soon be fat enough.\" Hansel, however, used to hold out a little bone, and the old woman, who had weak eyes, could not see what it was, and supposing it to be Hansel's finger, wondered very much that it was not getting fatter.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tWhen four weeks had passed and Hansel seemed to remain so thin, she lost patience and could wait no longer. \"Now then, Grethel,\" cried she to the little girl; \"be quick and draw water; be Hansel fat or be he lean, tomorrow I must kill and cook him.\" Oh what a grief for the poor little sister to have to fetch water, and how the tears flowed down over her cheeks! \"Dear God, pray help us!\" cried she; \"if we had been devoured by wild beasts in the wood at least we should have died together.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"Spare me your lamentations,\" said the old woman; \"they are of no avail.\" Early next morning Grethel had to get up, make the fire, and fill the kettle. \"First we will do the baking,\" said the old woman; \"I nave heated the oven already, and kneaded the dough.\" She pushed poor Grethel towards the oven, out of which the flames were already shining.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"Creep in,\" said the witch, \"and see if it is properly hot, so that the bread may be baked.\" And Grethel once in, she meant to shut the door upon her and let her be baked, and then she would have eaten her. But Grethel perceived her intention, and said, \"I don't know how to do it: how shall I get in?\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"Stupid goose,\" said the old woman, \"the opening is big enough, do you see? I could get in myself!\" and she stooped down and put her head in the oven's mouth. Then Grethel gave her a push, so that she went in farther, and she shut the iron door upon her, and put up the bar. Oh how frightfully she howled! but Grethel ran away, and left the wicked witch to burn miserably.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tGrethel went straight to Hansel, opened the stable-door, and cried, \"Hansel, we are free! the old witch is dead!\" Then out flew Hansel like a bird from its cage as soon as the door is opened. How rejoiced they both were! how they fell each on the other's neck! and danced about, and kissed each other! And as they had nothing more to fear they went over all the old witch's house, and in every corner there stood chests of pearls and precious stones. \"This is something better than flint stones,\" said Hansel, as he filled his pockets, and Grethel, thinking she also would like to carry something home with her, filled her apron full. i! Now, away we go,\" said Hansel, \"if we only can get out of the witch's wood.\" When they had journeyed a few hours they came to a great piece of water. \"We can never get across this,\" said Hansel, \"I see no stepping-stones and no bridge.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"And there is no boat either,\" said Grethel; \"but here comes a white duck; if I ask her she will help us over.\" So she cried,\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\"Duck, duck, here we stand,\n\t\t\t\t\t\t\t\t\t\tHansel and Grethel, on the land,\n\t\t\t\t\t\t\t\t\t\tStepping-stones and bridge we lack,\n\t\t\t\t\t\t\t\t\t\tCarry us over on your nice white back.\"\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tAnd the duck came accordingly, and Hansel got upon her and told his sister to come too. \"No,\" answered Grethel, \"that would be too hard upon the duck; we can go separately, one after the other.\" And that was how it was managed, and after that they went on happily, until they came to the wood, and the way grew more and more familiar, till at last they saw in the distance their father's house. Then they ran till they came up to it, rushed in at the door, and fell on their father's neck. The man had not had a quiet hour since he left his children in the wood; but the wife was dead. And when Grethel opened her apron the pearls and precious stones were scattered all over the room, and Hansel took one handful after another out of his pocket. Then was all care at an end, and they lived in great joy together. My tale is done, there runs a mouse, whosoever catches it, may make himself a big fur cap out of it."
+						},
+						{
+							"title": "Analysis",
+							"images": [
+								{
+									"image": "http://localhost:5173/src/assets/nodes/cartoon008.png",
+									"float": "auto",
+									"width": 60,
+									"caption": "the little one"
+								}
+							],
+							"text": "Hansel and Gretel (German: Hänsel und Gretel), one of the world's most popular fairy tales, is the work of the Brothers Grimm. The story was supposed to picture life of the middle-class during the 19th century. According to the story, we can conclude a lot about the difficulties of civilization at that period. Due to the constant famine that prevailed at the time, it was not at all uncommon for parents to abandon their children, especially in the woods where they would die or disappear.\n\n\t\t\t\t\t\t\t\t\t\tIn the first edition of the Brothers Grimm story collection, there was no stepmother. It was the mother who persuaded the father to leave the children in the woods. That has changed over the years, just like in the Snow White and the Seven Dwarfs fairy tale, for the sake of curiosity for children.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tAlso, interestingly, in the original sketch of the story, made by the Brothers Grimm in the Dortchen Wild area, the children have no names and appear on the pages only as \"Little Sister\" and \"Little Brother\".\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tThe original story begins with a picture of a starving family (food symbolically represents love and care we give to each other). And hunger means lack of love. Above all, if we look at the story from this perspective, it turns out, there was a lack of love for children and more precisely for mothers (the father did not want to get rid of the children until the very end). And the expression of a lack of love for children is the mother's desire to \"bring\" the children into the woods. It can even be assumed that children were not desirable for this woman, which is something we would never assume as \"natural\" today.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tFurther narration can be considered as one (or set) of dreams, and a set of events that actually happened (in reality from a fairy tale). This does not significantly change their interpretation.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tGretel, together with his brother Hansel meets an evil witch, who is the shadow of their real mother. An honest version of one aspect of femininity and motherhood.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tThe witch openly declares that she wants to kill the boy. In other words, children, exploring their subconscious, encounters a picture of their mother and is actually scary and carnivorous.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tThe mother's outer false shell is easily destroyed, releasing a terrible, powerful, but expected (from the children's) reality.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tFolklorists Iona and Peter Opie in Classical Tales (1974) point out that Hansel and Gretel belong to a group of European stories, especially popular in the Baltic region, about children who cheat cannibals in whose hands they are inadvertently caught. The story is reminiscent of the first half of Charles Perrault's The Boy with the Finger (1697) and Madame d'Onue's short story The Smart Ashes (1721). In both stories the abandoned children mark their way home. In Clever Ash, Opie notes, the heroine burns the giant by pushing him into the oven in a similar way. Linguist and folklorist Edward Wajda suggested that these stories reflect the rite of initiation of proto-Indo-European society.\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tThe candy house is a picture of the Baba Yaga hut, which the Europeans altered and distorted. It is covered with \"pancakes and pies\" (funeral food).\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\tThis image was taken over from the Slavs by the new inhabitants of Europe, who took their places of residence. They turned the picture of the \"edible\" forest witch's hut into a gingerbread house (judging by the gingerbread, it happened quite late). But the essence is preserved."
+						}
+					]
+				},
+				"nodeType": "NODE"
+			},
+			{
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon001.png",
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.7
+					}
+				},
+				"key": "0054",
+				"name": "Personal",
+				"tech": [],
+				"shortText": "short text",
+				"width": 300,
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0055",
+				"name": "Personality",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon003.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0056",
+				"name": "Sense of Humor",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon005.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0057",
+				"name": "Anger Management",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon000.png"
+				],
+				"nodeType": "NODE"
+			},
+			{
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon006.png",
+				"y": 200,
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.13
+					}
+				},
+				"key": "0058",
+				"name": "Aspirations",
+				"tech": [],
+				"shortText": "short text",
+				"nodeType": "NODE"
+			},
+			{
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon011.png",
+				"key": "0059",
+				"name": "Large Aspirations",
+				"tech": [],
+				"shortText": "short text",
+				"width": 420,
+				"height": 220,
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0060",
+				"name": "Getting a Boat, a Jet an Island",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon007.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0061",
+				"name": "Become Chairman",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon007.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0062",
+				"name": "Buy the World",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon004.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0063",
+				"name": "Get to the Moon",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon010.png",
+				"nodeType": "NODE"
+			},
+			{
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon010.png",
+				"key": "0064",
+				"name": "Small Aspirations",
+				"tech": [],
+				"shortText": "short text",
+				"height": 100,
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0065",
+				"name": "Getting a Bike",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon008.png",
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0066",
+				"name": "Sitting by the Window",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon009.png",
+				"nodeType": "NODE"
+			},
+			{
+				"thumbnail": "http://localhost:5173/src/assets/nodes/cartoon011.png",
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.05
+					}
+				},
+				"key": "0067",
+				"name": "Articles",
+				"tech": [],
+				"shortText": "short text",
+				"width": 200,
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0068",
+				"name": "Architecture",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon001.png"
+				],
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0069",
+				"name": "AA SUB 1",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon001.png"
+				],
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0072",
+				"name": "BB SUB 1",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon002.png"
+				],
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0073",
+				"name": "AACC SUB 2",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon001.png"
+				],
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0074",
+				"name": "AADD SUB 2",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon002.png"
+				],
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0070",
+				"name": "AAAA SUB 2",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon001.png"
+				],
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0071",
+				"name": "AABB SUB 2",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon002.png"
+				],
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0075",
+				"name": "Engineering",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon002.png"
+				],
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0076",
+				"name": "CC SUB 1",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon001.png"
+				],
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0077",
+				"name": "CCAA SUB 1",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon001.png"
+				],
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0078",
+				"name": "CCBB SUB 1",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon002.png"
+				],
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0079",
+				"name": "DD SUB 1",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon002.png"
+				],
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0080",
+				"name": "DDAA SUB 1",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon001.png"
+				],
+				"nodeType": "NODE"
+			},
+			{
+				"key": "0081",
+				"name": "DDBB SUB 1",
+				"tech": [],
+				"shortText": "short text",
+				"thumbnail": [
+					"http://localhost:5173/src/assets/nodes/cartoon002.png"
+				],
+				"nodeType": "NODE"
+			}
+		],
+		"relationships": [
+			[
+				"root",
+				"0001"
+			],
+			[
+				"root",
+				"0026"
+			],
+			[
+				"root",
+				"0050"
+			],
+			[
+				"root",
+				"0054"
+			],
+			[
+				"root",
+				"0058"
+			],
+			[
+				"root",
+				"0067"
+			],
+			[
+				"0001",
+				"0002"
+			],
+			[
+				"0001",
+				"0003"
+			],
+			[
+				"0003",
+				"0004"
+			],
+			[
+				"0004",
+				"0005"
+			],
+			[
+				"0004",
+				"0022"
+			],
+			[
+				"0004",
+				"0023"
+			],
+			[
+				"0005",
+				"0006"
+			],
+			[
+				"0005",
+				"0012"
+			],
+			[
+				"0006",
+				"0007"
+			],
+			[
+				"0006",
+				"0008"
+			],
+			[
+				"0006",
+				"0009"
+			],
+			[
+				"0009",
+				"0010"
+			],
+			[
+				"0009",
+				"0011"
+			],
+			[
+				"0012",
+				"0013"
+			],
+			[
+				"0012",
+				"0014"
+			],
+			[
+				"0012",
+				"0015"
+			],
+			[
+				"0012",
+				"0016"
+			],
+			[
+				"0012",
+				"0017"
+			],
+			[
+				"0012",
+				"0018"
+			],
+			[
+				"0012",
+				"0018b"
+			],
+			[
+				"0012",
+				"0019"
+			],
+			[
+				"0017",
+				"0020"
+			],
+			[
+				"0019",
+				"0021"
+			],
+			[
+				"0023",
+				"0024"
+			],
+			[
+				"0023",
+				"0025"
+			],
+			[
+				"0026",
+				"0027"
+			],
+			[
+				"0027",
+				"0028"
+			],
+			[
+				"0027",
+				"0035"
+			],
+			[
+				"0027",
+				"0036"
+			],
+			[
+				"0027",
+				"0037"
+			],
+			[
+				"0027",
+				"0047"
+			],
+			[
+				"0027",
+				"0048"
+			],
+			[
+				"0027",
+				"0049"
+			],
+			[
+				"0028",
+				"0029"
+			],
+			[
+				"0028",
+				"0030"
+			],
+			[
+				"0028",
+				"0031"
+			],
+			[
+				"0028",
+				"0034"
+			],
+			[
+				"0031",
+				"0032"
+			],
+			[
+				"0032",
+				"0033"
+			],
+			[
+				"0037",
+				"0038"
+			],
+			[
+				"0037",
+				"0039"
+			],
+			[
+				"0037",
+				"0040"
+			],
+			[
+				"0037",
+				"0041"
+			],
+			[
+				"0037",
+				"0042"
+			],
+			[
+				"0037",
+				"0043"
+			],
+			[
+				"0037",
+				"0044"
+			],
+			[
+				"0037",
+				"0045"
+			],
+			[
+				"0037",
+				"0046"
+			],
+			[
+				"0050",
+				"0051"
+			],
+			[
+				"0051",
+				"0052"
+			],
+			[
+				"0051",
+				"0053"
+			],
+			[
+				"0054",
+				"0055"
+			],
+			[
+				"0055",
+				"0056"
+			],
+			[
+				"0055",
+				"0057"
+			],
+			[
+				"0058",
+				"0059"
+			],
+			[
+				"0058",
+				"0064"
+			],
+			[
+				"0059",
+				"0060"
+			],
+			[
+				"0059",
+				"0061"
+			],
+			[
+				"0059",
+				"0062"
+			],
+			[
+				"0059",
+				"0063"
+			],
+			[
+				"0064",
+				"0065"
+			],
+			[
+				"0064",
+				"0066"
+			],
+			[
+				"0067",
+				"0068"
+			],
+			[
+				"0067",
+				"0075"
+			],
+			[
+				"0068",
+				"0069"
+			],
+			[
+				"0068",
+				"0072"
+			],
+			[
+				"0069",
+				"0070"
+			],
+			[
+				"0069",
+				"0071"
+			],
+			[
+				"0072",
+				"0073"
+			],
+			[
+				"0072",
+				"0074"
+			],
+			[
+				"0075",
+				"0076"
+			],
+			[
+				"0075",
+				"0079"
+			],
+			[
+				"0076",
+				"0077"
+			],
+			[
+				"0076",
+				"0078"
+			],
+			[
+				"0079",
+				"0080"
+			],
+			[
+				"0079",
+				"0081"
+			]
+		]
+	},
+	"options": {
+		"group": {
+			"spacingY": 200
+		},
+		"node": {
+			"spacingX": 200
+		},
+		"connection": {
+			"offsetStart": 0,
+			"offsetEnd": 50,
+			"curveDistributionCoeficient": 0.5,
+			"fixedStart": 0
+		}
+	}
+}

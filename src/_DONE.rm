@@ -1,0 +1,19 @@
+[done]	Timeline:
+		Ruler:
+			Guide to measure time.
+
+[done]	Board Nodes:
+		Add offsetY parameter:
+			Will add to the automatic Y value to stagger elements on the same row.
+
+[done]	Scroll:
+		make mouse wheel navigate up and down.
+
+
+[done]	Total Width ViewBox:
+		TimedNode's children's are not being checked in the process.
+
+[done]	Cascading Timelines:
+		Make possible to chain and group multiple timelines.
+
+

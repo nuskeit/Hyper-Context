@@ -1,0 +1,20 @@
+.main-editor-wrapper {
+	.editor-all {
+		background-color: #a85;
+		padding: 1rem;
+		overflow: hidden;
+
+
+	}
+
+	transition: height 1s;
+
+}
+
+.main-editor-wrapper--open {
+	height: 10rem;
+}
+
+.main-editor-wrapper--close {
+	max-height: 0;
+}
