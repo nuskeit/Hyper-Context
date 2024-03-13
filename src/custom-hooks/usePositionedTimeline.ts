@@ -8,7 +8,7 @@ export default function usePositionedTimeline(timeline: Timeline, timedChildren:
 	const globalOptions = useGlobalOptions()
 
 	const [positionedTimeline, setPositionedTimeline] = useState<I_Positioned<Timeline>>(createPositionedElement<Timeline>(timeline))
-	const [timelineGroup, setTimelineGroup] = useState(createNodeGroup({}))
+	const [timelineGroup, setTimelineGroup] = useState(createNodeGroup(undefined))
 	const [positionedChildren, setPositionedChildren] = useState<I_Positioned<TimedNode>[]>([])
 
 	useEffect(() => {
@@ -63,7 +63,6 @@ const positionItemsInsideTimeline = (timeline: Timeline, timedChildren: TimedNod
 	for (let i = 0; i < orderedTimedChildren.length; ++i) {
 		const timedNode = orderedTimedChildren[i]
 		const x = (timedNode.start - timeline.start) * timeToGraphFactor
-		// const y = timedNode.height * timedNode.row //Should use afeHeight. Check when doing variable height timedNodes
 		const y = rowsTrueYPisition[timedNode.row]
 		const width = (timedNode.end - timedNode.start) * timeToGraphFactor
 		const height = timedNode.height

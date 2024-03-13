@@ -23,7 +23,7 @@ export default function () {
 	const svgRef = useRef(null)
 	const [viewBox, viewBoxTuple, changeOriginXYWH, scrollVertical, zoom, setZoomLevel] = useWindowResize(() => svgRef.current)
 
-	const [firstNodeGroup, setFirstNodeGroup] = useState(createNodeGroup({}))
+	const [firstNodeGroup, setFirstNodeGroup] = useState(createNodeGroup(undefined))
 	const [node, positionedGroup, positionedChildren] = usePositionedNode("", firstNodeGroup)
 
 	// useEffect(() => {
@@ -80,7 +80,7 @@ export default function () {
 			setZoomLevel(2600 / newWidth)
 		}
 
-		const z = async()=>{}
+		const z = async () => { }
 
 		// if (newWidth > maxWidth) {
 		// 	maxWidth = newWidth

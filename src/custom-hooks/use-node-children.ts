@@ -19,13 +19,13 @@ export default function useNodeChildren(nodeKey: NodeKey) {
 			res = book.boardNode.nodes["root"] !== undefined
 				? [book.boardNode.nodes["root"]]
 				: []
-		} else {
-			res = book.boardNode.relationships.filter(n => {
-				return n["source"] === nodeKey
-			}).map(n => {
-				return book.boardNode.nodes[n["target"]]
+		} else if (book.boardNode.nodes[nodeKey].group != undefined) {
+			// @ts-ignore undefined is being contemplated
+			res = book.boardNode.nodes[nodeKey].group?.children.map(n => {
+				return book.boardNode.nodes[n]
 			})
-		}
+		} else
+			res = []
 
 		return res as TreeNode[]
 	}

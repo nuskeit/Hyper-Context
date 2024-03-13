@@ -1,4 +1,3 @@
-import { createTreeNode } from "./factory"
 
 export interface I_Hashtable<T> {
 	[key: string]: T
@@ -9,12 +8,7 @@ export interface I_Position {
 	y: number
 	width: number
 	height: number
-	margin: {
-		left: number
-		right: number
-		top: number
-		bottom: number
-	}
+	margin: I_Margin
 }
 
 export interface I_Positioned<T> extends I_Position {
@@ -45,6 +39,7 @@ export class TreeNode implements I_Node, I_NodeData {
 	height: number = 100
 	x: number = 0
 	y: number = 0
+	group: I_NodeGroup | undefined
 	options?: I_Nodeoptions = {
 		spacingX: 0,
 		connection: {
@@ -63,7 +58,6 @@ export class TreeNode implements I_Node, I_NodeData {
 export class BoardNode extends TreeNode implements I_Node {
 	viewBox: [number, number, number, number] = [0, 0, 0, 0]
 	nodes: I_Hashtable<I_Node> = {}
-	relationships: I_Relationship[] = []
 	nodeType: NodeType = NodeType.BOARD
 
 	constructor(key: string) {
@@ -73,16 +67,20 @@ export class BoardNode extends TreeNode implements I_Node {
 
 export interface I_Relationship {
 	source: NodeKey
-	target: NodeKey
+	target: NodeKey[]
 }
 
 export interface I_NodeGroup extends I_Vector2, I_Size2 {
-	margin: {
-		left: number
-		right: number
-		top: number
-		bottom: number
-	}
+	parent: NodeKey
+	children: Array<NodeKey>
+	margin: I_Margin
+}
+
+export interface I_Margin {
+	left: number
+	right: number
+	top: number
+	bottom: number
 }
 
 export interface I_Node extends I_Identity {
@@ -91,6 +89,7 @@ export interface I_Node extends I_Identity {
 	height: number
 	x: number
 	y: number
+	group: I_NodeGroup | undefined
 	options?: I_Nodeoptions | undefined
 }
 
@@ -145,6 +144,7 @@ export class TimedNode implements I_TimedNode, I_NodeData {
 	y: number = 0
 	start: number = 0
 	end: number = 0
+	group: I_NodeGroup | undefined
 	options?: I_Nodeoptions = {
 		spacingX: 0,
 		connection: {
@@ -189,6 +189,9 @@ export class Timeline implements I_Node, I_NodeData {
 	shortText: string = ""
 	fullStory?: FullStory
 	thumbnail: string = ""
+
+	group: I_NodeGroup | undefined
+
 	options?: I_Nodeoptions = {
 		spacingX: 0,
 		connection: {

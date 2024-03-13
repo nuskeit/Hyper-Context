@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { createNodeGroup, createPositionedElement } from "../types/factory"
-import { I_Node, I_NodeGroup, I_Positioned, NodeKey, TreeNode } from "../types/types"
-import useGlobalOptions from "./useGlobalOptions"
+import { I_Node, I_NodeGroup, I_Positioned, NodeKey } from "../types/types"
 import useNodeChildren from "./use-node-children"
+import useGlobalOptions from "./useGlobalOptions"
 
 export default function usePositionedNode(nodeKey: NodeKey, group: I_NodeGroup) {
 
@@ -10,7 +10,7 @@ export default function usePositionedNode(nodeKey: NodeKey, group: I_NodeGroup) 
 	const globalOptions = useGlobalOptions()
 
 	const [positionedChildren, setPositionedChildren] = useState<I_Positioned<I_Node>[]>([])
-	const [childrensGroup, setChildrensGroup] = useState(createNodeGroup({}))
+	const [childrensGroup, setChildrensGroup] = useState(createNodeGroup(undefined))
 
 	useEffect(() => {
 		if (nodeChildren.length > 0) {
@@ -27,7 +27,7 @@ export default function usePositionedNode(nodeKey: NodeKey, group: I_NodeGroup) 
 			let prevX = 0
 
 			setPositionedChildren(nodeChildren.map(n => {
-				
+
 				const newNode = createPositionedElement<I_Node>(n, {
 					x: prevX - childrensGroupWidth / 2,
 					y: group.y + group.height + n.y + globalOptions.group.spacingY,

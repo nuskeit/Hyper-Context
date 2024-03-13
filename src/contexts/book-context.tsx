@@ -4,7 +4,7 @@ import { createBook } from '../types/factory';
 import { I_Options, Book, TreeNode } from "../types/types";
 
 
-export const BookContext = createContext(createBook({}))
+export const BookContext = createContext(createBook(undefined))
 export const BookContextDispatch = createContext((() => { }) as any)
 export const ActiveFullStoryContext = createContext<{ fullStoryNode: TreeNode | undefined }>({ fullStoryNode: undefined })
 export const ActiveFullStoryContextSetter = createContext<Function>(() => { })

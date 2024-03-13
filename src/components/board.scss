@@ -82,8 +82,12 @@
 
 
 				.timeline-node-ruler-tag-text {
-					fill: #ff0;
-					filter: drop-shadow(.5rem .5rem .2rem #0007);
+					font-size: 1.5rem;
+					fill: #fff;
+					filter:
+					drop-shadow(0 0 .05rem #000) 
+					drop-shadow(0 0 .05rem #000) 
+					drop-shadow(.3rem .3rem .1rem #0009);
 
 				}
 			}

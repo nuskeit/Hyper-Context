@@ -1,6 +1,6 @@
 import { getImgUrl } from "../custom-hooks/use-images"
 import { right } from "../util/text"
-import { BoardNode, Editable, EditionType, FullStory, I_ConnectionOptions, I_Hashtable, I_Node, I_NodeGroup, I_Nodeoptions, I_Position, I_Positioned, I_Relationship, I_Textblock, I_TextblockImage, I_TimedNode, Book, NodeType, TimedNode, Timeline, TreeNode } from "./types"
+import { BoardNode, Editable, EditionType, FullStory, I_ConnectionOptions, I_Hashtable, I_Node, I_NodeGroup, I_Nodeoptions, I_Position, I_Positioned, I_Relationship, I_Textblock, I_TextblockImage, I_TimedNode, Book, NodeType, TimedNode, Timeline, TreeNode, I_Margin } from "./types"
 
 
 function generateRandomKey() {
@@ -50,7 +50,8 @@ export const createTreeNode = (data: any): TreeNode => {
 		width: withDefaultValue(data, "width", 200),
 		height: withDefaultValue(data, "height", 200),
 		nodeType: withDefaultValue(data, "nodeType", NodeType.NODE),
-		options: withDefaultValue(data, "options", undefined)
+		options: withDefaultValue(data, "options", undefined),
+		group: withDefaultValue(data, "group", undefined, createNodeGroup)
 	}
 	return newChild
 }
@@ -76,24 +77,35 @@ function withDefaultValue(data: any, field: string, defaultValue: any, func: Fun
 	return defaultValue
 }
 
+function isMandatoryValue(data: any, field: string, func: Function | undefined = undefined): any {
+	if (data !== undefined && typeof data === "object" && field in data) {
+		if (func != undefined) {
+			return func(data[field])
+		} else {
+			return data[field]
+		}
+	}
+	throw new Error(`Mandatory Value Exception. The field "${field}" is missing.`)
+}
+
 export function createNodeGroup(data: any): I_NodeGroup {
 	return {
+		parent: withDefaultValue(data, "parent", undefined),
+		children: withDefaultValue(data, "children", []),
 		x: withDefaultValue(data, "x", 0),
 		y: withDefaultValue(data, "y", 0),
 		width: withDefaultValue(data, "width", 0),
 		height: withDefaultValue(data, "height", 0),
-		margin: data["margin"] ? {
-			left: withDefaultValue(data["margin"], "left", 0),
-			right: withDefaultValue(data["margin"], "right", 0),
-			top: withDefaultValue(data["margin"], "top", 0),
-			bottom: withDefaultValue(data["margin"], "bottom", 0),
-		} : {
-			left: 0,
-			right: 0,
-			top: 0,
-			bottom: 0,
-		}
+		margin: withDefaultValue(data, "margin", createMargin({}), createMargin)
+	}
+}
 
+export function createMargin(data: any): I_Margin {
+	return {
+		left: withDefaultValue(data, "left", 0),
+		right: withDefaultValue(data, "right", 0),
+		top: withDefaultValue(data, "top", 0),
+		bottom: withDefaultValue(data, "bottom", 0),
 	}
 }
 
@@ -151,23 +163,12 @@ export function createNodeList(data: I_Node[]): I_Hashtable<I_Node> {
 	return result
 }
 
-
-export function createRelationshipsList(data: []): I_Relationship[] {
-	if (data === undefined)
-		return []
-	return data.map(n => {
-		return { source: n[0], target: n[1] }
-	})
-}
-
-
 export function createBoardNode(data: any): BoardNode {
 	return {
 		...createTreeNode(data),
 		viewBox: withDefaultValue(data, "viewBox", [0, 0, 0, 0]),
 		nodeType: NodeType.BOARD,
-		nodes: withDefaultValue(data, "nodes", {}, createNodeList),
-		relationships: withDefaultValue(data, "relationships", [], createRelationshipsList)
+		nodes: withDefaultValue(data, "nodes", {}, createNodeList)
 	}
 }
 
@@ -185,7 +186,7 @@ export function createBook(data: any): Book {
 			curveDistributionCoeficient: .5,
 			fixedStart: 0
 		}
-}
+	}
 	const res = {
 		options: withDefaultValue(data, "options", defaultOptions),
 		boardNode: withDefaultValue(data, "boardNode", createBoardNode({}), createBoardNode)
