@@ -1,18 +1,18 @@
 import { createContext, ReactNode, useState } from "react";
 import useBookState from "../custom-hooks/use-book-state";
 import { createBook } from '../types/factory';
-import { I_Options, Book, TreeNode } from "../types/types";
+import { I_Options, Book, I_TreeNode } from "../types/types";
 
 
 export const BookContext = createContext(createBook(undefined))
 export const BookContextDispatch = createContext((() => { }) as any)
-export const ActiveFullStoryContext = createContext<{ fullStoryNode: TreeNode | undefined }>({ fullStoryNode: undefined })
+export const ActiveFullStoryContext = createContext<{ fullStoryNode: I_TreeNode | undefined }>({ fullStoryNode: undefined })
 export const ActiveFullStoryContextSetter = createContext<Function>(() => { })
 export const OptionsContext = createContext<I_Options>({} as I_Options)
 
 export default function (props: { children: ReactNode }) {
 	const [book, dispatch] = useBookState()
-	const [fullStory, setFullStoryNode] = useState<TreeNode | undefined>()
+	const [fullStory, setFullStoryNode] = useState<I_TreeNode | undefined>()
 
 	return (
 		<BookContext.Provider value={book}>

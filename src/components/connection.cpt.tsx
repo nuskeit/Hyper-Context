@@ -1,9 +1,9 @@
 import { memo, useRef } from "react";
 import useGlobalOptions from "../custom-hooks/useGlobalOptions";
-import { I_Node, I_Position, I_Positioned } from "../types/types";
+import { I_TreeNode, I_Position, I_Positioned } from "../types/types";
 
 export default memo(function (
-	{ el1, el2 }: { el1: I_Position, el2: I_Positioned<I_Node> }
+	{ el1, el2 }: { el1: I_Position, el2: I_Positioned<I_TreeNode> }
 ) {
 	const globalOptions = useGlobalOptions()
 	const mergedOptions = {

@@ -1,5 +1,5 @@
 import { ReactNode, useMemo } from "react"
-import { I_Node, I_NodeGroup, I_Positioned, TimedNode } from "../types/types"
+import { I_TreeNode, I_NodeGroup, I_Positioned, I_TimedNode } from "../types/types"
 import { getDateString } from "../util/util"
 
 export default function TimelineRuler({
@@ -7,8 +7,8 @@ export default function TimelineRuler({
 	children,
 	group
 }: {
-	positionedNode: I_Positioned<I_Node>,
-	children: I_Positioned<TimedNode>[],
+	positionedNode: I_Positioned<I_TreeNode>,
+	children: I_Positioned<I_TimedNode>[],
 	group: I_NodeGroup
 }) {
 
@@ -20,7 +20,7 @@ export default function TimelineRuler({
 			y: number
 		}>()
 
-		children.forEach((e:I_Positioned<TimedNode>, i) => {
+		children.forEach((e:I_Positioned<I_TimedNode>, i) => {
 			const dStart = {
 				date: e.element.start,
 				x: e.x,
@@ -64,7 +64,6 @@ export default function TimelineRuler({
 						<g transform={`translate(0 ${group.y + positionedNode.height + tagSeparation + 50 * (i % 2)})`}>
 							{/* <g transform={`translate(0 ${e.y - 25})`}> */}
 							<g className="timeline-node-ruler-tag" transform="rotate(-15)">
-								{/* <rect className="timeline-node-ruler-tag-background" x="-110" y="-15" width="220" height="30" /> */}
 								<text y="8" className="timeline-node-ruler-tag-text">{dateTagEnd()}</text>
 							</g>
 						</g>

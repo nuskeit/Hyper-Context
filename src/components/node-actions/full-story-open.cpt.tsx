@@ -1,10 +1,10 @@
 import { useMemo } from "react";
-import { TreeNode } from "types/types";
+import { I_TreeNode } from "types/types";
 import { useSetActiveFullStory } from "../../custom-hooks/use-active-full-story-context";
 import { getImgUrl } from "../../custom-hooks/use-images";
 import ActionsStripButton from "../actions-strip-button";
 
-export default function ({ node }: { node: TreeNode }) {
+export default function ({ node }: { node: I_TreeNode }) {
 
 	const setActiveFullStory = useSetActiveFullStory()
 

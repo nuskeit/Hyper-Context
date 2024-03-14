@@ -23,46 +23,33 @@ export interface I_Identity {
 }
 
 export type Book = {
-	boardNode: BoardNode,
+	boardNode: I_BoardNode,
 	options: I_Options
 }
 
-export class TreeNode implements I_Node, I_NodeData {
-	readonly key: string
-	name: string = ""
-	nodeType: NodeType = NodeType.NODE
-	title: string = ""
-	shortText: string = ""
-	fullStory?: FullStory
-	thumbnail: string = ""
-	width: number = 100
-	height: number = 100
-	x: number = 0
-	y: number = 0
+export interface I_TreeNode extends I_Identity {
+	nodeType: NodeType
+	width: number
+	height: number
+	x: number
+	y: number
 	group: I_NodeGroup | undefined
-	options?: I_Nodeoptions = {
-		spacingX: 0,
-		connection: {
-			offsetStart: 0,
-			offsetEnd: 0,
-			curveDistributionCoeficient: .5,
-			fixedStart: 0
-		}
-	}
-
-	constructor(key: string) {
-		this.key = key
-	}
+	options?: I_Nodeoptions | undefined
+	card: I_Card
 }
 
-export class BoardNode extends TreeNode implements I_Node {
-	viewBox: [number, number, number, number] = [0, 0, 0, 0]
-	nodes: I_Hashtable<I_Node> = {}
-	nodeType: NodeType = NodeType.BOARD
+export interface I_Card {
+	name: string
+	title: string
+	shortText: string
+	fullStory?: FullStory
+	thumbnail: string
+}
 
-	constructor(key: string) {
-		super(key)
-	}
+export interface I_BoardNode extends I_TreeNode {
+	viewBox: [number, number, number, number]
+	nodes: I_Hashtable<I_TreeNode>
+	nodeType: NodeType
 }
 
 export interface I_Relationship {
@@ -81,16 +68,6 @@ export interface I_Margin {
 	right: number
 	top: number
 	bottom: number
-}
-
-export interface I_Node extends I_Identity {
-	nodeType: NodeType
-	width: number
-	height: number
-	x: number
-	y: number
-	group: I_NodeGroup | undefined
-	options?: I_Nodeoptions | undefined
 }
 
 export interface I_Options {
@@ -116,48 +93,41 @@ export interface I_ConnectionOptions {
 	fixedStart: number
 }
 
-export interface I_NodeData {
-	name: string
-	shortText: string
-	fullStory?: FullStory
-	thumbnail: string
-}
-
-export interface I_TimedNode extends I_Node {
+export interface I_TimedNode extends I_TreeNode {
 	start: number
 	end: number
 	row: number
 }
 
-export class TimedNode implements I_TimedNode, I_NodeData {
-	readonly key: string
-	name: string = ""
-	nodeType: NodeType = NodeType.TIMED
-	title: string = ""
-	shortText: string = ""
-	fullStory?: FullStory
-	thumbnail: string = ""
-	width: number = 100
-	height: number = 100 //REVISAR SI POSICION Y TAMAÑO DEBEN MOVERSE!
-	row: number = 1
-	x: number = 0
-	y: number = 0
-	start: number = 0
-	end: number = 0
-	group: I_NodeGroup | undefined
-	options?: I_Nodeoptions = {
-		spacingX: 0,
-		connection: {
-			offsetStart: 0,
-			offsetEnd: 0,
-			curveDistributionCoeficient: .5,
-			fixedStart: 0
-		}
-	}
-	constructor(key: string) {
-		this.key = key
-	}
-}
+// export class TimedNode implements I_TimedNode, I_Card {
+// 	readonly key: string
+// 	name: string = ""
+// 	nodeType: NodeType = NodeType.TIMED
+// 	title: string = ""
+// 	shortText: string = ""
+// 	fullStory?: FullStory
+// 	thumbnail: string = ""
+// 	width: number = 100
+// 	height: number = 100 //REVISAR SI POSICION Y TAMAÑO DEBEN MOVERSE!
+// 	row: number = 1
+// 	x: number = 0
+// 	y: number = 0
+// 	start: number = 0
+// 	end: number = 0
+// 	group: I_NodeGroup | undefined
+// 	options?: I_Nodeoptions = {
+// 		spacingX: 0,
+// 		connection: {
+// 			offsetStart: 0,
+// 			offsetEnd: 0,
+// 			curveDistributionCoeficient: .5,
+// 			fixedStart: 0
+// 		}
+// 	}
+// 	constructor(key: string) {
+// 		this.key = key
+// 	}
+// }
 
 
 export const config = {
@@ -175,37 +145,9 @@ export const NodeType = {
 export type NodeType = typeof NodeType[keyof typeof NodeType]
 
 
-export class Timeline implements I_Node, I_NodeData {
-	key: string
-	nodeType: NodeType = NodeType.TIMELINE
-	start: number = 0
-	end: number = 0
-	width: number = 100
-	height: number = 100
-	x: number = 0
-	y: number = 0
-
-	name: string = ""
-	shortText: string = ""
-	fullStory?: FullStory
-	thumbnail: string = ""
-
-	group: I_NodeGroup | undefined
-
-	options?: I_Nodeoptions = {
-		spacingX: 0,
-		connection: {
-			offsetStart: 0,
-			offsetEnd: 0,
-			curveDistributionCoeficient: .5,
-			fixedStart: 0
-		}
-	}
-
-	constructor(key: string) {
-		this.key = key
-	}
-
+export interface I_Timeline extends I_TreeNode {
+	start: number
+	end: number
 }
 
 export class FullStory {
@@ -266,9 +208,11 @@ export type SystemMode = typeof SystemMode[keyof typeof SystemMode]
 
 
 export const EditionType = {
-	ADD: "ADD",
-	UPDATE: "UPDATE",
-	DELETE: "DELETE"
+	CREATE_NODE: "CREATE_NODE",
+	MODIFY_NODE: "MODIFY_NODE",
+	MODIFY_NODE_STYLE: "MODIFY_NODE_STYLE",
+	MODIFY_FULL_STORY: "MODIFY_FULL_STORY",
+	DELETE_NODE: "DELETE_NODE"
 } as const
 export type EditionType = typeof EditionType[keyof typeof EditionType]
 

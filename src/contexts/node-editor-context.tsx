@@ -1,14 +1,14 @@
 import { createContext, ReactNode, useState } from "react";
 import { createEditableNode, createTreeNode } from "../types/factory";
-import { Editable, EditionType, TreeNode } from "../types/types";
+import { Editable, EditionType, I_TreeNode } from "../types/types";
 
-export const NodeEditorContext = createContext<Editable<TreeNode>>(createEditableNode(createTreeNode(undefined), EditionType.UPDATE))
-export const NodeEditorContextSetter = createContext((e: Editable<TreeNode> | undefined) => { })
+export const NodeEditorContext = createContext<Editable<I_TreeNode>>(createEditableNode(createTreeNode(undefined), EditionType.MODIFY_NODE))
+export const NodeEditorContextSetter = createContext((e: Editable<I_TreeNode> | undefined) => { })
 
 export default function (props: { children: ReactNode }) {
-	const [editingNode, setEditingNode] = useState<Editable<TreeNode> | undefined>()
+	const [editingNode, setEditingNode] = useState<Editable<I_TreeNode> | undefined>()
 
-	const setterFn = (e: Editable<TreeNode> | undefined) => {
+	const setterFn = (e: Editable<I_TreeNode> | undefined) => {
 		setEditingNode(e)
 	}
 

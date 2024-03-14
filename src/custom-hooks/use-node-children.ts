@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react"
 import useBookStateContext from "../contexts/use-book-context"
-import { I_Node, NodeKey, TreeNode } from "../types/types"
+import { I_TreeNode, NodeKey } from "../types/types"
 
 export default function useNodeChildren(nodeKey: NodeKey) {
 	const [book, bookDispatch] = useBookStateContext()
-	const [node, setNode] = useState<I_Node>(book.boardNode.nodes[nodeKey] as TreeNode)
-	const [children, setChildren] = useState<I_Node[]>([])
+	const [node, setNode] = useState<I_TreeNode>(book.boardNode.nodes[nodeKey] )
+	const [children, setChildren] = useState<I_TreeNode[]>([])
 
 
 	useEffect(() => {
-		setNode(book.boardNode.nodes[nodeKey] as TreeNode)
+		setNode(book.boardNode.nodes[nodeKey] )
 		setChildren(getChildren(nodeKey))
 	}, [nodeKey, book.boardNode.nodes[nodeKey], book])
 
-	const getChildren = (nodeKey: NodeKey): TreeNode[] => {
-		let res: I_Node[] = []
+	const getChildren = (nodeKey: NodeKey): I_TreeNode[] => {
+		let res: I_TreeNode[] = []
 		if (nodeKey === "") {
 			res = book.boardNode.nodes["root"] !== undefined
 				? [book.boardNode.nodes["root"]]
@@ -27,7 +27,7 @@ export default function useNodeChildren(nodeKey: NodeKey) {
 		} else
 			res = []
 
-		return res as TreeNode[]
+		return res
 	}
 
 	return [node, children] as const

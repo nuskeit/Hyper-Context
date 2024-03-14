@@ -1,0 +1,22 @@
+.node-toolstrip {
+	fill: orange;
+
+	.button {
+		fill: #fff;
+
+		&>rect {
+			rx: 20;
+			ry: 20;
+			
+		}
+		.new {
+			fill: #080;
+		}
+		.mod {
+			fill: #666;
+		}
+		.del {
+			fill: #c20;
+		}
+	}
+}

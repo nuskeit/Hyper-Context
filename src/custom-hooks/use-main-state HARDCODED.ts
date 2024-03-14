@@ -1,7 +1,7 @@
 // import { useEffect, useReducer } from "react"
 // import testData from "../data/test-3.json"
 // import { createBook, createNode } from "../types/factory"
-// import { BoardNode, I_Identity, I_Node, Book } from "../types/types"
+// import { I_BoardNode, I_Identity, Book } from "../types/types"
 
 // export const ActionType = {
 // 	NEW_BOOK: "NEW_BOOK",

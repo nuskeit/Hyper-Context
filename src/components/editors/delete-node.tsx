@@ -11,7 +11,7 @@ export default function () {
 	const [confirm, setConfirm] = useState(false)
 
 	function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-		setEditingNode({ ...editingNode, target: { ...editingNode.target, name: e.target.value } })
+		setEditingNode({ ...editingNode, target: { ...editingNode.target, card: { ...editingNode.target.card, name: e.target.value } } })
 	}
 
 	function handleClick(e: React.MouseEvent<HTMLElement>) {
@@ -23,7 +23,7 @@ export default function () {
 			<div>Node Editor</div>
 			<div>
 				{/* <input type="text" value={name} onChange={e => setName(e.target.value)} /> */}
-				<input type="text" value={editingNode?.target.name || ""} onChange={handleChange} />
+				<input type="text" value={editingNode?.target.card.name || ""} onChange={handleChange} />
 				<button onClick={handleClick} />
 			</div>
 

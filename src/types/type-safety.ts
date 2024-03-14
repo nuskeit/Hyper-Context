@@ -1,4 +1,4 @@
-import { I_Node, I_TimedNode, NodeType } from "./types"
+import { NodeType } from "./types"
 
 export function isBoardNode(t: any): boolean {
 	return t["nodeType"] == NodeType.BOARD && isNode(t)

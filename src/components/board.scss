@@ -1,3 +1,4 @@
+@import "../index.scss";
 .board {
 	//	border: solid .3rem yellow;
 	width: 100%;
@@ -9,15 +10,15 @@
 	margin: 0;
 	display: block;
 
-	.shadow-15 {
-		filter: drop-shadow(.5rem .5rem .2rem #0007);
-	}
+	// .shadow-15 {
+	// 	filter: drop-shadow(.5rem .5rem .2rem #0007);
+	// }
 
 	.level-group {
+		@extend .generic-shadow;
 		rx: 9;
 		ry: 9;
 		pointer-events: none;
-		filter: drop-shadow(1.5rem 1.5rem 0rem #000);
 	}
 
 	.board-node {
@@ -71,39 +72,28 @@
 			}
 
 			.timeline-node-ruler-tag {
-				.timeline-node-ruler-tag-background {
-					// fill: url(#tag-background-gradient);
-					fill: #aaa5;
-					// stroke: #fff;
-					rx: 0;
-					ry: 0;
-					filter: drop-shadow(.5rem .5rem .2rem #0007);
-				}
-
 
 				.timeline-node-ruler-tag-text {
 					font-size: 1.5rem;
 					fill: #fff;
 					filter:
-					drop-shadow(0 0 .05rem #000) 
-					drop-shadow(0 0 .05rem #000) 
-					drop-shadow(.3rem .3rem .1rem #0009);
+						drop-shadow(0 0 .05rem #000) drop-shadow(0 0 .05rem #000) drop-shadow(.3rem .3rem .1rem #0009);
 
 				}
 			}
 		}
 
 		.timeline-node-base {
+			@extend .generic-shadow;
 			fill: #0003;
 			stroke: none;
-			filter: drop-shadow(.5rem .5rem .2rem #0007);
 		}
 
 	}
 
 	.timed-node {
+		@extend .generic-shadow;
 		cursor: pointer;
-		filter: drop-shadow(.5rem .5rem .2rem #0005);
 
 		.timed-node-title {
 			font-size: 2rem;
@@ -142,7 +132,15 @@
 	}
 
 
-	.action-strip-placement {}
+	.node-action-strip {
+		transform-origin: 2rem 2rem;
+		transform: scale(1, 1);
+
+		&:hover {
+			transform: scale(2, 2);
+
+		}
+	}
 
 
 }
@@ -153,7 +151,7 @@
 }
 
 .connections {
-	filter: drop-shadow(.5rem .5rem .2rem #0007);
+	@extend .generic-shadow;
 
 	.path {
 		stroke-dasharray: 500 100 80;

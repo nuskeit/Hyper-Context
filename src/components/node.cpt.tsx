@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import useActiveFullStoryContext from "../custom-hooks/use-active-full-story-context";
 import usePositionedNode from "../custom-hooks/usePositionedNode";
 import { createPosition } from "../types/factory";
 import { isTimedNode, isTimelineNode } from "../types/type-safety";
-import { I_NodeGroup, I_Position, I_Positioned, NodeKey, NodeType, TimedNode, Timeline, TreeNode } from "../types/types";
+import { I_NodeGroup, I_Position, I_Positioned, NodeKey, NodeType, SystemMode, I_TimedNode, I_Timeline, I_TreeNode } from "../types/types";
 import ConnectionCpt from "./connection.cpt";
 import LayoutTimedNodeCpt from "./layout-timed-node.cpt";
-import LayoutTreeNodeCpt from "./layout-tree-node.cpt";
+import I_LayoutTreeNodeCpt from "./layout-tree-node.cpt";
 import TimelineCpt from "./timeline.cpt";
+import useSystemModeContext from "../contexts/use-system-mode-context";
+import NodeToolstripCpt from "./node-toolstrip.cpt";
 
 function NodeCpt({
 	group,
@@ -25,7 +27,7 @@ function NodeCpt({
 	changeViewBoxDelegate: Function
 }) {
 	const [isLoading, setIsLoading] = useState(true)
-	const [selectedChild, setSelectedChild] = useState<TreeNode | undefined>()
+	const [selectedChild, setSelectedChild] = useState<I_TreeNode | undefined>()
 	// const [node, children] = useNodeChildren(nodeKey)
 	const [node, childrensGroup, positionedChildren] = usePositionedNode(nodeKey, group)
 	const [activeFullStory, setActiveFullStory] = useActiveFullStoryContext()
@@ -33,7 +35,7 @@ function NodeCpt({
 	// /* DEBUG */
 	// useEffect(() => {
 	// 	// if (node.children.length > 0 && isTimelineNode(node.children[0]))
-	// 	const n = node as TreeNode
+	// 	const n = node
 	// 	if (n.name === "Education" || n.name === "Informal" || n.name === "YouTube")
 	// 		if (!showChildren)
 	// 			onClick(n)
@@ -44,7 +46,7 @@ function NodeCpt({
 	}, [group.width])
 
 
-	function childrenClickHandler(n: TreeNode) {
+	function childrenClickHandler(n: I_TreeNode) {
 		if (showChildren && selectedChild?.key === n.key) {
 			setSelectedChild(undefined)
 		} else {
@@ -94,7 +96,7 @@ function NodeCpt({
 		e.stopPropagation()
 
 		if (positionedChildren.length == 0) {
-			if ((node as TreeNode).fullStory != undefined) {
+			if (node.card.fullStory != undefined) {
 				setActiveFullStory(node)
 			}
 		} else {
@@ -113,13 +115,30 @@ function NodeCpt({
 		fn1()
 	}, [])
 
+	const [systemMode, setSystemMode] = useSystemModeContext()
+	const editorStrip = useCallback(() => {
+		if (systemMode === SystemMode.EDIT) {
+			return (
+				<NodeToolstripCpt node={node} />
+			)
+		} else
+			return <></>
+	}, [systemMode])
+
 	if (isLoading) return <></>
 	if (isTimedNode(node)) {
-		return <LayoutTimedNodeCpt positionedNode={{ ...position, element: node as Timeline }} group={childrensGroupWithSpaceForTags} showChildren={showChildren} handleLocalClick={handleLocalClick}
-			childrenJSX={childrenJSX} children={positionedChildren as I_Positioned<TimedNode>[]} connections={connections} />
+		return <>
+			<LayoutTimedNodeCpt positionedNode={{ ...position, element: node as I_Timeline }} group={childrensGroupWithSpaceForTags} showChildren={showChildren} handleLocalClick={handleLocalClick}
+				childrenJSX={childrenJSX} childrenNodes={positionedChildren as I_Positioned<I_TimedNode>[]} connections={connections} >
+				{editorStrip()}
+			</LayoutTimedNodeCpt>
+		</>
 	} else {
-		return <LayoutTreeNodeCpt positionedNode={{ ...position, element: node as TreeNode }} group={childrensGroupWithSpaceForTags} showChildren={showChildren} handleLocalClick={handleLocalClick}
-			childrenJSX={childrenJSX} children={positionedChildren as I_Positioned<TreeNode>[]} connections={connections} />
+		return <><I_LayoutTreeNodeCpt positionedNode={{ ...position, element: node }} group={childrensGroupWithSpaceForTags} showChildren={showChildren} handleLocalClick={handleLocalClick}
+			childrenJSX={childrenJSX} childrenNodes={positionedChildren as I_Positioned<I_TreeNode>[]} connections={connections}>
+			{editorStrip()}
+		</I_LayoutTreeNodeCpt>
+		</>
 	}
 }
 

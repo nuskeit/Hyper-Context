@@ -25,24 +25,30 @@ export default function () {
 	// 	// setEditingNode({ ...editingNode, name: e.target.value })
 	// }
 
-	let autoStyle = "main-editor-wrapper--close"
+	let autoStyle = "main-editor-wrapper main-editor-wrapper--close"
 	if (systemMode === SystemMode.EDIT && editingNode !== undefined)
-		autoStyle = "main-editor-wrapper--open"
-	
-	// if (systemMode === SystemMode.EDIT && editingNode !== undefined)
-	// 	switch (editingNode.target.nodeType) {
-	// 		case NodeType.NODE:
-				return (
-					<div className={autoStyle}>
-						<TreeNodeEditor />
-					</div>
-				)
-		// 	default:
-		// 		return <> {editingNode.editionType}  NodeType: {NodeType.NODE} </>
-		// 	// <TreeNodeEditor node={editingNode} updateNode={setEditingNode}/>
-		// }
+		autoStyle = "main-editor-wrapper main-editor-wrapper--open"
 
-	return <></>
+	let editor = <></>
+	if (systemMode === SystemMode.EDIT && editingNode !== undefined) {
+		switch (editingNode.editionType) {
+			case EditionType.CREATE_NODE:
+				editor = <>CREATE NODE</>
+				break
+			case EditionType.MODIFY_NODE:
+				editor = < TreeNodeEditor />
+				break
+			default:
+				editor = <> DELETE NODE: editionType:{editingNode.editionType},  NodeType: {NodeType.NODE} </>
+		}
+	}
+
+	return (
+		<div className={autoStyle}>
+			{editor}
+		</div>
+	)
+
 
 
 	// if (systemMode === SystemMode.EDIT && editingNode !== undefined)

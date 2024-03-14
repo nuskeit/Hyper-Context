@@ -1,6 +1,6 @@
 import { getImgUrl } from "../custom-hooks/use-images"
 import { right } from "../util/text"
-import { BoardNode, Editable, EditionType, FullStory, I_ConnectionOptions, I_Hashtable, I_Node, I_NodeGroup, I_Nodeoptions, I_Position, I_Positioned, I_Relationship, I_Textblock, I_TextblockImage, I_TimedNode, Book, NodeType, TimedNode, Timeline, TreeNode, I_Margin } from "./types"
+import { I_BoardNode, Editable, EditionType, FullStory, I_ConnectionOptions, I_Hashtable, I_TreeNode, I_NodeGroup, I_Nodeoptions, I_Position, I_Positioned, I_Relationship, I_Textblock, I_TextblockImage, I_TimedNode, Book, NodeType, I_Timeline, I_Margin, I_Card } from "./types"
 
 
 function generateRandomKey() {
@@ -12,7 +12,7 @@ function getRandomImage() {
 	return getImgUrl(`nodes/cartoon${right("000" + (Math.random() * 12).toFixed(0).toString(), 3)}.png`)
 }
 
-export function createNode(n: I_Node) {
+export function createNode(n: I_TreeNode) {
 	// if (n.nodeType === NodeType.BOARD)
 	// 	return createBoardNode(n)
 	if (n.nodeType === NodeType.TIMELINE)
@@ -37,26 +37,33 @@ export function createTimedNode(data: any): I_TimedNode {
 	} as I_TimedNode
 }
 
-export const createTreeNode = (data: any): TreeNode => {
-	const newChild: TreeNode = {
+export const createTreeNode = (data: any): I_TreeNode => {
+	const newChild: I_TreeNode = {
 		key: withDefaultValue(data, "key", generateRandomKey()),
-		name: withDefaultValue(data, "name", ""),
-		title: withDefaultValue(data, "title", ""),
-		shortText: withDefaultValue(data, "shortText", ""),
-		fullStory: createFullStory(withDefaultValue(data, "fullStory", undefined)),
-		thumbnail: withDefaultValue(data, "thumbnail", ""),
 		x: withDefaultValue(data, "x", 0),
 		y: withDefaultValue(data, "y", 0),
 		width: withDefaultValue(data, "width", 200),
 		height: withDefaultValue(data, "height", 200),
 		nodeType: withDefaultValue(data, "nodeType", NodeType.NODE),
 		options: withDefaultValue(data, "options", undefined),
-		group: withDefaultValue(data, "group", undefined, createNodeGroup)
+		group: withDefaultValue(data, "group", undefined, createNodeGroup),
+		card: withDefaultValue(data, "card", {}, createCard)
 	}
 	return newChild
 }
 
-export function createTimelineNode(data: any): Timeline {
+export const createCard = (data: any): I_Card => {
+	const newCard: I_Card = {
+		name: withDefaultValue(data, "name", ""),
+		title: withDefaultValue(data, "title", ""),
+		shortText: withDefaultValue(data, "shortText", ""),
+		fullStory: createFullStory(withDefaultValue(data, "fullStory", undefined)),
+		thumbnail: withDefaultValue(data, "thumbnail", "")
+	}
+	return newCard
+}
+
+export function createTimelineNode(data: any): I_Timeline {
 	const treeNode = createTreeNode(data)
 	return {
 		...treeNode,
@@ -66,13 +73,21 @@ export function createTimelineNode(data: any): Timeline {
 	}
 }
 
-function withDefaultValue(data: any, field: string, defaultValue: any, func: Function | undefined = undefined): any {
+
+/**
+ * factoryFunction must include a case for undefined as parameter. 
+ * If included, this function is the ultimate decisor to establish 
+ * a default value for the entire object.
+ */
+function withDefaultValue(data: any, field: string, defaultValue: any, factoryFunction: Function | undefined = undefined): any {
 	if (data !== undefined && typeof data === "object" && field in data) {
-		if (func != undefined) {
-			return func(data[field])
+		if (factoryFunction != undefined) {
+			return factoryFunction(data[field])
 		} else {
 			return data[field]
 		}
+	} else if (factoryFunction != undefined) {
+		return factoryFunction(undefined)
 	}
 	return defaultValue
 }
@@ -150,8 +165,8 @@ export function createTextblockImage(data: any): I_TextblockImage {
 }
 
 
-export function createNodeList(data: I_Node[]): I_Hashtable<I_Node> {
-	const result: I_Hashtable<I_Node> = {}
+export function createNodeList(data: I_TreeNode[]): I_Hashtable<I_TreeNode> {
+	const result: I_Hashtable<I_TreeNode> = {}
 
 	if (data === undefined)
 		return result
@@ -163,7 +178,7 @@ export function createNodeList(data: I_Node[]): I_Hashtable<I_Node> {
 	return result
 }
 
-export function createBoardNode(data: any): BoardNode {
+export function createBoardNode(data: any): I_BoardNode {
 	return {
 		...createTreeNode(data),
 		viewBox: withDefaultValue(data, "viewBox", [0, 0, 0, 0]),
@@ -212,8 +227,8 @@ export function createBook(data: any): Book {
 
 // Tighter typed
 
-export function createEditableNode(node: TreeNode, editionType: EditionType) {
-	return new Editable<TreeNode>(node, editionType)
+export function createEditableNode<T extends I_TreeNode>(node: T, editionType: EditionType): Editable<T> {
+	return new Editable<T>(node, editionType)
 }
 
 
@@ -226,15 +241,7 @@ export function createPosition(data?: any): I_Position {
 		y: withDefaultValue(data, "y", 0),
 		width: withDefaultValue(data, "width", 100),
 		height: withDefaultValue(data, "height", 100),
-		margin: withDefaultValue(data, "margin", { left: 0, right: 0, top: 0, bottom: 0 },
-			() => ({
-				left: withDefaultValue(data["margin"], "left", 0),
-				right: withDefaultValue(data["margin"], "right", 0),
-				top: withDefaultValue(data["margin"], "top", 0),
-				bottom: withDefaultValue(data["margin"], "bottom", 0),
-			})
-		)
-
+		margin: withDefaultValue(data, "margin", { left: 0, right: 0, top: 0, bottom: 0 }, createMargin)
 	}
 
 }
@@ -246,14 +253,6 @@ export function createPositionedElement<T>(element: T, data?: any): I_Positioned
 		y: withDefaultValue(data, "y", 0),
 		width: withDefaultValue(data, "width", 100),
 		height: withDefaultValue(data, "height", 100),
-		margin: withDefaultValue(data, "margin", { left: 0, right: 0, top: 0, bottom: 0 },
-			() => ({
-				left: withDefaultValue(data["margin"], "left", 0),
-				right: withDefaultValue(data["margin"], "right", 0),
-				top: withDefaultValue(data["margin"], "top", 0),
-				bottom: withDefaultValue(data["margin"], "bottom", 0),
-			})
-		)
-
+		margin: withDefaultValue(data, "margin", { left: 0, right: 0, top: 0, bottom: 0 }, createMargin)
 	}
 }

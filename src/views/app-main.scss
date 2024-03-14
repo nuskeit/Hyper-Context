@@ -7,15 +7,16 @@
 	margin: 0;
 
 	.main-title {
+		flex: 0 0 2rem;
 		text-align: center;
 		justify-content: center;
 		font-size: 1rem;
 		letter-spacing: 1.5rem;
-		flex: 0 0 2rem;
 		padding: 0;
 		margin: 0;
 		display: flex;
 		flex-direction: row;
+		background-color: red;
 	}
 
 	.main-content {
@@ -26,26 +27,37 @@
 		position: relative;
 		padding: 0;
 		margin: 0;
-
+		
 		.main-top-menu{
 			flex: 0 0 1.5rem;
+			position: relative;
+			overflow: hidden;
+			//border: solid .5rem #090;
 		}
-
+		
 		.main-board {
 			flex: 1 1 auto;
 			position: relative;
+			overflow: hidden;
 			padding: 0;
 			margin: 0;
 			overflow: hidden;
+			//border: solid .5rem #0cf;
 		}
-
+		
 		.main-editor {
 			flex: 1 0 auto;
-			// border: solid orange .3rem;
+			max-height: 15rem;
+			////border: solid .0rem #0f0;
+			position: relative;
+			overflow: hidden;
 			background-color: #888;
 			margin: 0;
 			padding: 0;
-			overflow: hidden;
+			overflow: auto;
+
+			display: flex;
+			flex-direction: column;
 		}
 	}
 }

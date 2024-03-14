@@ -1,9 +1,9 @@
 import parse from "html-react-parser";
 import { useCallback, useEffect, useState } from "react";
 import { lorem } from "../const";
-import { TreeNode } from "../types/types";
+import { I_TreeNode } from "../types/types";
 import "./full-story.scss";
-export default function ({ node, onExit }: { node: TreeNode, onExit: Function }) {
+export default function ({ node, onExit }: { node: I_TreeNode, onExit: Function }) {
 
 	const [content, setContent] = useState<string | JSX.Element | JSX.Element[]>("")
 
@@ -16,7 +16,7 @@ export default function ({ node, onExit }: { node: TreeNode, onExit: Function })
 	const textWithImages = useCallback(() => {
 		const loreme = `aaaa bbbb cccc`
 		const result = []
-		for (const textBlock of node.fullStory?.textBlocks || []) {
+		for (const textBlock of node.card.fullStory?.textBlocks || []) {
 			const textLEngth = textBlock.text.length
 			const fragments = textBlock.images.length
 
@@ -73,7 +73,7 @@ export default function ({ node, onExit }: { node: TreeNode, onExit: Function })
 		<div className="full-story" onClick={() => { onExit() }}>
 			<div className="full-story-border">
 				<div className="full-story-body" onClick={e => e.stopPropagation()}>
-					<div className="full-story-title">{node.name}</div>
+					<div className="full-story-title">{node.card.name}</div>
 					<div className="full-story-text">
 						{/* <img src={node.images[0]} /> */}
 						{/* {content} */}

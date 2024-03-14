@@ -1,5 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useState } from "react";
-import { TreeNode } from "../types/types";
+import { useEffect, useState } from "react";
 
 export default function (svgAccessor: Function, updateOnlyOnAnimationFrame = false) {
 

@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react"
 import { createNodeGroup, createPositionedElement } from "../types/factory"
-import { I_Hashtable, I_NodeGroup, I_Positioned, TimedNode, Timeline } from "../types/types"
+import { I_Hashtable, I_NodeGroup, I_Positioned, I_TimedNode, I_Timeline } from "../types/types"
 import useGlobalOptions from "./useGlobalOptions"
 
-export default function usePositionedTimeline(timeline: Timeline, timedChildren: TimedNode[], group: I_NodeGroup, position: { x: number, y: number, height: number, width: number }) {
+export default function usePositionedTimeline(timeline: I_Timeline, timedChildren: I_TimedNode[], group: I_NodeGroup, position: { x: number, y: number, height: number, width: number }) {
 
 	const globalOptions = useGlobalOptions()
 
-	const [positionedTimeline, setPositionedTimeline] = useState<I_Positioned<Timeline>>(createPositionedElement<Timeline>(timeline))
+	const [positionedTimeline, setPositionedTimeline] = useState<I_Positioned<I_Timeline>>(createPositionedElement<I_Timeline>(timeline))
 	const [timelineGroup, setTimelineGroup] = useState(createNodeGroup(undefined))
-	const [positionedChildren, setPositionedChildren] = useState<I_Positioned<TimedNode>[]>([])
+	const [positionedChildren, setPositionedChildren] = useState<I_Positioned<I_TimedNode>[]>([])
 
 	useEffect(() => {
 
@@ -40,15 +40,15 @@ export default function usePositionedTimeline(timeline: Timeline, timedChildren:
 
 
 
-function timelineWithStartAndEnd(timeline: Timeline, timedChildren: TimedNode[]) {
+function timelineWithStartAndEnd(timeline: I_Timeline, timedChildren: I_TimedNode[]) {
 	timedChildren.forEach(n => { //This garantees that the size of the timeline, is given by the proper nodes
 		timeline.start = Math.min(timeline.start == 0 ? n.start : timeline.start, n.start)
 		timeline.end = Math.max(timeline.end, n.end)
 	})
 }
 
-const positionItemsInsideTimeline = (timeline: Timeline, timedChildren: TimedNode[], gru: I_NodeGroup,
-	position: { x: number, y: number, height: number, width: number }, fixedWidth = 0): [I_Positioned<TimedNode>[], I_NodeGroup] => {
+const positionItemsInsideTimeline = (timeline: I_Timeline, timedChildren: I_TimedNode[], gru: I_NodeGroup,
+	position: { x: number, y: number, height: number, width: number }, fixedWidth = 0): [I_Positioned<I_TimedNode>[], I_NodeGroup] => {
 	const timeInterval = timeline.end - timeline.start
 	const timeToGraphFactor = fixedWidth / timeInterval;
 
@@ -91,7 +91,7 @@ const positionItemsInsideTimeline = (timeline: Timeline, timedChildren: TimedNod
 }
 
 // Gets the true row height, to work with uneven timed-nodes' heights
-function getRowsPositionY(oc: TimedNode[]): I_Hashtable<number> {
+function getRowsPositionY(oc: I_TimedNode[]): I_Hashtable<number> {
 	let rowsTrueHeight: I_Hashtable<number> = {}
 	let _y: I_Hashtable<number> = {}
 	_y[0] = 0
@@ -114,11 +114,11 @@ function getRowsPositionY(oc: TimedNode[]): I_Hashtable<number> {
 }
 
 
-function orderTimedNodes(timedNodes: TimedNode[]): TimedNode[] {
-	const originalNodes: TimedNode[] = [...timedNodes]
-	const orderedNodes: TimedNode[] = []
+function orderTimedNodes(timedNodes: I_TimedNode[]): I_TimedNode[] {
+	const originalNodes: I_TimedNode[] = [...timedNodes]
+	const orderedNodes: I_TimedNode[] = []
 
-	function nextTimedNode(nodes: TimedNode[], oNodes: TimedNode[], row = 0) {
+	function nextTimedNode(nodes: I_TimedNode[], oNodes: I_TimedNode[], row = 0) {
 		const sinceDate = oNodes.length > 0 ? oNodes[oNodes.length - 1].end : 0
 		let rowsToAdd = 0
 		let [nodeIndex] = findNextNonOverlappingTimedNode(nodes, sinceDate)
@@ -139,7 +139,7 @@ function orderTimedNodes(timedNodes: TimedNode[]): TimedNode[] {
 	return orderedNodes
 }
 
-function findNextNonOverlappingTimedNode(timedNodes: TimedNode[], sinceDate: number): [number, number, number] {
+function findNextNonOverlappingTimedNode(timedNodes: I_TimedNode[], sinceDate: number): [number, number, number] {
 	if (timedNodes.length == 0) return [-1, -1, -1]
 	let firstIndex = -1
 	let start = Number.MAX_SAFE_INTEGER

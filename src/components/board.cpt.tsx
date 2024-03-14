@@ -4,7 +4,7 @@ import useWindowResize from "../custom-hooks/use-window-resize";
 import usePositionedNode from "../custom-hooks/usePositionedNode";
 import { createNodeGroup } from "../types/factory";
 import { isTimelineNode } from "../types/type-safety";
-import { TreeNode } from "../types/types";
+import { I_TreeNode } from "../types/types";
 import './board.scss';
 import EditModeButton from "./buttons/edit-mode-button.cpt";
 import useBookStateContext from "../contexts/use-book-context";
@@ -40,12 +40,12 @@ export default function () {
 		})
 	}, [book.boardNode.viewBox])
 
-	const fullStory = (n?: TreeNode) =>
+	const fullStory = (n?: I_TreeNode) =>
 		n === undefined ? <></> :
 			<FullStoryCpt node={n} onExit={storyUnselectHandler} />
 
 
-	const clickHandler = (n: TreeNode) => {
+	const clickHandler = (n: I_TreeNode) => {
 		//changeOrigin(n)
 	}
 
@@ -53,7 +53,7 @@ export default function () {
 	function fullStoryRead() {
 		if (activeFullStory.fullStoryNode === undefined)
 			return fullStory(undefined)
-		return fullStory(activeFullStory.fullStoryNode as TreeNode)
+		return fullStory(activeFullStory.fullStoryNode as I_TreeNode)
 	}
 
 	function handleScrolling(event: WheelEvent) {
@@ -97,7 +97,7 @@ export default function () {
 
 			if (isTimelineNode(positionedNode.element)) {
 				return <></>
-				// return <TimelineCpt group={{ ...positionedGroup, y: positionedGroup.y + offsetY }} timeline={positionedNode as Timeline} onClick={childrenClickHandler} key={i} />
+				// return <TimelineCpt group={{ ...positionedGroup, y: positionedGroup.y + offsetY }} timeline={positionedNode as I_Timeline} onClick={childrenClickHandler} key={i} />
 			}
 			else {
 				return <NodeCpt

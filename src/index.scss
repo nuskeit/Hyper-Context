@@ -16,6 +16,10 @@ html {
 	overflow: hidden;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	margin: 0;
 	place-items: center;
@@ -55,4 +59,9 @@ button:hover {
 button:focus,
 button:focus-visible {
 	outline: 4px auto -webkit-focus-ring-color;
+}
+
+.generic-shadow{
+	filter: drop-shadow(.5rem .5rem .2rem #0007);
+
 }

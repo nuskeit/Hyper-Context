@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useNodeChildren from "../custom-hooks/use-node-children";
 import usePositionedTimeline from "../custom-hooks/usePositionedTimeline";
-import { I_NodeGroup, I_Vector2, NodeKey, TimedNode, Timeline, TreeNode } from "../types/types";
+import { I_NodeGroup, I_Vector2, NodeKey, I_TimedNode, I_Timeline, I_TreeNode } from "../types/types";
 import NodeCpt from "./node.cpt";
 import TimelineRuler from "./timeline-ruler.cpt";
 
@@ -22,9 +22,9 @@ function TimelineCpt({
 }) {
 
 	const [isLoading, setIsLoading] = useState(true)
-	const [selectedChild, setSelectedChild] = useState<TimedNode | undefined>()
+	const [selectedChild, setSelectedChild] = useState<I_TimedNode | undefined>()
 	const [node, children] = useNodeChildren(nodeKey)
-	const [positionedGroup, positionedTimeline, positionedChildren] = usePositionedTimeline(node as Timeline, children as TimedNode[], group, position)
+	const [positionedGroup, positionedTimeline, positionedChildren] = usePositionedTimeline(node as I_Timeline, children as I_TimedNode[], group, position)
 	/* DEBUG */
 	// useEffect(() => {
 	// 	// if (timeline.children.length == 1)
@@ -32,16 +32,16 @@ function TimelineCpt({
 	// 	setSelectedChild(timeline.children[0])
 	// }, [timeline])
 
-	const childrenClickHandler = (n: TimedNode) => {
+	const childrenClickHandler = (n: I_TimedNode) => {
 		if (showChildren && selectedChild?.key === n.key) {
 			setSelectedChild(undefined)
 		} else {
 			setSelectedChild(n)
 		}
 		if (!showChildren)
-			onClick(node as Timeline, "TIMELINE")
+			onClick(node as I_Timeline, "TIMELINE")
 	}
-	
+
 	const childrenJSX = () => {
 		return positionedChildren.map((positionedNode, i) => {
 			return <NodeCpt group={{ ...positionedGroup, height: group.height + positionedGroup.margin.bottom }}
@@ -56,9 +56,9 @@ function TimelineCpt({
 	}
 
 	useEffect(() => {
-		if((node as TreeNode).name==="Education Sub Timeline 2 of 2")
-		console.log("TIMELINE", (node as TreeNode).name, children);
-		
+		if (node.card.name === "Education Sub I_Timeline 2 of 2")
+			console.log("TIMELINE", node.card.name, children);
+
 		setIsLoading(false)
 	}, [])
 
@@ -72,7 +72,7 @@ function TimelineCpt({
 					<rect x={-30} y={-30} className="timeline-node-base"
 						width={positionedGroup.width + 60} height={positionedGroup.height + 60} rx="9" ry="9" />
 
-					<text x="0" y="-10" fontSize={40}>{positionedTimeline.element.name}</text>
+					<text x="0" y="-10" fontSize={40}>{positionedTimeline.element.card.name}</text>
 				</g>
 
 				<TimelineRuler positionedNode={positionedTimeline} children={positionedChildren} group={positionedGroup} />
