@@ -6,7 +6,7 @@ import PlusSignCpt from "./icons/plus-sign.cpt"
 import LoadingImg from "./image.cpt"
 import FullStoryOpenCpt from "./node-actions/full-story-open.cpt"
 
-export default function I_LayoutTreeNodeCpt(
+export default function LayoutTreeNodeCpt(
 	{ positionedNode,
 		childrenNodes,
 		group,
@@ -43,7 +43,7 @@ export default function I_LayoutTreeNodeCpt(
 
 	const count = useRef(0)
 	return <>
-		<GroupCpt fillColor="#ccc" group={group} visible={showChildren} />
+		<GroupCpt fillColor="none" group={group} visible={showChildren} />
 
 		<g className={"connections"}>
 			{connections}

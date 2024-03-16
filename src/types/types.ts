@@ -16,6 +16,20 @@ export interface I_Positioned<T> extends I_Position {
 }
 
 
+export type ViewBox = [number, number, number, number]
+
+export class WindowServices {
+	viewBox: ViewBox
+	zoomLevel: number
+	scrollPos: number
+
+	constructor(viewBox: ViewBox, zoomLevel = 0, scrollPos = 0) {
+		this.viewBox = viewBox
+		this.zoomLevel = zoomLevel
+		this.scrollPos = scrollPos
+	}
+}
+
 export type NodeKey = string
 
 export interface I_Identity {

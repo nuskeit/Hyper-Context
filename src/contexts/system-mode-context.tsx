@@ -7,9 +7,10 @@ export const SystemModeContext = createContext<SystemMode>(SystemMode.EDIT)
 export const SystemModeContextSetter = createContext((m: SystemMode) => { })
 
 export default function (props: { children: ReactNode }) {
-	const [systemMode, setSystemMode] = useState<SystemMode>(SystemMode.EDIT)
+	const [systemMode, setSystemMode] = useState<SystemMode>(localStorage["SystemMode"] || SystemMode.EDIT)
 
 	const setterFn = (m: SystemMode) => {
+		localStorage["SystemMode"] = m
 		setSystemMode(m)
 	}
 

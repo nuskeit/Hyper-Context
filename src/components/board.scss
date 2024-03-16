@@ -15,9 +15,8 @@
 	// }
 
 	.level-group {
-		@extend .generic-shadow;
-		rx: 9;
-		ry: 9;
+		rx: 20;
+		ry: 20;
 		pointer-events: none;
 	}
 

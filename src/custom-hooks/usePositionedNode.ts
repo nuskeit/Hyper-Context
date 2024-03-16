@@ -4,7 +4,7 @@ import { I_TreeNode, I_NodeGroup, I_Positioned, NodeKey } from "../types/types"
 import useNodeChildren from "./use-node-children"
 import useGlobalOptions from "./useGlobalOptions"
 
-export default function usePositionedNode(nodeKey: NodeKey, group: I_NodeGroup) {
+export default function usePositionedNode(nodeKey: NodeKey, prevGroup: I_NodeGroup) {
 
 	const [node, nodeChildren] = useNodeChildren(nodeKey)
 	const globalOptions = useGlobalOptions()
@@ -14,14 +14,25 @@ export default function usePositionedNode(nodeKey: NodeKey, group: I_NodeGroup) 
 
 	useEffect(() => {
 		if (nodeChildren.length > 0) {
-			let childrensGroupWidth = nodeChildren.map(n => n.width).reduce((acc, val) => acc + val, 0) + globalOptions.node.spacingX * (nodeChildren.length - 1)
-			let childrensGroupHeight = Math.max(0, ...nodeChildren.map(n => n.y + n.height)) //+ globalOptions.group.spacingY
+
+			let childrensGroupWidth = globalOptions.node.spacingX * (nodeChildren.length - 1)
+			let childrensGroupHeight = 0
+
+			// If tha only member is offset, offset the entire group
+			let minChildrensYPosition = Number.MAX_SAFE_INTEGER
+			nodeChildren.forEach(ch => {
+				// Prevent node's negative y offset
+				const y = Math.max(ch.y, 0)
+				minChildrensYPosition = Math.min(minChildrensYPosition, y)
+				childrensGroupWidth += ch.width
+				childrensGroupHeight = Math.max(childrensGroupHeight, y + ch.height)
+			})
 
 			setChildrensGroup(createNodeGroup({
 				width: childrensGroupWidth,
-				height: childrensGroupHeight,
+				height: childrensGroupHeight - minChildrensYPosition,
 				x: -childrensGroupWidth / 2,
-				y: group.y + group.height + globalOptions.group.spacingY,
+				y: prevGroup.y + prevGroup.height + globalOptions.group.spacingY + minChildrensYPosition,
 			}))
 
 			let prevX = 0
@@ -30,7 +41,7 @@ export default function usePositionedNode(nodeKey: NodeKey, group: I_NodeGroup) 
 
 				const newNode = createPositionedElement<I_TreeNode>(n, {
 					x: prevX - childrensGroupWidth / 2,
-					y: group.y + group.height + n.y + globalOptions.group.spacingY,
+					y: prevGroup.y + prevGroup.height + Math.max(n.y, 0) + globalOptions.group.spacingY,
 					width: n.width,
 					height: n.height
 				})
@@ -39,7 +50,7 @@ export default function usePositionedNode(nodeKey: NodeKey, group: I_NodeGroup) 
 				return newNode
 			}))
 		}
-	}, [nodeChildren, group])
+	}, [nodeChildren, prevGroup])
 
 	return [node, childrensGroup, positionedChildren] as const
 }

@@ -6,7 +6,7 @@ import { isTimedNode, isTimelineNode } from "../types/type-safety";
 import { I_NodeGroup, I_Position, I_Positioned, NodeKey, NodeType, SystemMode, I_TimedNode, I_Timeline, I_TreeNode } from "../types/types";
 import ConnectionCpt from "./connection.cpt";
 import LayoutTimedNodeCpt from "./layout-timed-node.cpt";
-import I_LayoutTreeNodeCpt from "./layout-tree-node.cpt";
+import LayoutTreeNodeCpt from "./layout-tree-node.cpt";
 import TimelineCpt from "./timeline.cpt";
 import useSystemModeContext from "../contexts/use-system-mode-context";
 import NodeToolstripCpt from "./node-toolstrip.cpt";
@@ -40,6 +40,15 @@ function NodeCpt({
 	// 		if (!showChildren)
 	// 			onClick(n)
 	// }, [node])
+
+	/* DEBUG */
+	useEffect(() => {
+		// if (node.children.length > 0 && isTimelineNode(node.children[0]))
+		const n = node
+		if (n.card.name === "Formal")
+			if (!showChildren)
+				onClick(n)
+	}, [node])
 
 	useEffect(() => {
 		changeViewBoxDelegate(group.width)
@@ -134,10 +143,11 @@ function NodeCpt({
 			</LayoutTimedNodeCpt>
 		</>
 	} else {
-		return <><I_LayoutTreeNodeCpt positionedNode={{ ...position, element: node }} group={childrensGroupWithSpaceForTags} showChildren={showChildren} handleLocalClick={handleLocalClick}
-			childrenJSX={childrenJSX} childrenNodes={positionedChildren as I_Positioned<I_TreeNode>[]} connections={connections}>
-			{editorStrip()}
-		</I_LayoutTreeNodeCpt>
+		return <>
+			<LayoutTreeNodeCpt positionedNode={{ ...position, element: node }} group={childrensGroupWithSpaceForTags} showChildren={showChildren} handleLocalClick={handleLocalClick}
+				childrenJSX={childrenJSX} childrenNodes={positionedChildren as I_Positioned<I_TreeNode>[]} connections={connections}>
+				{editorStrip()}
+			</LayoutTreeNodeCpt>
 		</>
 	}
 }

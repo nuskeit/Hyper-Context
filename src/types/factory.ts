@@ -1,6 +1,6 @@
 import { getImgUrl } from "../custom-hooks/use-images"
 import { right } from "../util/text"
-import { I_BoardNode, Editable, EditionType, FullStory, I_ConnectionOptions, I_Hashtable, I_TreeNode, I_NodeGroup, I_Nodeoptions, I_Position, I_Positioned, I_Relationship, I_Textblock, I_TextblockImage, I_TimedNode, Book, NodeType, I_Timeline, I_Margin, I_Card } from "./types"
+import { I_BoardNode, Editable, EditionType, FullStory, I_ConnectionOptions, I_Hashtable, I_TreeNode, I_NodeGroup, I_Nodeoptions, I_Position, I_Positioned, I_Relationship, I_Textblock, I_TextblockImage, I_TimedNode, Book, NodeType, I_Timeline, I_Margin, I_Card, ViewBox } from "./types"
 
 
 function generateRandomKey() {
@@ -26,6 +26,13 @@ export function createNode(n: I_TreeNode) {
 	}
 }
 
+export function createWindowServices(data?: { viewBox: ViewBox, zoomLevel?: number, scrollPos?: number }) {
+	return {
+		viewBox: withDefaultValue(data, "viewBox",  [-1500,0,3000,5000]),
+		zoomLevel: withDefaultValue(data, "zoomLevel", 1),
+		scrollPos: withDefaultValue(data, "scrollPos", 0),
+	}
+}
 
 export function createTimedNode(data: any): I_TimedNode {
 	return {

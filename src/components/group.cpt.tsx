@@ -10,7 +10,7 @@ export default function ({ group, visible, fillColor = "#0000", strokeColor = "#
 			y={group.y - 50}
 			width={group.width + 100}
 			height={group.height + 100}
-			className="level-group"
+			className="level-group generic-shadow"
 			stroke={strokeColor}
 			fill={fillColor}
 		/>

@@ -6,6 +6,7 @@ import SystemModeContext from "../contexts/system-mode-context"
 import MainEditor from "../components/editors/main-editor"
 import './app-main.scss'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom"
+import ViewBoxContext from "../contexts/view-box-context"
 
 export default function () {
 	const router = createBrowserRouter(
@@ -23,21 +24,23 @@ export default function () {
 			<SystemModeContext> {/* essencially to set EDIT mode*/}
 				<BookContextProvider> {/* To access the book we're working on */}
 					<NodeEditorContext> { /* Provides access to the node selected for editing */}
+						<ViewBoxContext> { /* Zoom and Scroll */}
 
-						<div className="main-title">HyperContext v0.2</div>
+							<div className="main-title">HyperContext v0.2</div>
 
-						<div className="main-content" >
-							<div className="main-top-menu">
-								<RouterProvider router={router} /> { /* To get, save and share books from the remote repo */}
+							<div className="main-content" >
+								<div className="main-top-menu">
+									<RouterProvider router={router} /> { /* To get, save and share books from the remote repo */}
+								</div>
+								<div className="main-board" >
+									<BoardCpt />
+								</div>
+								<div className="main-editor" >
+									<MainEditor />
+								</div>
 							</div>
-							<div className="main-board" >
-								<BoardCpt />
-							</div>
-							<div className="main-editor" >
-								<MainEditor />
-							</div>
-						</div>
 
+						</ViewBoxContext>
 					</NodeEditorContext>
 				</BookContextProvider>
 			</SystemModeContext>
