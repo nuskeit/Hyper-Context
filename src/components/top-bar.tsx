@@ -4,7 +4,7 @@ export default function ({ boardNode }: { boardNode: I_BoardNode }) {
 
 	return (
 		<div className="main-title">
-			<div>PROFILER for : {boardNode.card.title}</div>
+			<div>PROFILER for : {boardNode.card.title.value}</div>
 			<div>scscsds</div>
 		</div>
 	)

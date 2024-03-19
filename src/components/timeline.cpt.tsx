@@ -56,8 +56,6 @@ function TimelineCpt({
 	}
 
 	useEffect(() => {
-		if (node.card.name === "Education Sub I_Timeline 2 of 2")
-			console.log("TIMELINE", node.card.name, children);
 
 		setIsLoading(false)
 	}, [])
@@ -72,7 +70,7 @@ function TimelineCpt({
 					<rect x={-30} y={-30} className="timeline-node-base"
 						width={positionedGroup.width + 60} height={positionedGroup.height + 60} rx="9" ry="9" />
 
-					<text x="0" y="-10" fontSize={40}>{positionedTimeline.element.card.name}</text>
+					<text x="0" y="-10" fontSize={40}>{positionedTimeline.element.card.name.value}</text>
 				</g>
 
 				<TimelineRuler positionedNode={positionedTimeline} children={positionedChildren} group={positionedGroup} />

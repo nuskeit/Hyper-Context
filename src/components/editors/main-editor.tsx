@@ -6,7 +6,8 @@ import "./editors.scss"
 import useSystemModeContext from "../../contexts/use-system-mode-context"
 import { EditionType, NodeType, SystemMode } from "../../types/types"
 import TreeNodeEditor from "./tree-node-editor"
-import { createEditableNode } from "types/factory"
+import { createEditableNode } from "types/factory-from-data"
+import NodeStyleEditor from "./node-style-editor"
 
 export default function () {
 	// const [book, bookDispatch] = useBookStateContext()
@@ -38,8 +39,14 @@ export default function () {
 			case EditionType.MODIFY_NODE:
 				editor = < TreeNodeEditor />
 				break
+			case EditionType.DELETE_NODE:
+				editor = <>DELETE NODE</>
+				break
+			case EditionType.MODIFY_NODE_STYLE:
+				editor = < NodeStyleEditor />
+				break
 			default:
-				editor = <> DELETE NODE: editionType:{editingNode.editionType},  NodeType: {NodeType.NODE} </>
+				editor = <> NONE </>
 		}
 	}
 

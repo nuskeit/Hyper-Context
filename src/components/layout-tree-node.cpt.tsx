@@ -5,6 +5,7 @@ import GroupCpt from "./group.cpt"
 import PlusSignCpt from "./icons/plus-sign.cpt"
 import LoadingImg from "./image.cpt"
 import FullStoryOpenCpt from "./node-actions/full-story-open.cpt"
+import { getStylePropValue } from "../util/util"
 
 export default function LayoutTreeNodeCpt(
 	{ positionedNode,
@@ -50,29 +51,38 @@ export default function LayoutTreeNodeCpt(
 		</g>
 		<g className="board-node " transform={`translate(${positionedNode.x}, ${positionedNode.y})`}>
 			<g onPointerDown={handleLocalClick} className="generic-shadow">
-				<rect className="board-node-base " rx="10" ry="10" x={0} y={0} width={positionedNode.width} height={positionedNode.height} strokeWidth="3" />
-				<g transform="translate(0, 0)">
-					{/* <image href={positionedNode.thumbnail} width={positionedNode.width} height={positionedNode.height} /> */}
-					<LoadingImg url={positionedNode.element.card.thumbnail} width={positionedNode.width} height={positionedNode.height} />
+
+				<rect className="board-node-base " x={0} y={0}
+					width={positionedNode.width} height={positionedNode.height}
+					style={positionedNode.element.card.background?.style} />
+
+				<g style={positionedNode.element.card.thumbnail.style}>
+					<LoadingImg url={positionedNode.element.card.thumbnail.value} 
+					width={positionedNode.width} height={positionedNode.height} />
 				</g>
 
 				{moreButton()}
 			</g>
-			<text x={0} y={-5} className="elem-title">
-				<tspan y="0"> {++count.current} -
-					{positionedNode.element.card.name.toUpperCase().substring(0, positionedNode.width / 22)}
+			<text x={0} y={-55} className="elem-title" style={{ fontSize: "1.5rem", fill: "#ddd" }}>
+				<tspan x="0" dy="0">
+					re-render
 				</tspan>
-				<tspan fontSize={20}>
-					{positionedNode.element.card.name.length > positionedNode.width / 22 ? "..." : ""}
+				<tspan x="0" dy="20">
+					no. {++count.current}
 				</tspan>
 			</text>
 
-			{/* <text x={positionedNode.width / 2} y={positionedNode.height} dy="20" className="elem-short-text"> */}
-			<text x={0} y={positionedNode.height} dy="20" className="elem-short-text">
-				{wholeWordsMultilineText(positionedNode.element.card.shortText.substring(0, 98) + "...", 21).map((t, key) => <tspan x={0} dy="25" key={key}>{t}</tspan>)}
-				{/* {positionedNode.shortText} */}
+			<text x={positionedNode.width / 2} y={0} className="elem-title" 
+			style={{ ...positionedNode.element.card.name.style, textAnchor: "middle" }} >
+				{positionedNode.element.card.name.value.toUpperCase()}
 			</text>
 
+			<text x={positionedNode.width / 2} y={20} className="elem-title" 
+			style={{ ...positionedNode.element.card.title.style, textAnchor: "middle" }} >
+				{positionedNode.element.card.title.value
+					.split("\n").map((e, i) => (<tspan key={i} x={positionedNode.width / 2} 
+					dy={getStylePropValue(positionedNode.element.card.title.style, "fontSize", "0") || 30}>{e}</tspan>))}
+			</text>
 
 			<g className="node-action-strip" transform={`translate(${positionedNode.width - 20}, -10) scale(.6,.6)`}>
 				{actionStrip}

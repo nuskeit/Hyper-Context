@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from "react"
-import { createBook } from "../types/factory"
+import { createBook } from "../types/factory-from-data"
 import { Book } from "../types/types"
 import axios from "axios"
  /*
@@ -40,7 +40,6 @@ export default function () {
 				return mutableData
 			case ActionType.NEW_BOOK:
 				const tmp = { ...state }
-				console.log('NEW BOOK');
 				tmp.boardNode = action.payload.boardNode
 				tmp.options = action.payload.options
 				return tmp
@@ -54,26 +53,6 @@ export default function () {
 	function handleError(error: any) {
 		alert(error)
 	}
-
-	// useEffect(() => {
-	// 	const viewBox: [number, number, number, number] = [-1500, 0, 3000, 5000]
-	// 	const f = async () => {
-	// 		const g = async () => {
-	// 			const response = await axios.get("http://localhost:4000/board/a1")
-	// 			// const newData = JSON.parse(response.data)
-	// 			const data = await response.data
-	// 			const newData = data
-	// 			const newState = createBook(newData)
-	// 			newState.boardNode.viewBox = viewBox
-	// 			dispatch({ type: ActionType.NEW_BOOK, payload: newState })
-
-	// 		}
-	// 		await g()
-	// 	}
-	// 	setTimeout(f,2000)
-
-	// }, [])
-
 
 	return [state, dispatch] as const
 }

@@ -1,9 +1,11 @@
+import useActiveFullStoryContext from "../custom-hooks/use-active-full-story-context";
 import parse from "html-react-parser";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { lorem } from "../const";
-import { I_TreeNode } from "../types/types";
 import "./full-story.scss";
-export default function ({ node, onExit }: { node: I_TreeNode, onExit: Function }) {
+export default function FullStoryCpt() {
+
+	const [activeFullStory, setActiveFullStory] = useActiveFullStoryContext()
 
 	const [content, setContent] = useState<string | JSX.Element | JSX.Element[]>("")
 
@@ -12,11 +14,10 @@ export default function ({ node, onExit }: { node: I_TreeNode, onExit: Function 
 		setContent(parsedHtml)
 	}, [])
 
+	const textWithImages = () => {
 
-	const textWithImages = useCallback(() => {
-		const loreme = `aaaa bbbb cccc`
 		const result = []
-		for (const textBlock of node.card.fullStory?.textBlocks || []) {
+		for (const textBlock of activeFullStory.fullStoryNode?.card.fullStory?.value.textBlocks || []) {
 			const textLEngth = textBlock.text.length
 			const fragments = textBlock.images.length
 
@@ -46,16 +47,14 @@ export default function ({ node, onExit }: { node: I_TreeNode, onExit: Function 
 				</div>
 			)
 		}
-
 		return result
-	}, [])
+	}
 
 	function floatAuto(float: string, prevFloat: string): string {
 		var f = prevFloat != "left" ? 'left' : 'right'
 		f = float == "auto" ? f : float
 		return f
 	}
-
 
 	function findPreviousChar(t: string, char: string, start: number, end: number): number {
 		const _start = Math.min(start, end)
@@ -68,12 +67,17 @@ export default function ({ node, onExit }: { node: I_TreeNode, onExit: Function 
 		return -1
 	}
 
+	function handleExit() {
+		setActiveFullStory(undefined)
+	}
 
+	if (activeFullStory.fullStoryNode === undefined)
+		return <></>
 	return (
-		<div className="full-story" onClick={() => { onExit() }}>
+		<div className="full-story" onClick={handleExit}>
 			<div className="full-story-border">
 				<div className="full-story-body" onClick={e => e.stopPropagation()}>
-					<div className="full-story-title">{node.card.name}</div>
+					<div className="full-story-title">{activeFullStory.fullStoryNode?.card.name.value}</div>
 					<div className="full-story-text">
 						{/* <img src={node.images[0]} /> */}
 						{/* {content} */}

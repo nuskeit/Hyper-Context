@@ -27,8 +27,10 @@ export default memo(function (
 		const source = { x: middleX(el1), y: sourceY }
 		const target = { x: middleX(el2), y: targetY }
 		const totalDistance = {
-			horizontal: Math.max(target.x - source.x, source.x - target.x),
-			vertical: Math.max(target.y - source.y, source.y - target.y)
+			horizontal: Math.abs(target.x - source.x),
+			vertical: Math.abs(target.y - source.y)
+			// horizontal: Math.max(target.x - source.x, source.x - target.x),
+			// vertical: Math.max(target.y - source.y, source.y - target.y)
 		}
 
 		let _curveDistributionCoeficient = rangeLimit(mergedOptions.curveDistributionCoeficient, 0, 1)
@@ -53,19 +55,124 @@ export default memo(function (
 		const firstLeg = Math.min(Math.max(curveDistri(totalDistance.vertical, _curveDistributionCoeficient), minLegLength), maxLegLength)
 		const lastLeg = totalDistance.vertical - firstLeg
 
-		const curve1 = Math.min(totalDistance.horizontal * _curveDistributionCoeficient, totalDistance.vertical * _curveDistributionCoeficient)/2
-		const curve2 = Math.min(totalDistance.horizontal * (1 - _curveDistributionCoeficient), totalDistance.vertical * (1 - _curveDistributionCoeficient))/2
 
-		points = [
-			['M', source.x, source.y],
-			['L', source.x, source.y + firstLeg - curve1],
-			['Q', source.x, source.y + firstLeg],
-			['', source.x + dir.h * curve1, source.y + firstLeg],
-			['L', target.x - dir.h * curve2, target.y - lastLeg],
-			['Q', target.x, source.y + firstLeg],
-			['', target.x, target.y - lastLeg + curve2],
-			['L', target.x, target.y],
-		]
+		let curve1 = Math.min(totalDistance.horizontal * _curveDistributionCoeficient, totalDistance.vertical * _curveDistributionCoeficient) / 2
+		let curve2 = Math.min(totalDistance.horizontal * (1 - _curveDistributionCoeficient), totalDistance.vertical * (1 - _curveDistributionCoeficient)) / 2
+
+		// console.log('ddd', Math.abs(source.x - target.x))
+
+
+		let connectionShape = mergedOptions.connectionShape || 1
+		// if (Math.abs(source.x - target.x) < 200) connectionShape = 2
+
+		switch (connectionShape) {
+			case 1:
+				points = [
+					['M', source.x, source.y],
+					['L', source.x, source.y + firstLeg - curve1],
+					['Q', source.x, source.y + firstLeg],
+					['', source.x + dir.h * curve1, source.y + firstLeg],
+					['L', target.x - dir.h * curve2, target.y - lastLeg],
+					['Q', target.x, source.y + firstLeg],
+					['', target.x, target.y - lastLeg + curve2],
+					['L', target.x, target.y],
+				]
+				break;
+
+			case 2:
+
+				points = [
+					['M', source.x, source.y],
+					['Q', source.x, source.y + (firstLeg + lastLeg) / 2.8],
+					['', (source.x + target.x) / 2 + dir.h, source.y + (firstLeg + lastLeg) / 2],
+					['Q', target.x, source.y + (firstLeg + lastLeg) / 1.6],
+					['', target.x, target.y],
+				]
+
+				break;
+
+			case 3:
+
+				points = [
+					['M', source.x, source.y],
+					['L', source.x, source.y],
+
+					['', source.x, source.y],
+					['', source.x + dir.h * curve1, source.y + firstLeg],
+
+					['', target.x - dir.h * curve2, target.y - lastLeg],
+
+					['', target.x, target.y - lastLeg + curve2],
+
+					['', target.x, target.y],
+				]
+
+				break;
+
+			case 4:
+
+				points = [
+					['M', source.x, source.y],
+
+					['L', source.x, source.y + (firstLeg + lastLeg) / 2.8],
+
+					['Q', target.x - dir.h * curve2, target.y - lastLeg],
+
+					['', target.x, target.y - lastLeg + curve2],
+
+					['', target.x, target.y],
+					['', target.x, target.y],
+				]
+
+				break;
+
+			case 5:
+
+				points = [
+					['M', source.x, source.y],
+					['L', source.x, source.y],
+
+					['', source.x, source.y + (firstLeg + lastLeg) / 2.8],
+
+
+					['', target.x, target.y - lastLeg + curve2],
+
+					['', target.x, target.y],
+					['', target.x, target.y],
+				]
+
+				break;
+
+			case 6:
+
+				points = [
+					['M', source.x, source.y],
+					['', target.x, target.y],
+				]
+
+				break;
+
+			case 7:
+
+				points = [
+					['M', source.x, source.y],
+
+					['L', source.x, source.y + (firstLeg + lastLeg) / 2.8],
+
+					['', target.x - dir.h * curve2, target.y - lastLeg],
+
+					['', target.x, target.y - lastLeg + curve2],
+
+					['', target.x, target.y],
+				]
+
+				break;
+
+
+			default:
+				break;
+		}
+
 
 		const pathSequence = points.map((e) =>
 			`${e[0].toString()}${e[1].toString()} ${e[2].toString()} `
@@ -98,11 +205,11 @@ export default memo(function (
 
 			</defs>
 
-			<path className="path" style={{ strokeDashoffset: 0 }} d={path()} stroke="#aaa" strokeWidth={4} fill="none"
+			<path className="path" style={{ strokeDashoffset: 0 }} d={path()} stroke="#000" strokeWidth={10} fill="none"
 				markerStart="url(#end-cap)" markerEnd="url(#end-cap)" ref={pathRef} />
 			{/* {startPoint()}
-			{endPoint()} 
-			 {debugPoints()} */}
+			{endPoint()}
+			{debugPoints()} */}
 		</>
 	)
 })

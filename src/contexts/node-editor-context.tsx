@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useState } from "react";
-import { createEditableNode, createTreeNode } from "../types/factory";
+import { createEditableNode, createTreeNode } from "../types/factory-from-data";
 import { Editable, EditionType, I_TreeNode } from "../types/types";
 
 export const NodeEditorContext = createContext<Editable<I_TreeNode>>(createEditableNode(createTreeNode(undefined), EditionType.MODIFY_NODE))

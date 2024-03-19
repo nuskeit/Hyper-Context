@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import useActiveFullStoryContext from "../custom-hooks/use-active-full-story-context";
 import usePositionedNode from "../custom-hooks/usePositionedNode";
-import { createPosition } from "../types/factory";
+import { createPosition } from "../types/factory-from-data";
 import { isTimedNode, isTimelineNode } from "../types/type-safety";
 import { I_NodeGroup, I_Position, I_Positioned, NodeKey, NodeType, SystemMode, I_TimedNode, I_Timeline, I_TreeNode } from "../types/types";
 import ConnectionCpt from "./connection.cpt";
@@ -42,13 +42,13 @@ function NodeCpt({
 	// }, [node])
 
 	/* DEBUG */
-	useEffect(() => {
-		// if (node.children.length > 0 && isTimelineNode(node.children[0]))
-		const n = node
-		if (n.card.name === "Formal")
-			if (!showChildren)
-				onClick(n)
-	}, [node])
+	// useEffect(() => {
+	// 	// if (node.children.length > 0 && isTimelineNode(node.children[0]))
+	// 	const n = node
+	// 	if (n.card.name.value === "Education")
+	// 		if (!showChildren)
+	// 			onClick(n)
+	// }, [node])
 
 	useEffect(() => {
 		changeViewBoxDelegate(group.width)
@@ -102,16 +102,8 @@ function NodeCpt({
 	})
 
 	const handleLocalClick = (e: any) => {
-		e.stopPropagation()
+		onClick(node)
 
-		if (positionedChildren.length == 0) {
-			if (node.card.fullStory != undefined) {
-				setActiveFullStory(node)
-			}
-		} else {
-			setActiveFullStory(undefined)
-			onClick(node)
-		}
 	}
 
 	useEffect(() => {

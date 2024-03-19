@@ -3,7 +3,7 @@
 	//	border: solid .3rem yellow;
 	width: 100%;
 	height: 100%;
-	background-image: url('../assets/bg/doodles2.png');
+	background-image: url('../assets/bg/doodles3.png');
 	background-repeat: repeat;
 	background-size: 20%;
 	padding: 0;
@@ -22,11 +22,11 @@
 
 	.board-node {
 		cursor: pointer;
-		fill: #fff;
+		// font-weight: bold;
 		// transform-origin: 50%, 50%;
 
 		.board-node-base {
-			fill: #0000;
+			fill: none;
 			stroke-width: 5;
 			// stroke: #a0a4;
 			rx: 10;
@@ -150,7 +150,7 @@
 }
 
 .connections {
-	@extend .generic-shadow;
+	// @extend .generic-shadow;
 
 	.path {
 		stroke-dasharray: 500 100 80;
@@ -162,8 +162,10 @@
 
 		// animation: connection2 .5s linear;
 
-		stroke: #eee;
+		stroke: #fffa;
+		stroke-width:25;
 		stroke-dasharray: 0;
+		filter: drop-shadow(0 0 .1rem #fff) drop-shadow(.3rem .3rem .1rem #000);
 	}
 }
 

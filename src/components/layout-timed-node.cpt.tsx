@@ -46,11 +46,11 @@ export default function LayoutTimedNodeCpt(
 			onPointerDown={handleLocalClick}
 		>
 			<pattern id={positionedNode.element.key + "-color"} x="0" y="0" patternUnits="userSpaceOnUse" height={positionedNode.height} width="1">
-				<image href={positionedNode.element.card.thumbnail} height={positionedNode.height} />
+				<image href={positionedNode.element.card.thumbnail.value} height={positionedNode.height} />
 			</pattern>
 			<pattern id={positionedNode.element.key} x="0" y="0" patternUnits="userSpaceOnUse" height={positionedNode.height} width="270">
 				<g transform="translate(0,18) rotate(-5)">
-					<image x="50" href={positionedNode.element.card.thumbnail} height={positionedNode.height} width="270" />
+					<image x="50" href={positionedNode.element.card.thumbnail.value} height={positionedNode.height} width="270" />
 				</g>
 			</pattern>
 			
@@ -68,7 +68,7 @@ export default function LayoutTimedNodeCpt(
 				{/* <image href={positionedNode.thumbnail} x={2} y={2} height={positionedNode.height-4} /> */}
 
 				<text x="5" y={positionedNode.height / 1.3} className="timed-node-title">
-					{positionedNode.element.card.name}
+					{positionedNode.element.card.name.value}
 				</text>
 			</g>
 			{/* <g transform={`translate(${positionedNode.width - 28}, 0) scale(${positionedNode.width / 260},  ${positionedNode.height / 260})`}> */}

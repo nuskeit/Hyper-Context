@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
 import useBookState from "../custom-hooks/use-book-state";
-import { createBook } from '../types/factory';
+import { createBook } from '../types/factory-from-data';
 import { I_Options, Book, I_TreeNode } from "../types/types";
 
 

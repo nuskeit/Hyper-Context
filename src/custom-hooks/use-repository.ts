@@ -1,6 +1,6 @@
 import axios from "axios"
 import useBookStateContext from "../contexts/use-book-context"
-import { createBook, createCard } from "../types/factory"
+import { createBook, createCard } from "../types/factory-from-data"
 import { ActionType } from "./use-book-state"
 
 export default function () {
@@ -14,7 +14,7 @@ export default function () {
 		const response = await axios.get(`http://localhost:4000/board/${key}`)
 		const newData = await response.data
 
-		//updateDataVersion(newData)
+		//		updateDataVersion002_003(newData)
 
 		const newState = createBook(newData)
 		// newState.boardNode.viewBox = viewBox
@@ -29,7 +29,22 @@ export default function () {
 	return [getBook, saveBook] as const
 }
 
-function updateDataVersion(newData: any) {
+
+
+
+function updateDataVersion001_002(newData: any) {
+	if (newData["version"] != "0.001") throw Error(`Wrong version (ver ${newData["version"]})`)
+	Object.keys(newData.boardNode.nodes).forEach(key => {
+		Object.keys(newData.boardNode.nodes[key].card).forEach(field => {
+			newData.boardNode.nodes[key]["card"][field] = { value: newData.boardNode.nodes[key]["card"][field], style: {} }
+		});
+	});
+	console.log('DONE', JSON.stringify(newData));
+	return newData
+
+}
+
+function updateDataVersion000_001(newData: any) {
 	Object.keys(newData.boardNode.nodes).forEach(key => {
 		newData.boardNode.nodes[key]["card"] = createCard(newData.boardNode.nodes[key])
 		delete newData.boardNode.nodes[key].name

@@ -1,14 +1,17 @@
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom"
 import BoardCpt from "../components/board.cpt"
-import BookContextProvider from "../contexts/book-context"
+import MainEditor from "../components/editors/main-editor"
+import FullStoryProjectorCpt from "../components/full-story-projector.cpt"
 import BookMainToolbar from "../components/toolbars/book-main-toolbar"
+import BookContextProvider from "../contexts/book-context"
 import NodeEditorContext from "../contexts/node-editor-context"
 import SystemModeContext from "../contexts/system-mode-context"
-import MainEditor from "../components/editors/main-editor"
-import './app-main.scss'
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom"
 import ViewBoxContext from "../contexts/view-box-context"
+import './app-main.scss'
+import FullStoryCpt from "../components/full-story.cpt"
 
 export default function () {
+
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route >
@@ -37,6 +40,11 @@ export default function () {
 								</div>
 								<div className="main-editor" >
 									<MainEditor />
+								</div>
+								<div>
+									<FullStoryCpt />
+
+									{/* <FullStoryProjectorCpt /> */}
 								</div>
 							</div>
 

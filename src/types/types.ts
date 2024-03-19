@@ -15,6 +15,22 @@ export interface I_Positioned<T> extends I_Position {
 	element: T
 }
 
+/*export class Style {
+	styleOrDefault(styleJSName: string, defaultValue: string = ""): string {
+		if (Object.hasOwn(this, styleJSName))
+			// @ts-ignore
+			return this[styleJSName]
+		return defaultValue
+	}
+}
+*/
+
+export interface I_Style { }
+
+export interface I_Styled<T> {
+	value: T
+	style: I_Style
+}
 
 export type ViewBox = [number, number, number, number]
 
@@ -53,12 +69,20 @@ export interface I_TreeNode extends I_Identity {
 }
 
 export interface I_Card {
-	name: string
-	title: string
-	shortText: string
-	fullStory?: FullStory
-	thumbnail: string
+	name: I_Styled<string>
+	title: I_Styled<string>
+	background: I_Styled<I_Background>
+	shortText: I_Styled<string>
+	fullStory?: I_Styled<FullStory>
+	thumbnail: I_Styled<string>
 }
+
+export interface I_Background {
+	"image": string,
+	"video": string
+	"play": boolean
+}
+
 
 export interface I_BoardNode extends I_TreeNode {
 	viewBox: [number, number, number, number]
@@ -105,6 +129,8 @@ export interface I_ConnectionOptions {
 	offsetEnd: any
 	curveDistributionCoeficient: number
 	fixedStart: number
+	fixedEnd: number
+	connectionShape: number
 }
 
 export interface I_TimedNode extends I_TreeNode {
@@ -226,7 +252,8 @@ export const EditionType = {
 	MODIFY_NODE: "MODIFY_NODE",
 	MODIFY_NODE_STYLE: "MODIFY_NODE_STYLE",
 	MODIFY_FULL_STORY: "MODIFY_FULL_STORY",
-	DELETE_NODE: "DELETE_NODE"
+	DELETE_NODE: "DELETE_NODE",
+	MODIFY_STYLE: "MODIFY_STYLE",
 } as const
 export type EditionType = typeof EditionType[keyof typeof EditionType]
 

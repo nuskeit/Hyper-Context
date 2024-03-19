@@ -5,18 +5,49 @@
 		fill: #fff;
 
 		&>rect {
-			rx: 20;
-			ry: 20;
-			
+			rx: 0;
+			ry: 0;
+
 		}
+
+		&>rect {
+			stroke: black;
+			stroke-width: 0;
+			fill-opacity: .8;
+		}
+
+		text {
+			transform-origin: 1.3rem -.45rem;
+//			transform: rotate(45deg) translate(500, 500);
+//			animation: rotate 2s linear;
+			// animation: name duration timing-function delay iteration-count direction fill-mode;
+			// animation-iteration-count: infinite;
+		}
+
+@keyframes rotate {
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+
 		.new {
 			fill: #080;
 		}
+
 		.mod {
-			fill: #666;
+			fill: #dd6;
 		}
+
 		.del {
 			fill: #c20;
+		}
+
+		.edit-style {
+			fill: #02c;
 		}
 	}
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { createNodeGroup, createPositionedElement } from "../types/factory"
+import { createNodeGroup, createPositionedElement } from "../types/factory-from-data"
 import { I_TreeNode, I_NodeGroup, I_Positioned, NodeKey } from "../types/types"
 import useNodeChildren from "./use-node-children"
 import useGlobalOptions from "./useGlobalOptions"
