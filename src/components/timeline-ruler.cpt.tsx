@@ -7,8 +7,8 @@ export default function TimelineRuler({
 	children,
 	group
 }: {
-	positionedNode: I_Positioned<I_TreeNode>,
-	children: I_Positioned<I_TimedNode>[],
+	positionedNode: I_TreeNode,
+	children: I_TimedNode[],
 	group: I_NodeGroup
 }) {
 
@@ -20,11 +20,11 @@ export default function TimelineRuler({
 			y: number
 		}>()
 
-		children.forEach((e:I_Positioned<I_TimedNode>, i) => {
+		children.forEach((e: I_TimedNode, i) => {
 			const dStart = {
-				date: e.element.start,
-				x: e.x,
-				y: e.y + e.height
+				date: e.start,
+				x: e.nodeLayout.value.x,
+				y: e.nodeLayout.value.y + e.nodeLayout.value.height
 			}
 
 			if (!dates.has(dStart.date)) {
@@ -33,9 +33,9 @@ export default function TimelineRuler({
 			}
 
 			const dEnd = {
-				date: e.element.end,
-				x: e.x + e.width,
-				y: e.y + e.height
+				date: e.end,
+				x: e.nodeLayout.value.x + e.nodeLayout.value.width,
+				y: e.nodeLayout.value.y + e.nodeLayout.value.height
 			}
 
 			if (!dates.has(dEnd.date)) {
@@ -59,12 +59,12 @@ export default function TimelineRuler({
 							</linearGradient>
 						</defs>
 						{/* <line className="timeline-node-ruler-mark" x1={0} y1={e.y} x2={0} y2={positionedNode.height + 60 + 20 * (i % 2)} /> */}
-						<line className="timeline-node-ruler-mark" x1={0} y1={e.y} x2={0} y2={group.y + positionedNode.height + tagSeparation - 20 + 20 * (i % 2)} />
+						<line className="timeline-node-ruler-mark simple-shadow" x1={0} y1={e.y} x2={0} y2={group.groupLayout.value.y + positionedNode.nodeLayout.value.height + tagSeparation - 20 + 20 * (i % 2)} />
 
-						<g transform={`translate(0 ${group.y + positionedNode.height + tagSeparation + 50 * (i % 2)})`}>
+						<g transform={`translate(0 ${group.groupLayout.value.y + positionedNode.nodeLayout.value.height + tagSeparation + 50 * (i % 2)})`}>
 							{/* <g transform={`translate(0 ${e.y - 25})`}> */}
 							<g className="timeline-node-ruler-tag" transform="rotate(-15)">
-								<text y="8" className="timeline-node-ruler-tag-text">{dateTagEnd()}</text>
+								<text y="8" className="timeline-node-ruler-tag-text">{positionedNode.nodeLayout.value.height}-{dateTagEnd()}</text>
 							</g>
 						</g>
 						{/* <text className="timeline-node-ruler-tag" y={positionedNode.height + 80 + 20} transform="rotate(-90, 10, 310)">{dateTagEnd()}</text> */}

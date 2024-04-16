@@ -1,6 +1,6 @@
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import useGlobalOptions from "../custom-hooks/use-global-options";
-import { I_Position, I_TreeNode } from "../types/types";
+import { I_TreeNode, I_Position, I_Positioned } from "../types/types";
 
 export default function (
 	{
@@ -19,9 +19,10 @@ export default function (
 
 	const pathRef = useRef(null)
 
-	const sourceY = el1.y + el1.height + mergedOptions.offsetStart
+	// const sourceY = el1.y + el1.height + mergedOptions.offsetStart
+	const sourceY = el1.y + el1.height / 2 + mergedOptions.offsetStart
 
-	const targetY = el2.nodeLayout.value.y - mergedOptions.offsetEnd
+	const targetY = el2.nodeLayout.value.y - el1.height / 2 - mergedOptions.offsetEnd
 
 	const middleX = (el: I_Position) => {
 		return el.x + (el.width) / 2
@@ -35,6 +36,8 @@ export default function (
 		const totalDistance = {
 			horizontal: Math.abs(target.x - source.x),
 			vertical: Math.abs(target.y - source.y)
+			// horizontal: Math.max(target.x - source.x, source.x - target.x),
+			// vertical: Math.max(target.y - source.y, source.y - target.y)
 		}
 
 		let _curveDistributionCoeficient = rangeLimit(mergedOptions.curveDistributionCoeficient, 0, 1)
@@ -63,10 +66,11 @@ export default function (
 		let curve1 = Math.min(totalDistance.horizontal * _curveDistributionCoeficient, totalDistance.vertical * _curveDistributionCoeficient) / 2
 		let curve2 = Math.min(totalDistance.horizontal * (1 - _curveDistributionCoeficient), totalDistance.vertical * (1 - _curveDistributionCoeficient)) / 2
 
+		// console.log('ddd', Math.abs(source.x - target.x))
+
 
 		let connectionShape = mergedOptions.connectionShape || 1
-		// If the Y offset between the two conected nodes is too short, just use a better curve
-		if (connectionShape === 1 && Math.abs(source.x - target.x) < 200) connectionShape = 2
+		// if (Math.abs(source.x - target.x) < 200) connectionShape = 2
 
 		switch (connectionShape) {
 			case 1:

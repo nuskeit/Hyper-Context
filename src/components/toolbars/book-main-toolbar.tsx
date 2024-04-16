@@ -4,21 +4,21 @@ import "./book-main-toolbar.scss"
 import { useEffect } from "react";
 
 export default function () {
-const param = useParams()
+	const param = useParams()
 	const [getBook, saveBook] = useRepository()
 
 	function handleOpen() {
-		getBook("book Key")
+		//getBook("book Key")
 	}
 
 	function handleSave() {
-		saveBook()
+		// saveBook()
 	}
 
-useEffect(() => {
-	console.log('param',param["key"]);
-	getBook(param["key"]+"")
-}, [param])
+	useEffect(() => {
+		console.log('param key', param["key"]);
+		getBook(param["key"] + "")
+	}, [param])
 
 	return <>
 		<div className="book-main-toolbar">

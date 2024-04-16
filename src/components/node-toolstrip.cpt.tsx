@@ -5,36 +5,38 @@ import useNodeEditorContext from "../contexts/use-node-editor-context"
 import "./node-toolstrip.scss"
 //import useNodeChildren from "../custom-hooks/use-node-children";
 
-export default function (props: {
-	node: I_TreeNode
-}) {
+export default function (
+	{
+		node
+	}: {
+		node: I_TreeNode
+	}) {
 	const [editingNode, setEditingNode] = useNodeEditorContext()
 
-	//const [node, nodeChildren] = useNodeChildren(props.node.key)
-
+	//const [node, nodeChildren] = useNodeChildren(node.key)
 
 	function handleNew(e: React.MouseEvent) {
 		e.preventDefault()
 		e.stopPropagation()
-		setEditingNode(createEditableNode(props.node, EditionType.CREATE_NODE))
+		setEditingNode(createEditableNode<I_TreeNode>(node, EditionType.CREATE_NODE))
 	}
 
 	function handleUpdate(e: React.MouseEvent) {
 		e.preventDefault()
 		e.stopPropagation()
-		setEditingNode(createEditableNode(props.node, EditionType.MODIFY_NODE))
+		setEditingNode(createEditableNode<I_TreeNode>(node, EditionType.MODIFY_NODE))
 	}
 
 	function handleDelete(e: React.MouseEvent) {
 		e.preventDefault()
 		e.stopPropagation()
-		setEditingNode(createEditableNode(props.node, EditionType.DELETE_NODE))
+		setEditingNode(createEditableNode<I_TreeNode>(node, EditionType.DELETE_NODE))
 	}
 
 	function handleEditStyle(e: React.MouseEvent) {
 		e.preventDefault()
 		e.stopPropagation()
-		setEditingNode(createEditableNode(props.node, EditionType.MODIFY_NODE_STYLE))
+		setEditingNode(createEditableNode<I_TreeNode>(node, EditionType.MODIFY_NODE_STYLE))
 	}
 
 	const renderCount = useRef(0)
@@ -42,40 +44,57 @@ export default function (props: {
 
 	/* DEBUG */
 	useEffect(() => {
-		if (props.node.card.name.value == "Education" && editingNode === undefined)
-			setEditingNode(createEditableNode(props.node, EditionType.MODIFY_NODE_STYLE))
-
+		// if (node.card.name.value == "Formal" && editingNode === undefined) {
+		// 	setEditingNode(createEditableNode<I_TreeNode>(node, EditionType.MODIFY_NODE))
+		// 	console.log('FORMAL');
+		// }
 		renderCount.current++
-	}, [props.node])
+	}, [node])
+
+	const st = {
+		rx: "20", ry: "20",
+		stroke: "#0008",
+		strokeWidth: "4"
+	}
+
+	const buttonLayout={
+		w:140,
+		h:65,
+		spacing:20,
+		fontSize:60
+	}
 
 	return (
 		<>
-			<g className="node-toolstrip" transform={`translate(${props.node.width / 2 - 70}, ${props.node.height / 2 - 40})`}>
-				{/* <rect x={0} y={0} width={50} height={props.node.height} className="shadow-15"
+			<g className="node-toolstrip simple-shadow"
+				transform={`translate(
+				${node.nodeLayout.value.x + node.nodeLayout.value.width / 2 - buttonLayout.w-buttonLayout.spacing/2},
+			 	${node.nodeLayout.value.y + node.nodeLayout.value.height - buttonLayout.h-buttonLayout.spacing/2})`}>
+				{/* <rect x={0} y={0} width={50} height={node.height} className="shadow-15"
 					fill="#fd47" rx={6} ry={6}
 					strokeWidth="3" /> */}
 
 				<g onClick={handleNew} className="button"  >
-					<rect width={70} height="40" className="new" />
-					<text x="12" y="28" fontSize={24} >NEW</text>
+					<rect width={buttonLayout.w} height={buttonLayout.h} className="new" style={st} />
+					<text x={10} y={50} fontSize={buttonLayout.fontSize} >NEW</text>
 				</g>
 
-				<g transform={`translate(${70}, 0)`}
+				<g transform={`translate(${buttonLayout.w + buttonLayout.spacing}, 0)`}
 					onClick={handleUpdate} className="button" >
-					<rect width={70} height="40" className="mod" />
-					<text x="12" y="28" fontSize={24} >MOD</text>
+					<rect width={buttonLayout.w} height={buttonLayout.h} className="mod" style={st} />
+					<text x={10} y={50} fontSize={buttonLayout.fontSize} >MOD</text>
 				</g>
 
-				<g transform={`translate(${0}, 40)`}
+				<g transform={`translate(${0}, ${buttonLayout.h + buttonLayout.spacing})`}
 					onClick={handleDelete} className="button" >
-					<rect width={70} height="40" className="del" />
-					<text x="12" y="28" fontSize={24} >DEL</text>
+					<rect width={buttonLayout.w} height={buttonLayout.h} className="del" style={st} />
+					<text x={10} y={50} fontSize={buttonLayout.fontSize} >DEL</text>
 				</g>
 
-				<g transform={`translate(${70}, 40)`}
+				<g transform={`translate(${buttonLayout.w + buttonLayout.spacing}, ${buttonLayout.h + buttonLayout.spacing})`}
 					onClick={handleEditStyle} className="button" >
-					<rect width={70} height="40" className="edit-style" />
-					<text x="12" y="28" fontSize={24} >STY</text>
+					<rect width={buttonLayout.w} height={buttonLayout.h} className="edit-style" style={st} />
+					<text x={10} y={50} fontSize={buttonLayout.fontSize} >STY</text>
 				</g>
 
 			</g>

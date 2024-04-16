@@ -1,0 +1,1366 @@
+{
+	"version": 0.06,
+	"board": {
+		"key": "board",
+		"name": "Adrian Nuske",
+		"title": "Software Engineer",
+		"viewBox": [
+			-1500,
+			0,
+			3000,
+			5000
+		],
+		"childrenGroup": {
+			"parent": "board",
+			"children": [
+				"root"
+			],
+			"groupLayout": {
+				"value": {
+					"x": 0,
+					"y": 0,
+					"width": 0,
+					"height": 0
+				}
+			}
+		},
+		"nodes": [
+			{
+				"key": "root",
+				"name": "PLACEHOLDER FOR START NODE - NOT TO BE DISPLAYED",
+				"nodeType": "NODE",
+				"childrenGroup": {
+					"parent": "root",
+					"children": [
+						"start"
+					],
+					"groupLayout": {
+						"value": {
+							"x": 0,
+							"y": 0,
+							"width": 0,
+							"height": 0,
+							"padding": {
+								"left": 60,
+								"right": 60,
+								"top": 60,
+								"bottom": 60
+							}
+						}
+					}
+				}
+			},
+			{
+				"key": "start",
+				"name": "Nombre del nodo START",
+				"nodeType": "NODE",
+				"nodeLayout": {
+					"value": {
+						"x": 0,
+						"y": 0,
+						"width": 450,
+						"height": 350
+					},
+					"style": {}
+				},
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.5
+					}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 0,
+									"y": 0,
+									"width": 450,
+									"height": 350,
+									"margin": {
+										"left": 0,
+										"right": 0,
+										"top": 0,
+										"bottom": 0
+									}
+								},
+								"style": {
+									"fill": "#a5a",
+									"stroke": "#000",
+									"fillOpacity": ".6",
+									"strokeOpacity": ".6",
+									"strokeWidth": "2",
+									"rx": "10",
+									"ry": "10"
+								}
+							}
+						},
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "HYPER-CONTEXTUAL\n& ESSENTIALS",
+								"style": {
+									"fill": "#c00",
+									"paintOrder": "stroke",
+									"stroke": "#ccc",
+									"strokeWidth": "6",
+									"lineHeight": "70",
+									"fontSize": "70",
+									"textAnchor": "middle"
+								}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 0,
+									"y": -130,
+									"width": 0,
+									"height": 0,
+									"margin": {
+										"left": 0,
+										"right": 0,
+										"top": 0,
+										"bottom": 0
+									}
+								},
+								"style": {
+									"fill": "#fa7",
+									"stroke": "#a53",
+									"fillOpacity": ".6",
+									"strokeOpacity": ".8",
+									"strokeWidth": "2",
+									"rx": "10",
+									"ry": "10"
+								}
+							}
+						},
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "UNPRECEDENTED style,\nto present anything\nyou cannot do in\na better way,\nwithout this.",
+								"style": {
+									"fill": "#fff",
+									"lineHeight": "30",
+									"fontSize": "20",
+									"transform": "rotate(5deg)"
+								}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": -125,
+									"y": 75,
+									"width": 275,
+									"height": 225,
+									"margin": {
+										"left": 0,
+										"right": 0,
+										"top": 0,
+										"bottom": 0
+									}
+								},
+								"style": {
+									"fill": "#0aa",
+									"stroke": "#053",
+									"fillOpacity": ".3",
+									"strokeOpacity": ".5",
+									"strokeWidth": "2",
+									"rx": "350",
+									"ry": "250",
+									"transform": "rotate(-10deg)"
+								}
+							}
+						},
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "Lorem ipsum dolor\nsit amet consectetur\nadipisicing elit.\nEos architecto illum\nunde ad impedit.",
+								"style": {
+									"fill": "#fff",
+									"lineHeight": "35",
+									"fontSize": "25",
+									"transform": "rotate(5deg)"
+								}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 175,
+									"y": 75,
+									"width": 0,
+									"height": 0,
+									"margin": {
+										"left": 50,
+										"right": 50,
+										"top": 50,
+										"bottom": 50
+									}
+								},
+								"style": {
+									"fill": "#f00a",
+									"stroke": "#d00a",
+									"fillOpacity": ".6",
+									"strokeOpacity": ".6",
+									"strokeWidth": "2",
+									"rx": "10",
+									"ry": "10",
+									"transform": "rotate(10deg)"
+								}
+							}
+						}
+					],
+					"fullStory": {
+						"value": {
+							"key": 779860536597.5648,
+							"textBlocks": [
+								{
+									"key": 1306999086265.0718,
+									"images": [
+										{
+											"image": "http://localhost:5173/src/assets/nodes/cartoon010.png",
+											"width": 20,
+											"float": "auto",
+											"caption": "nice photo!"
+										}
+									],
+									"title": "First Section Title",
+									"text": "Some text"
+								}
+							]
+						},
+						"style": {}
+					}
+				},
+				"childrenGroup": {
+					"parent": "start",
+					"children": [
+						"001",
+						"002"
+					],
+					"groupLayout": {
+						"value": {
+							"x": 0,
+							"y": 0,
+							"width": 325,
+							"height": 50,
+							"padding": {
+								"left": 20,
+								"right": 20,
+								"top": 20,
+								"bottom": 20
+							}
+						}
+					}
+				}
+			},
+			{
+				"key": "001",
+				"name": "Nombre del Nodo 001",
+				"nodeType": "NODE",
+				"nodeLayout": {
+					"value": {
+						"x": 0,
+						"y": 250,
+						"width": 600,
+						"height": 550,
+						"margin": {
+							"left": 150,
+							"right": 150,
+							"top": 150,
+							"bottom": 150
+						}
+					},
+					"style": {}
+				},
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.3
+					}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 0,
+									"y": 0,
+									"width": 400,
+									"height": 300,
+									"margin": {
+										"left": 50,
+										"right": 100,
+										"top": 150,
+										"bottom": 200
+									}
+								},
+								"style": {
+									"fill": "#47f",
+									"stroke": "#46d",
+									"fillOpacity": ".6",
+									"strokeOpacity": ".6",
+									"strokeWidth": "2",
+									"rx": "60",
+									"ry": "60"
+								}
+							}
+						},
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "NODO 001",
+								"style": {
+									"fill": "#000",
+									"paintOrder": "stroke",
+									"stroke": "#ccc",
+									"strokeWidth": "0",
+									"lineHeight": "70",
+									"fontSize": "70",
+									"textAnchor": "middle"
+								}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 0,
+									"y": 0,
+									"width": 0,
+									"height": 0,
+									"margin": {
+										"left": 50,
+										"right": 100,
+										"top": 150,
+										"bottom": 200
+									}
+								},
+								"style": {
+									"fill": "#ddd",
+									"stroke": "#000",
+									"fillOpacity": "1",
+									"strokeOpacity": "1",
+									"strokeWidth": "0",
+									"rx": "10",
+									"ry": "10"
+								}
+							}
+						}
+					],
+					"fullStory": {
+						"value": {
+							"key": 779860536597.5648,
+							"textBlocks": [
+								{
+									"key": 1306999086265.0718,
+									"images": [
+										{
+											"image": "http://localhost:5173/src/assets/nodes/cartoon010.png",
+											"width": 20,
+											"float": "auto",
+											"caption": "nice photo!"
+										}
+									],
+									"title": "First Section Title",
+									"text": "Some text"
+								}
+							]
+						},
+						"style": {}
+					}
+				},
+				"childrenGroup": {
+					"parent": "001",
+					"children": [],
+					"groupLayout": {
+						"value": {
+							"x": 0,
+							"y": 0,
+							"width": 1400,
+							"height": 900
+						}
+					}
+				}
+			},
+			{
+				"key": "002",
+				"name": "Nombre del Nodo 002",
+				"nodeType": "NODE",
+				"nodeLayout": {
+					"value": {
+						"x": 0,
+						"y": 0,
+						"width": 800,
+						"height": 600
+					},
+					"style": {}
+				},
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.5
+					}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 0,
+									"y": 0,
+									"width": 500,
+									"height": 400,
+									"margin": {
+										"left": 50,
+										"right": 100,
+										"top": 150,
+										"bottom": 200
+									}
+								},
+								"style": {
+									"fill": "#47f",
+									"stroke": "#46d",
+									"fillOpacity": ".6",
+									"strokeOpacity": ".6",
+									"strokeWidth": "2",
+									"rx": "60",
+									"ry": "60"
+								}
+							}
+						},
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "TERCER NODO",
+								"style": {
+									"fill": "#000",
+									"paintOrder": "stroke",
+									"stroke": "#ccc",
+									"strokeWidth": "0",
+									"lineHeight": "70",
+									"fontSize": "70",
+									"textAnchor": "middle"
+								}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 0,
+									"y": 0,
+									"width": 0,
+									"height": 0,
+									"margin": {
+										"left": 50,
+										"right": 100,
+										"top": 150,
+										"bottom": 200
+									}
+								},
+								"style": {
+									"fill": "#ddd",
+									"stroke": "#000",
+									"fillOpacity": "1",
+									"strokeOpacity": "1",
+									"strokeWidth": "0",
+									"rx": "10",
+									"ry": "10"
+								}
+							}
+						}
+					],
+					"fullStory": {
+						"value": {
+							"key": 779860536597.5648,
+							"textBlocks": [
+								{
+									"key": 1306999086265.0718,
+									"images": [
+										{
+											"image": "http://localhost:5173/src/assets/nodes/cartoon010.png",
+											"width": 20,
+											"float": "auto",
+											"caption": "nice photo!"
+										}
+									],
+									"title": "First Section Title",
+									"text": "Some text"
+								}
+							]
+						},
+						"style": {}
+					}
+				},
+				"childrenGroup": {
+					"parent": "002",
+					"children": [
+						"003"
+					],
+					"groupLayout": {
+						"value": {
+							"x": 0,
+							"y": 0,
+							"width": 1500,
+							"height": 550
+						}
+					}
+				}
+			},
+			{
+				"key": "003",
+				"name": "Nombre del Nodo 003",
+				"nodeType": "NODE",
+				"nodeLayout": {
+					"value": {
+						"x": -400,
+						"y": 0,
+						"width": 800,
+						"height": 600
+					},
+					"style": {}
+				},
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.5
+					}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 0,
+									"y": 0,
+									"width": 500,
+									"height": 400,
+									"margin": {
+										"left": 50,
+										"right": 100,
+										"top": 150,
+										"bottom": 200
+									}
+								},
+								"style": {
+									"fill": "#47f",
+									"stroke": "#46d",
+									"fillOpacity": ".6",
+									"strokeOpacity": ".6",
+									"strokeWidth": "2",
+									"rx": "60",
+									"ry": "60"
+								}
+							}
+						},
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "NODO 003",
+								"style": {
+									"fill": "#000",
+									"paintOrder": "stroke",
+									"stroke": "#ccc",
+									"strokeWidth": "0",
+									"lineHeight": "70",
+									"fontSize": "70",
+									"textAnchor": "middle"
+								}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 0,
+									"y": 0,
+									"width": 0,
+									"height": 0,
+									"margin": {
+										"left": 20,
+										"right": 20,
+										"top": 20,
+										"bottom": 20
+									}
+								},
+								"style": {
+									"fill": "#a5d",
+									"stroke": "#a0a",
+									"fillOpacity": "1",
+									"strokeOpacity": "1",
+									"strokeWidth": "0",
+									"rx": "10",
+									"ry": "10"
+								}
+							}
+						}
+					]
+				},
+				"childrenGroup": {
+					"parent": "003",
+					"children": [
+						"T100",
+						"T200"
+					],
+					"groupLayout": {
+						"value": {
+							"x": 0,
+							"y": 0,
+							"width": 300,
+							"height": 300
+						}
+					}
+				}
+			},
+			{
+				"key": "T100",
+				"name": "Nombre de la primera timeline",
+				"nodeType": "TIMELINE",
+				"nodeLayout": {
+					"value": {
+						"x": 0,
+						"y": 0,
+						"width": 900,
+						"height": 400
+					},
+					"style": {}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "Timeline ITEM",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"value": {},
+								"style": {}
+							}
+						}
+					],
+					"style": {}
+				},
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.5
+					}
+				},
+				"childrenGroup": {
+					"parent": "T100",
+					"children": [
+						"T101",
+						"T102"
+					],
+					"groupLayout": {
+						"value": {
+							"x": 0,
+							"y": 0,
+							"width": 300,
+							"height": 300
+						}
+					}
+				}
+			},
+			{
+				"key": "T101",
+				"height": 50,
+				"name": "Nombre del Timed 1",
+				"nodeType": "TIMED",
+				"start": 426789200,
+				"end": 959841200,
+				"nodeLayout": {
+					"value": {
+						"x": 0,
+						"y": 0,
+						"width": 0,
+						"height": 150
+					},
+					"style": {
+						"fill": "blue"
+					}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "Timed ITEM 1",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"x": 0,
+								"y": 0,
+								"value": {},
+								"style": {}
+							}
+						}
+					],
+					"style": {}
+				}
+			},
+			{
+				"key": "T102",
+				"name": "Nombre del Timed 2",
+				"nodeType": "TIMED",
+				"start": 316789200,
+				"end": 859841200,
+				"nodeLayout": {
+					"value": {
+						"x": 0,
+						"y": 0,
+						"width": 0,
+						"height": 50
+					},
+					"style": {}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "Timed ITEM 2",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"value": {},
+								"style": {}
+							}
+						}
+					],
+					"style": {}
+				},
+				"childrenGroup": {
+					"parent": "T102",
+					"children": [
+						"N021"
+					],
+					"groupLayout": {
+						"value": {
+							"x": 0,
+							"y": 0,
+							"width": 300,
+							"height": 300
+						}
+					}
+				}
+			},
+			{
+				"key": "N021",
+				"name": "Nombre del Nodo después del TIMED",
+				"nodeType": "NODE",
+				"nodeLayout": {
+					"value": {
+						"x": -400,
+						"y": 0,
+						"width": 800,
+						"height": 600
+					},
+					"style": {}
+				},
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.5
+					}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 0,
+									"y": 0,
+									"width": 500,
+									"height": 400,
+									"margin": {
+										"left": 50,
+										"right": 100,
+										"top": 150,
+										"bottom": 200
+									}
+								},
+								"style": {
+									"fill": "#47f",
+									"stroke": "#46d",
+									"fillOpacity": ".6",
+									"strokeOpacity": ".6",
+									"strokeWidth": "2",
+									"rx": "60",
+									"ry": "60"
+								}
+							}
+						},
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "NODE AFTER TIMED",
+								"style": {
+									"fill": "#000",
+									"paintOrder": "stroke",
+									"stroke": "#ccc",
+									"strokeWidth": "0",
+									"lineHeight": "70",
+									"fontSize": "70",
+									"textAnchor": "middle"
+								}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 0,
+									"y": 0,
+									"width": 0,
+									"height": 0,
+									"margin": {
+										"left": 20,
+										"right": 20,
+										"top": 20,
+										"bottom": 20
+									}
+								},
+								"style": {
+									"fill": "#a5d",
+									"stroke": "#a0a",
+									"fillOpacity": "1",
+									"strokeOpacity": "1",
+									"strokeWidth": "0",
+									"rx": "10",
+									"ry": "10"
+								}
+							}
+						}
+					]
+				},
+				"childrenGroup": {
+					"parent": "N021",
+					"children": [],
+					"groupLayout": {
+						"value": {
+							"x": 0,
+							"y": 0,
+							"width": 300,
+							"height": 300
+						}
+					}
+				}
+			},
+			{
+				"key": "T200",
+				"name": "Nombre de la segunda timeline",
+				"nodeType": "TIMELINE",
+				"nodeLayout": {
+					"value": {
+						"x": 0,
+						"y": 160,
+						"width": 800,
+						"height": 400
+					},
+					"style": {}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "Timeline ITEM",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"value": {},
+								"style": {}
+							}
+						}
+					],
+					"style": {}
+				},
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.5
+					}
+				},
+				"childrenGroup": {
+					"parent": "T200",
+					"children": [
+						"T201",
+						"T202"
+					],
+					"groupLayout": {
+						"value": {
+							"x": 0,
+							"y": 0,
+							"width": 300,
+							"height": 300
+						}
+					}
+				}
+			},
+			{
+				"key": "T201",
+				"height": 50,
+				"name": "Nombre del Timed 3",
+				"nodeType": "TIMED",
+				"start": 426789200,
+				"end": 959841200,
+				"nodeLayout": {
+					"value": {
+						"x": 0,
+						"y": 0,
+						"width": 0,
+						"height": 50
+					},
+					"style": {
+						"fill": "blue"
+					}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "Timed ITEM 1",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"x": 0,
+								"y": 0,
+								"value": {},
+								"style": {}
+							}
+						}
+					],
+					"style": {}
+				}
+			},
+			{
+				"key": "T202",
+				"name": "Nombre del Timed 4",
+				"nodeType": "TIMED",
+				"start": 316789200,
+				"end": 859841200,
+				"nodeLayout": {
+					"value": {
+						"x": 0,
+						"y": 0,
+						"width": 0,
+						"height": 50
+					},
+					"style": {}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "Timed ITEM 2",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"value": {},
+								"style": {}
+							}
+						}
+					],
+					"style": {}
+				},
+				"childrenGroup": {
+					"parent": "T202",
+					"children": [
+						"N031",
+						"T300"
+					],
+					"groupLayout": {
+						"value": {
+							"x": 0,
+							"y": 0,
+							"width": 300,
+							"height": 300
+						}
+					}
+				}
+			},
+			{
+				"key": "N031",
+				"name": "Nombre del Nodo después del TIMED 2",
+				"nodeType": "NODE",
+				"nodeLayout": {
+					"value": {
+						"x": -400,
+						"y": 0,
+						"width": 800,
+						"height": 600
+					},
+					"style": {}
+				},
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.5
+					}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 0,
+									"y": 0,
+									"width": 500,
+									"height": 400,
+									"margin": {
+										"left": 50,
+										"right": 100,
+										"top": 150,
+										"bottom": 200
+									}
+								},
+								"style": {
+									"fill": "#47f",
+									"stroke": "#46d",
+									"fillOpacity": ".6",
+									"strokeOpacity": ".6",
+									"strokeWidth": "2",
+									"rx": "60",
+									"ry": "60"
+								}
+							}
+						},
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "NODE AFTER TIMED 2",
+								"style": {
+									"fill": "#000",
+									"paintOrder": "stroke",
+									"stroke": "#ccc",
+									"strokeWidth": "0",
+									"lineHeight": "70",
+									"fontSize": "70",
+									"textAnchor": "middle"
+								}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 0,
+									"y": 0,
+									"width": 0,
+									"height": 0,
+									"margin": {
+										"left": 20,
+										"right": 20,
+										"top": 20,
+										"bottom": 20
+									}
+								},
+								"style": {
+									"fill": "#a5d",
+									"stroke": "#a0a",
+									"fillOpacity": "1",
+									"strokeOpacity": "1",
+									"strokeWidth": "0",
+									"rx": "10",
+									"ry": "10"
+								}
+							}
+						}
+					]
+				},
+				"childrenGroup": {
+					"parent": "N031",
+					"children": [],
+					"groupLayout": {
+						"value": {
+							"x": 0,
+							"y": 0,
+							"width": 300,
+							"height": 300
+						}
+					}
+				}
+			},
+			{
+				"key": "T300",
+				"name": "Nombre de la tercera timeline",
+				"nodeType": "TIMELINE",
+				"nodeLayout": {
+					"value": {
+						"x": 0,
+						"y": 160,
+						"width": 800,
+						"height": 400
+					},
+					"style": {}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "Timeline ITEM",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"value": {},
+								"style": {}
+							}
+						}
+					],
+					"style": {}
+				},
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.5
+					}
+				},
+				"childrenGroup": {
+					"parent": "T300",
+					"children": [
+						"T301",
+						"T302"
+					],
+					"groupLayout": {
+						"value": {
+							"x": 0,
+							"y": 0,
+							"width": 300,
+							"height": 300
+						}
+					}
+				}
+			},
+			{
+				"key": "T301",
+				"height": 50,
+				"name": "Nombre del Timed 3",
+				"nodeType": "TIMED",
+				"start": 426789200,
+				"end": 959841200,
+				"nodeLayout": {
+					"value": {
+						"x": 0,
+						"y": 0,
+						"width": 0,
+						"height": 50
+					},
+					"style": {
+						"fill": "blue"
+					}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "Timed ITEM 1",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"x": 0,
+								"y": 0,
+								"value": {},
+								"style": {}
+							}
+						}
+					],
+					"style": {}
+				}
+			},
+			{
+				"key": "T302",
+				"name": "Nombre del Timed 4",
+				"nodeType": "TIMED",
+				"start": 316789200,
+				"end": 859841200,
+				"nodeLayout": {
+					"value": {
+						"x": 0,
+						"y": 0,
+						"width": 0,
+						"height": 50
+					},
+					"style": {}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "Timed ITEM 2",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"value": {},
+								"style": {}
+							}
+						}
+					],
+					"style": {}
+				},
+				"childrenGroup": {
+					"parent": "T302",
+					"children": [
+						"N041"
+					],
+					"groupLayout": {
+						"value": {
+							"x": 0,
+							"y": 0,
+							"width": 300,
+							"height": 300
+						}
+					}
+				}
+			},
+			{
+				"key": "N041",
+				"name": "Nombre del Nodo después del TIMED 2",
+				"nodeType": "NODE",
+				"nodeLayout": {
+					"value": {
+						"x": -400,
+						"y": 0,
+						"width": 800,
+						"height": 600
+					},
+					"style": {}
+				},
+				"options": {
+					"connection": {
+						"curveDistributionCoeficient": 0.5
+					}
+				},
+				"card": {
+					"cardItems": [
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "",
+								"style": {}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 0,
+									"y": 0,
+									"width": 500,
+									"height": 400,
+									"margin": {
+										"left": 50,
+										"right": 100,
+										"top": 150,
+										"bottom": 200
+									}
+								},
+								"style": {
+									"fill": "#47f",
+									"stroke": "#46d",
+									"fillOpacity": ".6",
+									"strokeOpacity": ".6",
+									"strokeWidth": "2",
+									"rx": "60",
+									"ry": "60"
+								}
+							}
+						},
+						{
+							"cardItemType": "TEXT",
+							"cardItemContent": {
+								"value": "NODE AFTER TIMED 2",
+								"style": {
+									"fill": "#000",
+									"paintOrder": "stroke",
+									"stroke": "#ccc",
+									"strokeWidth": "0",
+									"lineHeight": "70",
+									"fontSize": "70",
+									"textAnchor": "middle"
+								}
+							},
+							"cardItemLayout": {
+								"value": {
+									"x": 0,
+									"y": 0,
+									"width": 0,
+									"height": 0,
+									"margin": {
+										"left": 20,
+										"right": 20,
+										"top": 20,
+										"bottom": 20
+									}
+								},
+								"style": {
+									"fill": "#a5d",
+									"stroke": "#a0a",
+									"fillOpacity": "1",
+									"strokeOpacity": "1",
+									"strokeWidth": "0",
+									"rx": "10",
+									"ry": "10"
+								}
+							}
+						}
+					]
+				},
+				"childrenGroup": {
+					"parent": "N041",
+					"children": [],
+					"groupLayout": {
+						"value": {
+							"x": 0,
+							"y": 0,
+							"width": 300,
+							"height": 300
+						}
+					}
+				}
+			}
+		]
+	},
+	"options": {
+		"group": {
+			"spacingY": 400,
+			"defaultPadding": {
+				"left": 50,
+				"right": 50,
+				"top": 50,
+				"bottom": 50
+			}
+		},
+		"node": {
+			"spacingX": 100,
+			"margin": {
+				"left": 50,
+				"right": 50,
+				"top": 50,
+				"bottom": 50
+			}
+		},
+		"timeline": {
+			"margin": {
+				"left": 30,
+				"right": 30,
+				"top": 30,
+				"bottom": 30
+			}
+		},
+		"connection": {
+			"connectionShape": 1,
+			"offsetStart": 30,
+			"offsetEnd": 30,
+			"curveDistributionCoeficient": 0.5,
+			"fixedStart": 0
+		}
+	}
+}

@@ -24,7 +24,7 @@ export default function () {
 			<div>Node Editor</div>
 			<div>
 				{/* <input type="text" value={name} onChange={e => setName(e.target.value)} /> */}
-				<input type="text" value={editingNode?.target.card.name.value || ""} onChange={handleChange} />
+				<input type="text" value={editingNode?.target.name || ""} onChange={handleChange} />
 				<button onClick={handleClick} />
 			</div>
 

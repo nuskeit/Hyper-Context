@@ -77,7 +77,7 @@ export default function FullStoryCpt() {
 		<div className="full-story" onClick={handleExit}>
 			<div className="full-story-border">
 				<div className="full-story-body" onClick={e => e.stopPropagation()}>
-					<div className="full-story-title">{activeFullStory.fullStoryNode?.card.name.value}</div>
+					<div className="full-story-title">{activeFullStory.fullStoryNode?.name}</div>
 					<div className="full-story-text">
 						{/* <img src={node.images[0]} /> */}
 						{/* {content} */}

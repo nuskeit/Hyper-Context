@@ -26,9 +26,9 @@ export default function () {
 	// 	// setEditingNode({ ...editingNode, name: e.target.value })
 	// }
 
-	let autoStyle = "main-editor-wrapper main-editor-wrapper--close"
+	let autoStyle = "main-editor-wrapper--close"
 	if (systemMode === SystemMode.EDIT && editingNode !== undefined)
-		autoStyle = "main-editor-wrapper main-editor-wrapper--open"
+		autoStyle = "main-editor-wrapper--open"
 
 	let editor = <></>
 	if (systemMode === SystemMode.EDIT && editingNode !== undefined) {
@@ -51,7 +51,7 @@ export default function () {
 	}
 
 	return (
-		<div className={autoStyle}>
+		<div className={`main-editor-wrapper ${autoStyle}`}>
 			{editor}
 		</div>
 	)

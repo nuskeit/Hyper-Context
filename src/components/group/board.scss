@@ -1,0 +1,314 @@
+@import "../../index.scss";
+
+
+div.board {
+	background: repeating-linear-gradient(0deg,
+			#54f4 0%,
+			#54f4 10%,
+			#f454 12%,
+			#f454 22%,
+			#54f4 24%
+			), repeating-linear-gradient(90deg,
+			#54f4 0%,
+			#54f4 10%,
+			#f454 12%,
+			#f454 22%,
+			#54f4 24%
+			);
+
+	svg.board {
+		//	border: solid .3rem yellow;
+		width: 100%;
+		height: 100%;
+		// background-image: url('../../assets/bg/doodles3.png');
+		background-repeat: repeat;
+		background-size: 20%;
+		padding: 0;
+		margin: 0;
+		display: block;
+
+		.level-group {
+			pointer-events: none;
+		}
+
+		.board-node {
+			cursor: pointer;
+			// font-weight: bold;
+			// transform-origin: 50%, 50%;
+
+			.board-node-base {
+				fill: none;
+				stroke-width: 5;
+				// stroke: #a0a4;
+				rx: 10;
+				ry: 10;
+			}
+
+			.board-node-smalltext-base {
+				fill: #5bf5;
+			}
+
+			.elem-title {
+				fill: #000;
+				stroke: #000;
+				stroke-width: 0;
+				font-size: 2rem;
+				font-weight: bold;
+				text-anchor: center;
+			}
+
+			.elem-short-text {
+				fill: #000;
+				stroke-width: 0;
+				font-size: 2rem;
+				text-anchor: start;
+			}
+
+
+		}
+
+		.timeline-node {
+
+			.timeline-ruler {
+				font-size: 2.5rem;
+				text-anchor: middle;
+
+				.timeline-node-ruler-mark {
+					fill: none;
+					stroke-width: .2rem;
+					stroke-dasharray: 20;
+					stroke: #fffa;
+				}
+
+				.timeline-node-ruler-tag {
+
+					.timeline-node-ruler-tag-text {
+						font-size: 1.5rem;
+						fill: #fff;
+						filter:
+							drop-shadow(0 0 .05rem #000) drop-shadow(0 0 .05rem #000) drop-shadow(.3rem .3rem .1rem #0009);
+
+					}
+				}
+			}
+
+			.timeline-node-base {
+				fill: #0003;
+				stroke: none;
+			}
+
+		}
+
+		.timed-node {
+			cursor: pointer;
+
+			.timed-node-title {
+				font-size: 2rem;
+				stroke: #fff;
+				stroke-width: .1rem;
+				fill: #fff;
+				//font-weight: bold;
+			}
+
+			.timed-node-base {
+				// fill: #0003;
+				stroke-width: 3;
+				stroke: #0005;
+				rx: .3rem;
+				ry: .3rem;
+			}
+
+			.hover {
+				transition: opacity .2s;
+				opacity: 0;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.timed-action-strip {
+			transform-origin: 2rem 2rem;
+			transform: scale(1, 1);
+
+			&:hover {
+				transform: scale(2, 2);
+
+			}
+		}
+
+
+		.node-action-strip {
+			transform-origin: 2rem 2rem;
+			transform: scale(1, 1);
+
+			&:hover {
+				transform: scale(2, 2);
+
+			}
+		}
+
+
+	}
+
+
+	.icon-plus-sign {
+		opacity: .6;
+	}
+
+	.connections {
+
+		.path {
+			stroke-dasharray: 500 100 80;
+			stroke-dashoffset: 0%;
+			fill: none;
+			// transition-property: stroke-dashoffset;
+			// transition-duration: 1s;
+			// transition: stroke-dashoffset 7.5s linear;
+
+			// animation: connection2 .5s linear;
+
+			stroke: #fffa;
+			stroke-width: 7;
+			stroke-dasharray: 0;
+			filter: drop-shadow(0 0 .1rem #fff) drop-shadow(.3rem .3rem .1rem #000);
+		}
+	}
+
+	@keyframes connection2 {
+		0% {
+			stroke-dashoffset: 100%;
+			stroke: #000;
+			stroke-dasharray: 1500;
+		}
+
+		30% {
+			stroke: #af0;
+			stroke-width: 5;
+			filter: drop-shadow(0 0 1rem #0f0);
+		}
+
+
+		80% {
+			stroke-dashoffset: 0%;
+			stroke-dasharray: 10 150 50;
+			filter: drop-shadow(0 0 1rem #0f0);
+			stroke-width: 10;
+		}
+
+		100% {
+			stroke: #fff;
+			stroke-dasharray: 0 0 0;
+		}
+	}
+
+	@keyframes connection {
+		0% {
+			stroke-dashoffset: 100%;
+			stroke: #aaa;
+			stroke-dasharray: 100;
+		}
+
+		30% {
+			stroke: #fff;
+			stroke-width: 10;
+			filter: drop-shadow(0 0 1rem #0f0);
+		}
+
+		31% {
+			stroke-width: 10;
+			filter: drop-shadow(0 0 5rem #0f0);
+		}
+
+		60% {
+			stroke: #fff;
+			stroke-width: 20;
+			filter: drop-shadow(0 0 1rem #0f0);
+		}
+
+		80% {
+			stroke-dashoffset: 0%;
+			stroke-dasharray: 10 150 50;
+			filter: drop-shadow(0 0 1rem #0f0);
+			stroke-width: 10;
+		}
+
+		100% {
+			stroke: #aaa;
+			stroke-dasharray: 0 0 0;
+		}
+	}
+
+	@keyframes connection-flash {
+		0% {
+			stroke-dashoffset: 100%;
+			stroke: #aaa;
+			stroke-dasharray: 1000;
+		}
+
+		30% {
+			stroke: #fff;
+			filter: drop-shadow(0 0 1rem #0f0);
+		}
+
+		31% {
+			filter: drop-shadow(0 0 5rem #0f0);
+		}
+
+		60% {
+			stroke: #fff;
+			filter: drop-shadow(0 0 5rem #0f0);
+		}
+
+		80% {
+			stroke-dashoffset: 0%;
+			filter: drop-shadow(0 0 1rem #0f0);
+		}
+
+
+		100% {
+			stroke: #aaa;
+		}
+	}
+
+	@keyframes connection-dots {
+		0% {
+			stroke-dashoffset: 100%;
+			stroke: #aaa;
+			stroke-dasharray: 1;
+		}
+
+		30% {
+			stroke: #fff;
+			stroke-width: 10;
+			filter: drop-shadow(0 0 1rem #0f0);
+		}
+
+		31% {
+			stroke-width: 10;
+			filter: drop-shadow(0 0 5rem #0f0);
+		}
+
+		60% {
+			stroke: #fff;
+			stroke-width: 20;
+			filter: drop-shadow(0 0 5rem #0f0);
+		}
+
+		80% {
+			stroke-dashoffset: 0%;
+			filter: drop-shadow(0 0 1rem #0f0);
+			stroke-width: 10;
+		}
+
+		99% {
+			stroke-dasharray: 1000;
+		}
+
+		100% {
+			stroke: #aaa;
+			stroke-dasharray: 0 0 0;
+		}
+	}
+}

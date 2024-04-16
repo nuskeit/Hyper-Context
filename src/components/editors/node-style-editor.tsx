@@ -32,7 +32,7 @@ export default function () {
 	function handleChange_(e: React.ChangeEvent<HTMLInputElement>) {
 		console.log("HANDLE CHANGE");
 
-		setEditingNode({ ...editingNode, target: { ...editingNode.target, card: { ...editingNode.target.card, name: e.target } } })
+		// setEditingNode({ ...editingNode, target: { ...editingNode.target, card: { ...editingNode.target.card, name: e.target } } })
 
 	}
 
@@ -50,7 +50,7 @@ export default function () {
 
 	return (
 		<>
-			<div className="title">"{editingNode.target.card.name.value}" Style Editor</div>
+			<div className="title">"{editingNode.target.name}" Style Editor</div>
 			<div className="form-grid">
 				<div>
 					<h1>Probably should delete this entire control🤔</h1>

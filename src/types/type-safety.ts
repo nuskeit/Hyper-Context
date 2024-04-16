@@ -1,6 +1,6 @@
 import { NodeType } from "./types"
 
-export function isBoardNode(t: any): boolean {
+export function isboard(t: any): boolean {
 	return t["nodeType"] == NodeType.BOARD && isNode(t)
 }
 
@@ -13,6 +13,7 @@ export function isTimedNode(t: any): boolean {
 }
 
 export function isNode(t: any): boolean {
-	return "key" in t && "nodeType" in t && "x" in t && "y" in t && "width" in t && "height" in t
+	const tn=t.nodeLayout.value
+	return "key" in t && "nodeType" in t && "x" in tn && "y" in tn && "width" in tn && "height" in tn
 }
 

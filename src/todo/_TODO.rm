@@ -8,3 +8,5 @@ Check out these mini-charts:
 	https://mui-plus.vercel.app/components/Sparkline
 
 
+
+Change book.board.nodes[nodeKey] for useGetNode(nodeKey) or something like that

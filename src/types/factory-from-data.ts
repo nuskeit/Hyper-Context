@@ -1,6 +1,9 @@
+import { cssJsonToJs } from "../util/util"
 import { getImgUrl } from "../custom-hooks/use-images"
 import { right } from "../util/text"
-import { Book, Editable, EditionType, FullStory, I_Background, I_BoardNode, I_Card, I_ConnectionOptions, I_Hashtable, I_Margin, I_NodeGroup, I_Nodeoptions, I_Position, I_Positioned, I_Styled, I_Textblock, I_TextblockImage, I_TimedNode, I_Timeline, I_TreeNode, NodeType, ViewBox } from "./types"
+import { createStyled } from "./factory"
+import { Book, CardItemType, Editable, EditionType, FullStory, I_Background, I_Board, I_Card, I_CardItem, I_ConnectionOptions, I_Hashtable, I_Layout, I_Margin, I_NodeGroup, I_Nodeoptions, I_Position, I_Positioned, I_Styled, I_Textblock, I_TextblockImage, I_TimedNode, I_Timeline, I_TreeNode, NodeType, ViewBox } from "./types"
+import { I_TreeNode_dto } from "./data-types"
 
 
 function generateRandomKey() {
@@ -12,9 +15,9 @@ function getRandomImage() {
 	return getImgUrl(`nodes/cartoon${right("000" + (Math.random() * 12).toFixed(0).toString(), 3)}.png`)
 }
 
-export function createNode(n: I_TreeNode) {
+export function createNode(n: I_TreeNode_dto) {
 	// if (n.nodeType === NodeType.BOARD)
-	// 	return createBoardNode(n)
+	// 	return createboard(n)
 	if (n.nodeType === NodeType.TIMELINE)
 		return createTimelineNode(n)
 	if (n.nodeType === NodeType.TIMED)
@@ -26,10 +29,9 @@ export function createNode(n: I_TreeNode) {
 	}
 }
 
-
 export function createWindowServices(data?: { viewBox: ViewBox, zoomLevel?: number, scrollPos?: number }) {
 	return {
-		viewBox: withDefaultValue(data, "viewBox", [-1500, 0, 3000, 5000]),
+		viewBox: withDefaultValue(data, "viewBox", [-2000, 0, 4000, 5000]),
 		zoomLevel: withDefaultValue(data, "zoomLevel", 1),
 		scrollPos: withDefaultValue(data, "scrollPos", 0),
 	}
@@ -45,32 +47,78 @@ export function createTimedNode(data: any): I_TimedNode {
 	} as I_TimedNode
 }
 
-export const createTreeNode = (data: any): I_TreeNode => {
-	const newChild: I_TreeNode = {
-		key: withDefaultValue(data, "key", generateRandomKey()),
-		x: withDefaultValue(data, "x", 0),
-		y: withDefaultValue(data, "y", 0),
-		width: withDefaultValue(data, "width", 200),
-		height: withDefaultValue(data, "height", 200),
-		nodeType: withDefaultValue(data, "nodeType", NodeType.NODE),
-		options: withDefaultValue(data, "options", undefined),
-		group: withDefaultValue(data, "group", undefined, createNodeGroup),
-		card: withDefaultValue(data, "card", {}, createCard)
+export const createTreeNode = (data?: any): I_TreeNode => {
+	let safeData: any = {}
+	if (data !== undefined) safeData = data
+
+	if (safeData["nodeLayout"] === undefined)
+		safeData["nodeLayout"] = createLayout()
+	const styledLayout = createStyledFromData<I_Layout>(safeData["nodeLayout"])
+	const newNode: I_TreeNode = {
+		key: withDefaultValue(safeData, "key", generateRandomKey()),
+		name: withDefaultValue(safeData, "name", ""),
+		nodeType: withDefaultValue(safeData, "nodeType", NodeType.NODE),
+		nodeLayout: styledLayout,
+		options: withDefaultValue(safeData, "options", undefined),
+		card: withDefaultValue(safeData, "card", {}, createCard),
+		childrenGroup: withDefaultValue(safeData, "childrenGroup", {}, createNodeGroup)
 	}
-	return newChild
+	return newNode
 }
 
 export const createCard = (data: any): I_Card => {
+	if (data === undefined) return { cardItems: [] }
 	const newCard: I_Card = {
-		name: withDefaultValue(data, "name", ""),
-		title: withDefaultValue(data, "title", ""),
-		background: withDefaultValue(data, "background", undefined, createBackground),
-		shortText: withDefaultValue(data, "shortText", ""),
-		fullStory: withDefaultValue(data, "fullStory", undefined, createStyledFullStory),
-		thumbnail: withDefaultValue(data, "thumbnail", "")
+		cardItems: withDefaultValue(data, "cardItems", "", createCardItems),
+		fullStory: withDefaultValue(data, "fullStory", undefined, createStyledFullStory)
 	}
 	return newCard
 }
+
+function createCardItems(data: any[]): I_CardItem[] {
+	if (data === undefined) return []
+	return data.map(e => createCardItem(e))
+
+}
+
+export const createCardItem = (data: any): I_CardItem => {
+	const newCardItem: I_CardItem = {
+		cardItemType: withDefaultValue(data, "cardItemType", CardItemType.TEXT),
+		cardItemContent: withDefaultValue(data, "cardItemContent", createStyled<string>("", {}), createCardItemContent),
+		cardItemLayout: withDefaultValue(data, "cardItemLayout", createLayout(undefined), createLayout),
+	}
+	return newCardItem
+}
+
+function createCardItemContent(data: any) {
+	if (data === undefined) return createStyled<string>("", {})
+	return {
+		value: withDefaultValue(data, "value", ""),
+		style: withDefaultValue(data, "style", {}, cssJsonToJs),
+	}
+}
+
+function createLayout(data?: any): I_Styled<I_Layout> {
+	if (data === undefined) return {
+		value: {
+			x: 0, y: 0, width: 0, height: 0,
+			padding: { left: 0, right: 0, top: 0, bottom: 0 },
+			margin: { left: 0, right: 0, top: 0, bottom: 0 }
+		}, style: {}
+	}
+	return {
+		value: {
+			x: withDefaultValue(data.value, "x", "0"),
+			y: withDefaultValue(data.value, "y", "0"),
+			width: withDefaultValue(data.value, "width", "0"),
+			height: withDefaultValue(data.value, "height", "0"),
+			padding: withDefaultValue(data.value, "padding", undefined, createMargin),
+			margin: withDefaultValue(data.value, "margin", undefined, createMargin)
+		},
+		style: withDefaultValue(data, "style", {}, cssJsonToJs)
+	}
+}
+
 
 function createBackground(data: any): I_Styled<I_Background> | undefined {
 	if (data === undefined ||
@@ -82,27 +130,9 @@ function createBackground(data: any): I_Styled<I_Background> | undefined {
 			video: withDefaultValue(data["value"], "video", undefined),
 			play: withDefaultValue(data["value"], "play", false)
 		},
-		style: Object.hasOwn(data, "style") ? data.style : {}
+		style: Object.hasOwn(data, "style") ? cssJsonToJs(data.style) : {}
 	}
 }
-
-// export const createCard = (data: any): I_Card => {
-// 	const fullStory = data === undefined ? undefined : createFullStory(withDefaultValue(data, "fullStory", undefined))
-// 	let styledFullStory: I_Styled<FullStory> | undefined
-// 	if (fullStory != undefined)
-// 		styledFullStory = createStyled<FullStory>(fullStory)
-
-// 		console.log('styledFullStory',data);
-
-// 		const newCard: I_Card = {
-// 		name: withDefaultValue(data, "name", ""),
-// 		title: withDefaultValue(data, "title", ""),
-// 		shortText: withDefaultValue(data, "shortText", ""),
-// 		fullStory: styledFullStory,
-// 		thumbnail: withDefaultValue(data, "thumbnail", "")
-// 	}
-// 	return newCard
-// }
 
 export function createTimelineNode(data: any): I_Timeline {
 	const treeNode = createTreeNode(data)
@@ -120,7 +150,7 @@ export function createTimelineNode(data: any): I_Timeline {
  * If included, this function is the ultimate decisor to establish 
  * a default value for the entire object.
  */
-function withDefaultValue(data: any, field: string, defaultValue: any, factoryFunction: Function | undefined = undefined): any {
+export function withDefaultValue(data: any, field: string, defaultValue: any, factoryFunction: Function | undefined = undefined): any {
 	if (data !== undefined && typeof data === "object" && field in data) {
 		if (factoryFunction != undefined) {
 			return factoryFunction(data[field])
@@ -144,19 +174,16 @@ function isMandatoryValue(data: any, field: string, func: Function | undefined =
 	throw new Error(`Mandatory Value Exception. The field "${field}" is missing.`)
 }
 
-export function createNodeGroup(data: any): I_NodeGroup {
+export function createNodeGroup(data?: any): I_NodeGroup {
 	return {
 		parent: withDefaultValue(data, "parent", undefined),
 		children: withDefaultValue(data, "children", []),
-		x: withDefaultValue(data, "x", 0),
-		y: withDefaultValue(data, "y", 0),
-		width: withDefaultValue(data, "width", 0),
-		height: withDefaultValue(data, "height", 0),
-		margin: withDefaultValue(data, "margin", createMargin({}), createMargin)
+		groupLayout: withDefaultValue(data, "groupLayout", undefined, createLayout)
 	}
 }
 
-export function createMargin(data: any): I_Margin {
+export function createMargin(data?: any): I_Margin {
+	if (data === undefined) return { left: 0, right: 0, top: 0, bottom: 0 }
 	return {
 		left: withDefaultValue(data, "left", 0),
 		right: withDefaultValue(data, "right", 0),
@@ -177,14 +204,16 @@ export function createConnection(data: any): I_ConnectionOptions {
 		fixedStart: withDefaultValue(data, "fixedStart", undefined),
 		fixedEnd: withDefaultValue(data, "fixedEnd", undefined),
 		connectionShape: withDefaultValue(data, "connectionShape", undefined)
-		}
+	}
 }
 
 
 export function createStyledFromData<T extends object>(data: any): I_Styled<T> {
+	if (data === undefined) throw Error("createStyledFromData - data is undefined")
+	//		return { style: {}, value:  }
 	return {
-		style: Object.hasOwn(data, "style") ? data["style"] : {},
-		value: Object.hasOwn(data, "value") ? data["value"] : data
+		style: withDefaultValue(data, "style", data["style"], cssJsonToJs),
+		value: withDefaultValue(data, "value", data["value"], undefined)
 	}
 }
 
@@ -228,7 +257,7 @@ export function createTextblockImage(data: any): I_TextblockImage {
 }
 
 
-export function createNodeList(data: I_TreeNode[]): I_Hashtable<I_TreeNode> {
+export function createNodeList(data: I_TreeNode_dto[]): I_Hashtable<I_TreeNode> {
 	const result: I_Hashtable<I_TreeNode> = {}
 
 	if (data === undefined)
@@ -241,7 +270,16 @@ export function createNodeList(data: I_TreeNode[]): I_Hashtable<I_TreeNode> {
 	return result
 }
 
-export function createBoardNode(data: any): I_BoardNode {
+export function createboard(data: any): I_Board {
+	if (data === undefined) {
+		return {
+			...createTreeNode(undefined),
+			viewBox: [0, 0, 0, 0] as [number, number, number, number],
+			nodeType: NodeType.BOARD,
+			nodes: {} as I_Hashtable<I_TreeNode>
+		}
+	}
+
 	return {
 		...createTreeNode(data),
 		viewBox: withDefaultValue(data, "viewBox", [0, 0, 0, 0]),
@@ -250,7 +288,7 @@ export function createBoardNode(data: any): I_BoardNode {
 	}
 }
 
-export function createBook(data: any): Book {
+export function createBook(data?: any): Book {
 	const defaultOptions = {
 		group: {
 			spacingY: 200,
@@ -267,23 +305,7 @@ export function createBook(data: any): Book {
 	}
 	const res = {
 		options: withDefaultValue(data, "options", defaultOptions),
-		boardNode: withDefaultValue(data, "boardNode", createBoardNode({}), createBoardNode)
-		//  const res = {
-		// 	options: {
-		// 		group: {
-		// 			spacingY: 200,
-		// 		},
-		// 		node: {
-		// 			spacingX: 200,
-		// 			connection: {
-		// 				offsetStart: 50,
-		// 				offsetEnd: 50,
-		// 				curveDistributionCoeficient: .5,
-		// 				fixedStart: 0
-		// 			}
-		// 		}
-		// 	},
-		// 	boardNode: withDefaultValue(data, "boardNode", createBoardNode({}), createBoardNode)
+		board: withDefaultValue(data, "board", createboard(data), createboard)
 	}
 	return res
 }
@@ -318,4 +340,16 @@ export function createPositionedElement<T>(element: T, data?: any): I_Positioned
 		height: withDefaultValue(data, "height", 100),
 		margin: withDefaultValue(data, "margin", { left: 0, right: 0, top: 0, bottom: 0 }, createMargin)
 	}
+}
+
+export function createRect(data?: {}) {
+	if (data === undefined)
+		return { x: 0, y: 0, width: 0, height: 0 }
+	else
+		return {
+			x: withDefaultValue(data, "x", 0),
+			y: withDefaultValue(data, "y", 0),
+			width: withDefaultValue(data, "width", 100),
+			height: withDefaultValue(data, "height", 100)
+		}
 }

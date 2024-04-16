@@ -1,13 +1,9 @@
-
+/* Generic */
 export interface I_Hashtable<T> {
 	[key: string]: T
 }
 
-export interface I_Position {
-	x: number
-	y: number
-	width: number
-	height: number
+export interface I_Position extends I_Vector2, I_Size2 {
 	margin: I_Margin
 }
 
@@ -48,34 +44,29 @@ export class WindowServices {
 
 export type NodeKey = string
 
+
 export interface I_Identity {
 	key: string
 }
 
+
+
+/* Entities */
+
 export type Book = {
-	boardNode: I_BoardNode,
+	board: I_Board,
 	options: I_Options
 }
 
 export interface I_TreeNode extends I_Identity {
 	nodeType: NodeType
-	width: number
-	height: number
-	x: number
-	y: number
-	group: I_NodeGroup | undefined
+	name: string
+	nodeLayout: I_Styled<I_Layout>
 	options?: I_Nodeoptions | undefined
 	card: I_Card
+	childrenGroup: I_NodeGroup
 }
 
-export interface I_Card {
-	name: I_Styled<string>
-	title: I_Styled<string>
-	background: I_Styled<I_Background>
-	shortText: I_Styled<string>
-	fullStory?: I_Styled<FullStory>
-	thumbnail: I_Styled<string>
-}
 
 export interface I_Background {
 	"image": string,
@@ -84,7 +75,7 @@ export interface I_Background {
 }
 
 
-export interface I_BoardNode extends I_TreeNode {
+export interface I_Board extends I_TreeNode {
 	viewBox: [number, number, number, number]
 	nodes: I_Hashtable<I_TreeNode>
 	nodeType: NodeType
@@ -95,10 +86,10 @@ export interface I_Relationship {
 	target: NodeKey[]
 }
 
-export interface I_NodeGroup extends I_Vector2, I_Size2 {
+export interface I_NodeGroup {
 	parent: NodeKey
 	children: Array<NodeKey>
-	margin: I_Margin
+	groupLayout: I_Styled<I_Layout>
 }
 
 export interface I_Margin {
@@ -192,7 +183,7 @@ export interface I_Timeline extends I_TreeNode {
 
 export class FullStory {
 	key: string = ""
-	textBlocks: I_Textblock[] | null = null
+	textBlocks: I_Textblock[] = []
 }
 
 
@@ -214,21 +205,20 @@ export interface I_TextblockImage {
 
 // STYLES
 
-export class nodeStyle {
-	title: { fontFamily: string, fontSize: string } = { fontFamily: "", fontSize: "" }
-	shortText: { fontFamily: string, fontSize: string } = { fontFamily: "", fontSize: "" }
+// export class nodeStyle {
+// 	title: { fontFamily: string, fontSize: string } = { fontFamily: "", fontSize: "" }
+// 	shortText: { fontFamily: string, fontSize: string } = { fontFamily: "", fontSize: "" }
 
-	shape: {
-		rx: string
-		ry: string
-		backgroundColor: string
-	} = {
-			rx: "",
-			ry: "",
-			backgroundColor: "",
-		}
-}
-
+// 	shape: {
+// 		rx: string
+// 		ry: string
+// 		backgroundColor: string
+// 	} = {
+// 			rx: "",
+// 			ry: "",
+// 			backgroundColor: "",
+// 		}
+// }
 
 export interface I_Vector2 {
 	x: number
@@ -239,6 +229,8 @@ export interface I_Size2 {
 	width: number
 	height: number
 }
+
+export interface I_Rect extends I_Vector2, I_Size2 { }
 
 export const SystemMode = {
 	DEFAULT: "DEFAULT",
@@ -264,4 +256,30 @@ export class Editable<T> {
 		this.target = target
 		this.editionType = editionType
 	}
+}
+
+
+
+
+// CARDS
+export const CardItemType = {
+	TEXT: "TEXT",
+	IMAGE: "IMAGE"
+} as const
+export type CardItemType = typeof CardItemType[keyof typeof CardItemType]
+
+export interface I_Layout extends I_Vector2, I_Size2 {
+	padding: I_Margin
+	margin: I_Margin
+}
+
+export interface I_CardItem {
+	cardItemType: CardItemType
+	cardItemContent: I_Styled<any>
+	cardItemLayout: I_Styled<I_Layout>
+}
+
+export interface I_Card {
+	cardItems: I_CardItem[]
+	fullStory?: I_Styled<FullStory>
 }
