@@ -25,6 +25,8 @@ export default function usePositionedNodeChildren(nodeKey: NodeKey, minY: number
 			return ifExists<I_Margin>(ifExists<any>(globalOptions, "node", undefined), "margin", createMargin())
 	}
 
+
+
 	useEffect(() => {
 		if (nodeGroup !== undefined && nodeChildren !== undefined && nodeChildren.length > 0) {
 			// Add only the spaces between nodes
@@ -137,7 +139,6 @@ export default function usePositionedNodeChildren(nodeKey: NodeKey, minY: number
 
 		}
 	}, [nodeChildren, nodeGroup, globalOptions])
-
 
 	function applyPadding(g: I_Rect | undefined, padding: I_Margin): I_Rect {
 		if (g === undefined) return createRect()

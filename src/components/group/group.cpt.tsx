@@ -1,8 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ConnectionCpt from "../../components/connection.cpt";
 import usePositionedNodeChildren from "../../custom-hooks/auto-arrange/use-positioned-node-children";
-import { createPosition } from "../../types/factory-from-data";
-import { isTimedNode, isTimelineNode } from "../../types/type-safety";
+import { isTimelineNode } from "../../types/type-safety";
 import { I_Timeline, I_TreeNode, NodeKey, NodeType } from "../../types/types";
 import NodeCpt from "./node.cpt";
 import TimelineCpt from "./timeline.cpt";
@@ -18,6 +17,7 @@ export default function GroupCpt({
 	parentNode?: I_TreeNode
 	// children: ReactElement<any, string | JSXElementConstructor<any>>[]
 }) {
+
 	const [arrangedGroup, arrangedChildrenNodes, nextMinY] = usePositionedNodeChildren(groupParentKey, minY)
 
 	const [selectedChildKey, setSelectedChildKey] = useState<NodeKey>("")
@@ -26,12 +26,6 @@ export default function GroupCpt({
 
 	useEffect(() => {
 		if (arrangedGroup !== undefined) {
-			// const [ch, g, groupRect] = autoArrangeChildren(nodeGroup, childrenNodes)
-			// setArrangedGroup(g)
-			// setArrangedChildrenNodes(ch)
-			// setArrangedGroup(nodeGroup)
-			// setArrangedChildrenNodes(childrenNodes)
-
 			setGroupRect(
 				<rect
 					x={arrangedGroup.groupLayout.value.x}
@@ -44,8 +38,8 @@ export default function GroupCpt({
 						rx: "60",
 						ry: "60",
 						strokeWidth: "4",
-						stroke: "#222",
-						fill: "#af05"
+						stroke: "#2222",
+						fill: "#af02"
 					}}
 				/>
 			)
@@ -54,7 +48,6 @@ export default function GroupCpt({
 	}, [arrangedGroup]);
 
 	const showChildrenHandler = (k: NodeKey) => {
-		console.log('GROUP - showChildrenHandler', k);
 		if (selectedChildKey === k) {
 			setSelectedChildKey("")
 		} else {
@@ -62,7 +55,8 @@ export default function GroupCpt({
 		}
 	}
 
-	const children_r = useCallback(() => {
+	//	const children_r = useCallback(() => {
+	const children_r = () => {
 
 		return arrangedChildrenNodes.map((n, i) => {
 			if (isTimelineNode(n))
@@ -93,7 +87,7 @@ export default function GroupCpt({
 				</g>
 				)
 		})
-	}, [arrangedChildrenNodes, selectedChildKey]);
+	} //, [arrangedChildrenNodes, selectedChildKey]);
 
 
 	const connections = parentNode?.key !== undefined && arrangedChildrenNodes.map((e, i) => {

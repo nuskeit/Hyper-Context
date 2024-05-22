@@ -71,6 +71,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "start-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "",
@@ -90,10 +91,8 @@
 									}
 								},
 								"style": {
-									"fill": "#a5a",
-									"stroke": "#000",
-									"fillOpacity": ".6",
-									"strokeOpacity": ".6",
+									"fill": "#a5aa",
+									"stroke": "#000a",
 									"strokeWidth": "2",
 									"rx": "10",
 									"ry": "10"
@@ -101,13 +100,14 @@
 							}
 						},
 						{
+							"key": "start-2",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "HYPER-CONTEXTUAL\n& ESSENTIALS",
 								"style": {
-									"fill": "#c00",
+									"fill": "#cc0000",
 									"paintOrder": "stroke",
-									"stroke": "#ccc",
+									"stroke": "#cc7ccc",
 									"strokeWidth": "6",
 									"lineHeight": "70",
 									"fontSize": "70",
@@ -128,10 +128,8 @@
 									}
 								},
 								"style": {
-									"fill": "#fa7",
-									"stroke": "#a53",
-									"fillOpacity": ".6",
-									"strokeOpacity": ".8",
+									"fill": "#aa77aaee",
+									"stroke": "#aa5533bb",
 									"strokeWidth": "2",
 									"rx": "10",
 									"ry": "10"
@@ -139,14 +137,14 @@
 							}
 						},
 						{
+							"key": "start-3",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "UNPRECEDENTED style,\nto present anything\nyou cannot do in\na better way,\nwithout this.",
 								"style": {
 									"fill": "#fff",
 									"lineHeight": "30",
-									"fontSize": "20",
-									"transform": "rotate(5deg)"
+									"fontSize": "20"
 								}
 							},
 							"cardItemLayout": {
@@ -163,10 +161,8 @@
 									}
 								},
 								"style": {
-									"fill": "#0aa",
-									"stroke": "#053",
-									"fillOpacity": ".3",
-									"strokeOpacity": ".5",
+									"fill": "#0aa6",
+									"stroke": "#0538",
 									"strokeWidth": "2",
 									"rx": "350",
 									"ry": "250",
@@ -175,14 +171,14 @@
 							}
 						},
 						{
+							"key": "start-4",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "Lorem ipsum dolor\nsit amet consectetur\nadipisicing elit.\nEos architecto illum\nunde ad impedit.",
 								"style": {
 									"fill": "#fff",
 									"lineHeight": "35",
-									"fontSize": "25",
-									"transform": "rotate(5deg)"
+									"fontSize": "25"
 								}
 							},
 							"cardItemLayout": {
@@ -201,8 +197,6 @@
 								"style": {
 									"fill": "#f00a",
 									"stroke": "#d00a",
-									"fillOpacity": ".6",
-									"strokeOpacity": ".6",
 									"strokeWidth": "2",
 									"rx": "10",
 									"ry": "10",
@@ -282,6 +276,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "1-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "",
@@ -301,10 +296,8 @@
 									}
 								},
 								"style": {
-									"fill": "#47f",
-									"stroke": "#46d",
-									"fillOpacity": ".6",
-									"strokeOpacity": ".6",
+									"fill": "#47fa",
+									"stroke": "#46da",
 									"strokeWidth": "2",
 									"rx": "60",
 									"ry": "60"
@@ -312,6 +305,7 @@
 							}
 						},
 						{
+							"key": "1-2",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "NODO 001",
@@ -339,10 +333,8 @@
 									}
 								},
 								"style": {
-									"fill": "#ddd",
-									"stroke": "#000",
-									"fillOpacity": "1",
-									"strokeOpacity": "1",
+									"fill": "#ddd2",
+									"stroke": "#0002",
 									"strokeWidth": "0",
 									"rx": "10",
 									"ry": "10"
@@ -406,6 +398,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "2-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "",
@@ -425,10 +418,8 @@
 									}
 								},
 								"style": {
-									"fill": "#47f",
-									"stroke": "#46d",
-									"fillOpacity": ".6",
-									"strokeOpacity": ".6",
+									"fill": "#47fa",
+									"stroke": "#46da",
 									"strokeWidth": "2",
 									"rx": "60",
 									"ry": "60"
@@ -436,6 +427,7 @@
 							}
 						},
 						{
+							"key": "2-2",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "TERCER NODO",
@@ -463,10 +455,8 @@
 									}
 								},
 								"style": {
-									"fill": "#ddd",
-									"stroke": "#000",
-									"fillOpacity": "1",
-									"strokeOpacity": "1",
+									"fill": "#ddd2",
+									"stroke": "#0002",
 									"strokeWidth": "0",
 									"rx": "10",
 									"ry": "10"
@@ -532,6 +522,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "3-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "",
@@ -551,10 +542,8 @@
 									}
 								},
 								"style": {
-									"fill": "#47f",
-									"stroke": "#46d",
-									"fillOpacity": ".6",
-									"strokeOpacity": ".6",
+									"fill": "#47fa",
+									"stroke": "#46da",
 									"strokeWidth": "2",
 									"rx": "60",
 									"ry": "60"
@@ -562,13 +551,14 @@
 							}
 						},
 						{
+							"key": "3-2",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "NODO 003",
 								"style": {
 									"fill": "#000",
 									"paintOrder": "stroke",
-									"stroke": "#ccc",
+									"stroke": "#7cc",
 									"strokeWidth": "0",
 									"lineHeight": "70",
 									"fontSize": "70",
@@ -589,10 +579,8 @@
 									}
 								},
 								"style": {
-									"fill": "#a5d",
-									"stroke": "#a0a",
-									"fillOpacity": "1",
-									"strokeOpacity": "1",
+									"fill": "#a5d2",
+									"stroke": "#a0a2",
 									"strokeWidth": "0",
 									"rx": "10",
 									"ry": "10"
@@ -633,6 +621,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "T100-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "Timeline ITEM",
@@ -688,6 +677,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "T101-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "Timed ITEM 1",
@@ -722,6 +712,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "T102-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "Timed ITEM 2",
@@ -771,6 +762,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "N21-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "",
@@ -790,10 +782,8 @@
 									}
 								},
 								"style": {
-									"fill": "#47f",
-									"stroke": "#46d",
-									"fillOpacity": ".6",
-									"strokeOpacity": ".6",
+									"fill": "#47fa",
+									"stroke": "#46da",
 									"strokeWidth": "2",
 									"rx": "60",
 									"ry": "60"
@@ -801,13 +791,14 @@
 							}
 						},
 						{
+							"key": "N21-2",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "NODE AFTER TIMED",
 								"style": {
 									"fill": "#000",
 									"paintOrder": "stroke",
-									"stroke": "#ccc",
+									"stroke": "#fff",
 									"strokeWidth": "0",
 									"lineHeight": "70",
 									"fontSize": "70",
@@ -828,10 +819,8 @@
 									}
 								},
 								"style": {
-									"fill": "#a5d",
-									"stroke": "#a0a",
-									"fillOpacity": "1",
-									"strokeOpacity": "1",
+									"fill": "#a5d2",
+									"stroke": "#a0a2",
 									"strokeWidth": "0",
 									"rx": "10",
 									"ry": "10"
@@ -869,6 +858,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "T200-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "Timeline ITEM",
@@ -924,6 +914,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "T201-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "Timed ITEM 1",
@@ -958,6 +949,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "T202-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "Timed ITEM 2",
@@ -1008,6 +1000,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "N031-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "",
@@ -1027,10 +1020,8 @@
 									}
 								},
 								"style": {
-									"fill": "#47f",
-									"stroke": "#46d",
-									"fillOpacity": ".6",
-									"strokeOpacity": ".6",
+									"fill": "#47fa",
+									"stroke": "#46da",
 									"strokeWidth": "2",
 									"rx": "60",
 									"ry": "60"
@@ -1038,13 +1029,14 @@
 							}
 						},
 						{
+							"key": "N031-2",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "NODE AFTER TIMED 2",
 								"style": {
 									"fill": "#000",
 									"paintOrder": "stroke",
-									"stroke": "#ccc",
+									"stroke": "#bbb",
 									"strokeWidth": "0",
 									"lineHeight": "70",
 									"fontSize": "70",
@@ -1065,10 +1057,8 @@
 									}
 								},
 								"style": {
-									"fill": "#a5d",
-									"stroke": "#a0a",
-									"fillOpacity": "1",
-									"strokeOpacity": "1",
+									"fill": "#a5d2",
+									"stroke": "#a0a2",
 									"strokeWidth": "0",
 									"rx": "10",
 									"ry": "10"
@@ -1106,6 +1096,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "T300-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "Timeline ITEM",
@@ -1161,6 +1152,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "T301-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "Timed ITEM 1",
@@ -1195,6 +1187,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "T302-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "Timed ITEM 2",
@@ -1244,6 +1237,7 @@
 				"card": {
 					"cardItems": [
 						{
+							"key": "N041-1",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "",
@@ -1263,10 +1257,8 @@
 									}
 								},
 								"style": {
-									"fill": "#47f",
-									"stroke": "#46d",
-									"fillOpacity": ".6",
-									"strokeOpacity": ".6",
+									"fill": "#47fa",
+									"stroke": "#46da",
 									"strokeWidth": "2",
 									"rx": "60",
 									"ry": "60"
@@ -1274,13 +1266,14 @@
 							}
 						},
 						{
+							"key": "N041-2",
 							"cardItemType": "TEXT",
 							"cardItemContent": {
 								"value": "NODE AFTER TIMED 2",
 								"style": {
 									"fill": "#000",
 									"paintOrder": "stroke",
-									"stroke": "#ccc",
+									"stroke": "#aaa",
 									"strokeWidth": "0",
 									"lineHeight": "70",
 									"fontSize": "70",
@@ -1301,10 +1294,8 @@
 									}
 								},
 								"style": {
-									"fill": "#a5d",
-									"stroke": "#a0a",
-									"fillOpacity": "1",
-									"strokeOpacity": "1",
+									"fill": "#a5d2",
+									"stroke": "#a0a2",
 									"strokeWidth": "0",
 									"rx": "10",
 									"ry": "10"

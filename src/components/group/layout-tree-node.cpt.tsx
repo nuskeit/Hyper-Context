@@ -1,8 +1,8 @@
-import { PointerEventHandler, useCallback, useRef } from "react"
-import { I_TreeNode, SystemMode } from "../../types/types"
+import { PointerEventHandler, useCallback, useEffect, useMemo, useRef, useState } from "react"
+import useItemEditorContext from "../../contexts/use-item-editor-context"
+import { createEditable } from "../../types/factory-from-data"
+import { EditionType, I_CardItem, I_TreeNode } from "../../types/types"
 import CardItemCpt from "./card-item.cpt"
-import useSystemModeContext from "../../contexts/use-system-mode-context"
-import { useEditingNode } from "../../contexts/use-node-editor-context"
 
 function LayoutTreeNodeCpt(
 	{ node,
@@ -14,8 +14,12 @@ function LayoutTreeNodeCpt(
 		children: any
 	}
 ) {
-	const [systemMode] = useSystemModeContext()
-	const editingNode = useEditingNode()
+
+	const [cardItems, setCardItems] = useState<I_CardItem[]>(node.card.cardItems)
+
+	useEffect(() => {
+		setCardItems(node.card.cardItems)
+	}, [node]);
 
 	// function activeFullStoryButton() {
 	// 	return positionedNode.element.card.fullStory != undefined
@@ -33,44 +37,63 @@ function LayoutTreeNodeCpt(
 		// 	)
 	}
 
-	const layoutCardItems = useCallback(() => {
-		return node.card.cardItems.map((item, index) => (
-			<CardItemCpt cardItem={item} key={index} />
-		))
-	}, [node])
+	// const [selectedItem, setSelectedItem] = useState<I_CardItem | undefined>(undefined)
 
-	const editMode = systemMode === SystemMode.EDIT
-		&& editingNode?.target.key === node.key
-		&& (
-			<g transform={`translate(${0}, ${0})`}>
-				<text fontSize={50} x={-node.nodeLayout.value.width / 2} y={-node.nodeLayout.value.height / 2 - 50}>
-					{node.name}
-				</text>
-			</g>
-		)
+	// const itemSetterDelegate = (o: I_CardItem) => {
+	// 	console.log('o',o);
+	// 	// setCardItems( cardItems.filter(e=>!Object.is(e,o)))
+
+	// 	if (editingCardItem === undefined)
+	// 		setEditingCardItem(undefined)
+	// 	else
+	// 		setEditingCardItem({ ...editingCardItem, target: o })
+
+	// }
+
+	// const handleSelectItem = (ci: I_CardItem) => {
+	// 	if (Object.is(ci, editingCardItem?.target))
+	// 		setEditingCardItem(undefined)
+	// 	else
+	// 		setEditingCardItem(createEditable<I_CardItem>(ci, EditionType.MODIFY, itemSetterDelegate))
+	// }
+
+	const layoutCardItems = useMemo(() => {
+		return cardItems.map((item, index) => (
+			<CardItemCpt cardItem={cardItems[index]} key={index} />
+		))
+	}, [cardItems])
+
+
 
 
 	const count = useRef(0)
 	if (node === undefined || node.nodeLayout === undefined) return <></>
 
+	
 	return <>
 
-		<g transform={`translate(${node.nodeLayout.value.x}, ${node.nodeLayout.value.y + node.nodeLayout.value.height / 2})`}>
-			<g onPointerDown={handleLocalClick}>
-				<rect
+		{/* <g className={`board-node ${isLoading ? "hidden" : "visible"}`} */}
+		<g className={`board-node`}
+			transform={`translate(${node.nodeLayout.value.x}, ${node.nodeLayout.value.y + node.nodeLayout.value.height / 2})`}>
+			<g onPointerDown={handleLocalClick} className="enter">
+				{/* <rect
 					fill="#0001" stroke="#000" strokeDasharray="25" strokeWidth={4}
+					x={-node.nodeLayout.value.width / 2}
+					y={-node.nodeLayout.value.height / 2}
+					width={node.nodeLayout.value.width}
+					height={node.nodeLayout.value.height} /> */}
+				<rect
+					style={{ fill: "none", ...node.nodeLayout.style }}
 					x={-node.nodeLayout.value.width / 2}
 					y={-node.nodeLayout.value.height / 2}
 					width={node.nodeLayout.value.width}
 					height={node.nodeLayout.value.height} />
 				{/* <text fontSize={100}> {conta.current++}</text> */}
-				{layoutCardItems()}
+				{layoutCardItems}
 
 			</g>
 
 
-			{/* SHOW ONLY ON EDIT MODE */}
-			{editMode}
 
 			{/* 
 			<g onPointerDown={handleLocalClick} className="simple-shadow">

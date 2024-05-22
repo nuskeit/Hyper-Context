@@ -1,0 +1,84 @@
+.node-toolstrip {
+	//fill: orange;
+
+	text.button {
+		stroke:#000;
+		stroke-width: .2rem;
+		fill:#000;
+	}
+
+	rect.button {
+
+
+		rx: .8rem;
+		ry: .8rem;
+		stroke-width: .3rem;
+		font-family: inherit;
+		font-size: 500;
+		cursor: pointer;
+		fill: #f0f;
+		stroke: #bbb;
+
+		&:hover {
+			stroke: #fa0;
+		}
+
+		&:focus,
+
+		&:focus-visible {
+			stroke-width: 1.2px;
+		}
+
+
+
+
+		// &>rect {
+		// 	stroke: black;
+		// 	stroke-width: 0;
+		// 	fill-opacity: .8;
+		// }
+
+		// text {
+		// 	transform-origin: 1.3rem -.45rem;
+		// 	//			transform: rotate(45deg) translate(500, 500);
+		// 	//			animation: rotate 2s linear;
+		// 	// animation: name duration timing-function delay iteration-count direction fill-mode;
+		// 	// animation-iteration-count: infinite;
+		// }
+
+		@keyframes rotate {
+			from {
+				transform: rotate(0deg);
+			}
+
+			to {
+				transform: rotate(360deg);
+			}
+		}
+
+
+		&.new {
+			fill: #080;
+		}
+
+		&.mod {
+			fill: #aa6;
+		}
+
+		&.del {
+			fill: #c20;
+		}
+
+		&.edit-style {
+			fill: #02c;
+		}
+
+
+		&.new-node {
+			fill: #888;
+			stroke: #fff;
+		}
+
+	}
+
+}

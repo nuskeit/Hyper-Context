@@ -1,0 +1,46 @@
+.card-item {
+
+	--stroke-color-a :#fb0;
+	--stroke-color-b :#c80;
+
+	.bg-rect {
+		paint-order: stroke;
+	}
+
+	.edit-mode {
+		visibility: hidden;
+		fill: none;
+		animation: border-roll 4s 1 ease normal forwards;
+		stroke-width: 7;
+		
+	}
+
+	@keyframes border-roll {
+		0% {
+			stroke: var(--stroke-color-a);
+			stroke-width: 7;
+			filter: drop-shadow(0 0 .0rem var(--stroke-color-a)) drop-shadow(0 0 .0rem var(--stroke-color-a));
+		}
+	
+		
+		
+		15% {
+			stroke: var(--stroke-color-a);
+			stroke-width: 7;
+			stroke-dashoffset: 0;
+			filter: drop-shadow(0 0 .5rem var(--stroke-color-a)) drop-shadow(0 0 .5rem var(--stroke-color-a));
+		}
+	
+		100% {
+			stroke: var(--stroke-color-b);
+			stroke-width: 7;
+			stroke-dashoffset: 0;
+		}
+	
+	}
+
+	.edit-mode-selected {
+		visibility: visible;
+	}
+
+}

@@ -1,11 +1,14 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import useNodeEditorContext, { useEditingNode } from "../../contexts/use-node-editor-context";
 import useSystemModeContext from "../../contexts/use-system-mode-context";
 import { isTimedNode } from "../../types/type-safety";
-import { I_Timeline, I_TreeNode, SystemMode } from "../../types/types";
-import NodeToolstripCpt from "../node-toolstrip.cpt";
+import { EditionType, I_Timeline, I_TreeNode, SystemMode } from "../../types/types";
+import NodeToolstripCpt from "../menus/node-toolstrip.cpt";
 import GroupCpt from "./group.cpt";
 import LayoutTimedNodeCpt from "./layout-timed-node.cpt";
 import LayoutTreeNodeCpt from "./layout-tree-node.cpt";
+import { isEditMode } from "../../util/util";
+import { createEditableNode } from "../../types/factory-from-data";
 
 function NodeCpt({
 	minY,
@@ -19,6 +22,8 @@ function NodeCpt({
 	showChildren: boolean
 }) {
 	const [systemMode, setSystemMode] = useSystemModeContext()
+	const [editingNode, setEditingNode] = useNodeEditorContext()
+
 	const [isLoading, setIsLoading] = useState(true)
 
 	const conta = useRef(0)
@@ -32,10 +37,21 @@ function NodeCpt({
 	)
 
 	const handleLocalClick = (e: any) => {
-		console.log('NODE - handleClick: ', node.key);
 		e.stopPropagation()
 		if (node.childrenGroup.children.length > 0) // To avoid showing children when there´s nothing to show
-			showChildrenHandler(node.key)
+			if (systemMode === SystemMode.DEFAULT) // Only toggle "showChildren" when not in EDIT mode
+				showChildrenHandler(node.key)
+			else if (systemMode === SystemMode.EDIT)
+				setEditingNode(createEditableNode<I_TreeNode>(node, EditionType.MODIFY_NODE))
+
+	}
+
+	const handleOnNewNode = (visible: boolean) => {
+		if (!showChildren)
+			if (visible)
+				showChildrenHandler(node.key)
+			else
+				showChildrenHandler(undefined)
 	}
 
 	useEffect(() => {
@@ -48,14 +64,32 @@ function NodeCpt({
 		fn1()
 	}, [])
 
-	const editorStrip = useCallback(() => {
-		if (node !== undefined && systemMode === SystemMode.EDIT) {
+	const editorStrip = () => {
+		if (node !== undefined && isEditMode(systemMode)) {
 			return (
-				<NodeToolstripCpt node={node} />
+				<NodeToolstripCpt node={node} onNewNode={handleOnNewNode} />
 			)
 		} else
 			return <></>
-	}, [systemMode])
+	}
+
+
+	const editMode = isEditMode(systemMode)
+		&& editingNode?.target.key === node.key
+		&& (
+			<g transform={`translate(${node.nodeLayout.value.x}, ${node.nodeLayout.value.y + node.nodeLayout.value.height / 2})`}>
+				{/* <rect style={{ pointerEvents: "none" }}
+					fill="#0000" stroke="#fff" strokeDasharray="25" strokeWidth={4}
+					x={-node.nodeLayout.value.width / 2}
+					y={-node.nodeLayout.value.height / 2}
+					width={node.nodeLayout.value.width}
+					height={node.nodeLayout.value.height} /> */}
+				<text fontSize={50} x={-node.nodeLayout.value.width / 2} y={-node.nodeLayout.value.height / 2 - 50}>
+					{node.name}
+				</text>
+			</g>
+		)
+
 
 
 	// return useMemo(() => {
@@ -77,14 +111,12 @@ function NodeCpt({
 				node={node}
 				handleLocalClick={handleLocalClick}
 			>
-				{/* <rect width={node.width} height={node.height/4} fill="yellow" />
-				<text x={node.x} y={node.height/5.5} fontSize={100} fill="black" >x:</text> */}
-				{editorStrip()}
-				{/* {childrenJSX} */}
 				{groupJSX}
 			</LayoutTreeNodeCpt>
-			<text fontSize={150}>{conta.current++}</text>
-			{/* <rect width={200} height={200} fill="#f00a" onMouseDown={handleArrange} stroke="#000" strokeWidth={10} /> */}
+			{editorStrip()}
+			{/* SHOW ONLY ON EDIT MODE */}
+			{editMode}
+			<text fontSize={150} x={250} y={500}>{conta.current++}</text>
 		</>
 	}
 	// }, [node, positionedChildren, isLoading])

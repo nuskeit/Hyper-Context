@@ -1,0 +1,27 @@
+.number-ctl {
+	background: #f55;
+	border: solid .1rem black;
+
+	display: flex;
+	flex-direction: row;
+
+	.arrow {
+		flex: 0 0 1.2rem;
+		color: black
+	}
+
+	.arrow-left {
+		@extend .arrow;
+		background: #07f;
+	}
+
+	.arrow-right {
+		@extend .arrow;
+		background: #0f0;
+	}
+
+	.color-band {
+		flex: 1 1 auto;
+		background: linear-gradient(90deg, blue, red);
+	}
+}

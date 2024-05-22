@@ -24,7 +24,7 @@ export default function () {
 	const zoomAction = (deltaY: number) => {
 		const dir = deltaY > 0 ? 1 : -1
 		const level = windowServices.zoomLevel + (windowServices.zoomLevel / 20) * dir
-		const limitedLevel = Math.min(Math.max(level, .2), 4)
+		const limitedLevel = Math.min(Math.max(level, .01), 8)
 
 		setWindowServices({
 			...windowServices,
@@ -62,6 +62,8 @@ export default function () {
 			Math.trunc(windowServices.viewBox[2] * (1 / windowServices.zoomLevel)),
 			Math.trunc(windowServices.viewBox[3] * (1 / windowServices.zoomLevel))
 		]
+		localStorage.setItem("viewBox", viewBox.join(","))
+
 		return viewBox
 	}
 

@@ -1,4 +1,4 @@
-import { I_Hashtable, I_Layout, I_NodeGroup, I_Rect, I_Size2, I_Style, I_Vector2 } from "../types/types"
+import { I_Hashtable, I_Size2, I_Style, I_Vector2, SystemMode } from "../types/types"
 
 export function getEpoch(y: number, m: number, d: number): number {
 	return new Date(y, m - 1, d).getTime() / 1000
@@ -23,9 +23,15 @@ export function getDateString(epoch: number): string {
 /**
  * Get a value or default, of any implementation of I_Styled or I_Style
  */
-export function getStylePropValue<T>(s: I_Style, prop: string, defaultValue: T): T {
-	if (Object.hasOwn(s, prop))
-		return (s as any)[prop]
+export function getStylePropValue<T>(s: I_Style, prop: string, defaultValue: T, omitValues?: any[]): T {
+	if (Object.hasOwn(s, prop)) {
+		const val = (s as any)[prop]
+		if (omitValues === undefined)
+			return val
+		else
+			if (omitValues.find(e => e === val) === undefined)
+				return val
+	}
 	return defaultValue
 }
 
@@ -79,3 +85,26 @@ export function centeredLayout(l: I_Vector2 & I_Size2): I_Vector2 & I_Size2 {
 }
 
 
+export function generateNewKey(): string {
+	// return Math.round(Math.random() * new Date().getTime()).toString()
+	const chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
+		'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w',
+		'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
+		'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+		'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+	const base = (Date.now() + Math.round(Math.random() * 1000)).toString()
+	let result = ""
+	let count = Math.round(Math.random() * chars.length)
+	base.split("").forEach((n, i) => {
+		count += parseInt(n + i)
+		result += chars[count % (chars.length - 1)]
+	})
+	return result
+}
+
+
+export function isEditMode(systemMode: SystemMode) {
+	return systemMode === SystemMode.EDIT
+}
+
+export const isNumeric = (s: string) => /^[+-]?\d+(\.\d+)?$/.test(s)

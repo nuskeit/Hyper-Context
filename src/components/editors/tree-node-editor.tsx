@@ -1,11 +1,10 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import useBookStateContext from "../../contexts/use-book-context"
 import useNodeEditorContext from "../../contexts/use-node-editor-context"
 import { ActionType } from "../../custom-hooks/use-book-state"
-import { createStyled } from "../../types/factory"
-import { Editable, I_TreeNode } from "../../types/types"
+import { I_CardItem, I_TreeNode } from "../../types/types"
 import "./editors.scss"
-import { getStylePropValue } from "../../util/util"
+import TextCtl from "./form-controls/text.ctl"
 
 export default function () {
 	const [editingNode, setEditingNode] = useNodeEditorContext()
@@ -14,20 +13,21 @@ export default function () {
 	const [localEditingNode, setLocalEditingNode] = useState<I_TreeNode | undefined>()
 
 	useEffect(() => {
-		setLocalEditingNode({ ...editingNode.target })
+		if (editingNode !== undefined)
+			setLocalEditingNode({ ...editingNode.target })
 	}, [editingNode])
 
 	const handleChange = async (field: string, e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		console.log("HANDLE CHANGE", field, e.target.value);
 
-		const o = { ...editingNode.target }
+		const o = { ...editingNode?.target }
 
 		// @ts-ignore
-		o.card[field].value = e.target.value
+		// o.card[field].value = e.target.value
 
-		setLocalEditingNode(o)
+		// setLocalEditingNode(o)
 
-		await dispatchAsync(o)
+		// await dispatchAsync(o)
 
 
 		// switch (field) {
@@ -43,15 +43,15 @@ export default function () {
 
 	const handleChangeNode = async (field: string, e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 
-		const o = { ...editingNode.target }
+		const o = { ...editingNode?.target }
 		console.log("HANDLE CHANGE STYLE", field, e.target.value, (o as any)[field]);
 
-		// @ts-ignore
-		o[field] = e.target.value
+		// // @ts-ignore
+		// o[field] = e.target.value
 
-		setLocalEditingNode(o)
+		// setLocalEditingNode(o)
 
-		await dispatchAsync(o)
+		// await dispatchAsync(o)
 	}
 
 	const handleChangeStyle = async (field: string, e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -84,16 +84,9 @@ export default function () {
 
 	}
 
-	const styles =
+	const cardItemSelector =
 		(localEditingNode === undefined) ? <></> :
-			localEditingNode?.card.cardItems.map((styleItem, i) => {
-				return (
-					<div className="input-group" key={i}>
-						{/* <div>{styleItem.cardItemType}:</div><div><input type="text" value={getStylePropValue( styleItem.cardItemContent.style,"sds" , "") || ""} onChange={(e) => handleChangeStyle(styleKey, e)} /></div> */}
-						<div>{styleItem.cardItemType}</div>
-					</div>
-				)
-			})
+			<CardItemSelector cardItems={localEditingNode?.card.cardItems} />
 
 
 	return (
@@ -114,10 +107,9 @@ export default function () {
 					<div>thumbnail:</div><div><input type="text" value={localEditingNode?.card.thumbnail.value || ""} onChange={(e) => handleChange("thumbnail", e)} /></div>
 				</div> */}
 
-				<>
-					{styles}
-				</>
-
+			</div>
+			<div className="form-grid">
+				{cardItemSelector}
 			</div>
 			<div className="form-controls-trip">
 				<button onClick={handleClick}>SAVE</button>
@@ -126,3 +118,46 @@ export default function () {
 		</>
 	)
 }
+
+
+
+function CardItemSelector(
+	{
+		cardItems
+	}: {
+		cardItems: I_CardItem[]
+	}
+) {
+	const handleChange = (e: any) => {
+		console.log('e', e.target.value);
+	}
+
+	const items = cardItems.map((styleItem, i) => {
+		return (
+			<div className="input-group" key={i}>
+				{/* <div>{styleItem.cardItemType}:</div><div><input type="text" value={getStylePropValue( styleItem.cardItemContent.style,"sds" , "") || ""} onChange={(e) => handleChangeStyle(styleKey, e)} /></div> */}
+				<div>{styleItem.cardItemType}</div>
+				<div><TextCtl value={styleItem.cardItemContent.value} onChange={handleChange} /></div>
+			</div>
+		)
+	})
+
+	return (
+		<div>
+			<div>CARD ITEM SELECTOR</div>
+			{items}
+		</div>
+	)
+}
+
+
+
+
+// function CardItemEditor() {
+
+
+
+// 	return (
+// 		<div>CARD ITEM EDITOR</div>
+// 	)
+// }

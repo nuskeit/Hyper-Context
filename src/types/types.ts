@@ -25,7 +25,7 @@ export interface I_Style { }
 
 export interface I_Styled<T> {
 	value: T
-	style: I_Style
+	style: I_Hashtable<string>
 }
 
 export type ViewBox = [number, number, number, number]
@@ -246,18 +246,28 @@ export const EditionType = {
 	MODIFY_FULL_STORY: "MODIFY_FULL_STORY",
 	DELETE_NODE: "DELETE_NODE",
 	MODIFY_STYLE: "MODIFY_STYLE",
+	NEW: "NEW",
+	MODIFY: "MODIFY",
+	DELETE: "DELETE",
 } as const
 export type EditionType = typeof EditionType[keyof typeof EditionType]
 
-export class Editable<T> {
+// export class Editable<T> {
+// 	editionType: EditionType
+// 	target: T
+// 	constructor(target: T, editionType: EditionType) {
+// 		this.target = target
+// 		this.editionType = editionType
+// 	}
+// }
+
+export interface I_Editable<T> {
 	editionType: EditionType
 	target: T
-	constructor(target: T, editionType: EditionType) {
-		this.target = target
-		this.editionType = editionType
-	}
+	setterDelegate: SetterDelegate<T>
 }
 
+export type SetterDelegate<T> = (o: T) => void
 
 
 
@@ -274,6 +284,7 @@ export interface I_Layout extends I_Vector2, I_Size2 {
 }
 
 export interface I_CardItem {
+	key: string
 	cardItemType: CardItemType
 	cardItemContent: I_Styled<any>
 	cardItemLayout: I_Styled<I_Layout>

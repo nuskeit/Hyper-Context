@@ -1,0 +1,45 @@
+.color-ctl {
+	// background: #f55;
+	user-select: none;
+	//max-width: 12rem;
+	display: flex;
+	flex-flow: row nowrap;
+	//flex: 1 1 auto;
+	max-width: 100%;
+
+	.palette-control {
+		// visibility: hidden;
+		display: none;
+	}
+
+	.palette-control-visible {
+		visibility: visible;
+		display: unset;
+	}
+
+	.color {
+		flex: 1 1 30%;
+	}
+
+	.alpha {
+		border-left: .1rem solid #374;
+		flex: 1 1 20%;
+	}
+
+	.color-band {
+		flex: 1 1 auto;
+		padding: .1rem;
+
+		.color-band-button {
+			border: solid .05rem #333;
+			// box-shadow: 0 0 .2rem #000;
+			width: auto;
+			border-radius: .5rem .2rem .2rem .5rem;
+			width: min-content;
+			// aspect-ratio: 1;
+			height: 100%;
+			width:  100%;
+		}
+	}
+
+}

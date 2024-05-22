@@ -1,14 +1,11 @@
-import { cssJsonToJs } from "../util/util"
+import { cssJsonToJs, generateNewKey } from "../util/util"
 import { getImgUrl } from "../custom-hooks/use-images"
 import { right } from "../util/text"
 import { createStyled } from "./factory"
-import { Book, CardItemType, Editable, EditionType, FullStory, I_Background, I_Board, I_Card, I_CardItem, I_ConnectionOptions, I_Hashtable, I_Layout, I_Margin, I_NodeGroup, I_Nodeoptions, I_Position, I_Positioned, I_Styled, I_Textblock, I_TextblockImage, I_TimedNode, I_Timeline, I_TreeNode, NodeType, ViewBox } from "./types"
+import { Book, CardItemType, EditionType, FullStory, I_Background, I_Board, I_Card, I_CardItem, I_ConnectionOptions, I_Editable, I_Hashtable, I_Layout, I_Margin, I_NodeGroup, I_Nodeoptions, I_Position, I_Positioned, I_Styled, I_Textblock, I_TextblockImage, I_TimedNode, I_Timeline, I_TreeNode, NodeType, SetterDelegate, ViewBox } from "./types"
 import { I_TreeNode_dto } from "./data-types"
 
 
-function generateRandomKey() {
-	return Math.random() * new Date().getTime()
-}
 
 
 function getRandomImage() {
@@ -30,8 +27,13 @@ export function createNode(n: I_TreeNode_dto) {
 }
 
 export function createWindowServices(data?: { viewBox: ViewBox, zoomLevel?: number, scrollPos?: number }) {
+	if (localStorage.getItem("viewBox") === null)
+		localStorage.setItem("viewBox", "-2000,0,4000,5000")
+	const vbox = localStorage.getItem("viewBox")?.split(",")
 	return {
-		viewBox: withDefaultValue(data, "viewBox", [-2000, 0, 4000, 5000]),
+		// viewBox: withDefaultValue(data, "viewBox", [-2000, 0, 4000, 5000]),
+		// viewBox: withDefaultValue(data, "viewBox", [-1113,0,2227,2784]),		
+		viewBox: withDefaultValue(data, "viewBox", vbox),
 		zoomLevel: withDefaultValue(data, "zoomLevel", 1),
 		scrollPos: withDefaultValue(data, "scrollPos", 0),
 	}
@@ -55,7 +57,7 @@ export const createTreeNode = (data?: any): I_TreeNode => {
 		safeData["nodeLayout"] = createLayout()
 	const styledLayout = createStyledFromData<I_Layout>(safeData["nodeLayout"])
 	const newNode: I_TreeNode = {
-		key: withDefaultValue(safeData, "key", generateRandomKey()),
+		key: withDefaultValue(safeData, "key", generateNewKey()),
 		name: withDefaultValue(safeData, "name", ""),
 		nodeType: withDefaultValue(safeData, "nodeType", NodeType.NODE),
 		nodeLayout: styledLayout,
@@ -81,8 +83,16 @@ function createCardItems(data: any[]): I_CardItem[] {
 
 }
 
-export const createCardItem = (data: any): I_CardItem => {
+export const createCardItem = (data?: any): I_CardItem => {
+	if (data === undefined)
+		return {
+			key: generateNewKey(),
+			cardItemType: CardItemType.TEXT,
+			cardItemContent: createCardItemContent(),
+			cardItemLayout: createLayout()
+		}
 	const newCardItem: I_CardItem = {
+		key: withDefaultValue(data, "key", generateNewKey()),
 		cardItemType: withDefaultValue(data, "cardItemType", CardItemType.TEXT),
 		cardItemContent: withDefaultValue(data, "cardItemContent", createStyled<string>("", {}), createCardItemContent),
 		cardItemLayout: withDefaultValue(data, "cardItemLayout", createLayout(undefined), createLayout),
@@ -90,7 +100,7 @@ export const createCardItem = (data: any): I_CardItem => {
 	return newCardItem
 }
 
-function createCardItemContent(data: any) {
+function createCardItemContent(data?: any) {
 	if (data === undefined) return createStyled<string>("", {})
 	return {
 		value: withDefaultValue(data, "value", ""),
@@ -223,7 +233,7 @@ export function createStyledFullStory(data: any): I_Styled<FullStory> | undefine
 
 	const styled = createStyledFromData<FullStory>(data)
 
-	styled.value.key = withDefaultValue(styled.value, "key", generateRandomKey())
+	styled.value.key = withDefaultValue(styled.value, "key", generateNewKey())
 	styled.value.textBlocks = withDefaultValue(styled.value, "textBlocks", [], createTextblocks)
 
 	return styled
@@ -240,7 +250,7 @@ export function createTextblocks(data: any[]): I_Textblock[] | undefined {
 
 export function createTextblock(data: any): I_Textblock {
 	return {
-		key: withDefaultValue(data, "key", generateRandomKey()),
+		key: withDefaultValue(data, "key", generateNewKey()),
 		images: withDefaultValue(data, "images", []).map((e: any) => createTextblockImage(e)),
 		title: withDefaultValue(data, "title", ""),
 		text: withDefaultValue(data, "text", ""),
@@ -312,8 +322,18 @@ export function createBook(data?: any): Book {
 
 // Tighter typed
 
-export function createEditableNode<T extends I_TreeNode>(node: T, editionType: EditionType): Editable<T> {
-	return new Editable<T>(node, editionType)
+export function createEditableNode<T extends I_TreeNode>(node: T, editionType: EditionType, setterDelegate?: SetterDelegate<T>): I_Editable<T> {
+	const cb: SetterDelegate<T> = setterDelegate !== undefined ? setterDelegate : (o: T): void => { }
+	return createEditable<T>(node, editionType, cb)
+}
+
+export function createEditable<T>(target: T, editionType: EditionType, setterDelegate?: SetterDelegate<T>): I_Editable<T> {
+	const cb: SetterDelegate<T> = setterDelegate !== undefined ? setterDelegate : (o: T): void => { }
+	return {
+		target,
+		editionType,
+		setterDelegate: cb
+	}
 }
 
 

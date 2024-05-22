@@ -1,17 +1,16 @@
-import useBookStateContext from "../../contexts/use-book-context"
-import { useEffect, useState } from "react"
-import { ActionType } from "../../custom-hooks/use-book-state"
+import { useMemo } from "react"
+import { useGeneralEditorSpaceGetter } from "../../contexts/use-general-editor-space"
+import useItemEditorContext from "../../contexts/use-item-editor-context"
 import useNodeEditorContext from "../../contexts/use-node-editor-context"
-import "./editors.scss"
 import useSystemModeContext from "../../contexts/use-system-mode-context"
-import { EditionType, NodeType, SystemMode } from "../../types/types"
-import TreeNodeEditor from "./tree-node-editor"
-import { createEditableNode } from "types/factory-from-data"
-import NodeStyleEditor from "./node-style-editor"
+import { isEditMode } from "../../util/util"
+import "./editors.scss"
 
 export default function () {
 	// const [book, bookDispatch] = useBookStateContext()
 	const [editingNode, setEditingNode] = useNodeEditorContext()
+	const [editingItem, setEditingItem] = useItemEditorContext()
+	const editor = useGeneralEditorSpaceGetter()
 	const [systemMode, setSystemMode] = useSystemModeContext()
 
 	// const [name, setName] = useState("")
@@ -27,38 +26,78 @@ export default function () {
 	// }
 
 	let autoStyle = "main-editor-wrapper--close"
-	if (systemMode === SystemMode.EDIT && editingNode !== undefined)
+	// if (isEditMode(systemMode) && editingNode !== undefined)
+	if (isEditMode(systemMode) && editor !== undefined)
 		autoStyle = "main-editor-wrapper--open"
 
-	let editor = <></>
-	if (systemMode === SystemMode.EDIT && editingNode !== undefined) {
-		switch (editingNode.editionType) {
-			case EditionType.CREATE_NODE:
-				editor = <>CREATE NODE</>
-				break
-			case EditionType.MODIFY_NODE:
-				editor = < TreeNodeEditor />
-				break
-			case EditionType.DELETE_NODE:
-				editor = <>DELETE NODE</>
-				break
-			case EditionType.MODIFY_NODE_STYLE:
-				editor = < NodeStyleEditor />
-				break
-			default:
-				editor = <> NONE </>
-		}
-	}
+	let editorJSX = useMemo(
+		() => {
+			// DEBUG
+			return editor
+			// if (isEditMode(systemMode) && editingNode !== undefined) {
+
+			// 	if (editor!==undefined)
+			// 		return editor
+			// 	else
+			// 		switch (editingItem?.editionType) {
+			// 			case EditionType.MODIFY:
+			// 				// editorJSX = editor || <></>
+			// 				return <>NO EDITOR</> //< CardItemEditor />
+			// 				// if (editor !== undefined)
+			// 				// 	return editor
+			// 				break
+			// 			default:
+			// 				switch (editingNode?.editionType) {
+			// 					case EditionType.CREATE_NODE:
+			// 						return < TreeNodeEditor />
+			// 						// return <>CREATE NODE</>
+			// 						break
+			// 					case EditionType.MODIFY_NODE:
+			// 						return < TreeNodeEditor />
+			// 						break
+			// 					case EditionType.DELETE_NODE:
+			// 						return <>DELETE NODE</>
+			// 						break
+			// 					case EditionType.MODIFY_NODE_STYLE:
+			// 						return < NodeStyleEditor />
+			// 						break
+			// 					default:
+			// 						return <> NONE </>
+			// 				}
+			// 		}
+			// }
+
+		}, [editor])
+
+	// if (isEditMode(systemMode) && editingNode !== undefined) {
+	// 	switch (editingNode.editionType) {
+	// 		case EditionType.CREATE_NODE:
+	// 			editorJSX = < TreeNodeEditor />
+	// 			// editorJSX = <>CREATE NODE</>
+	// 			break
+	// 		case EditionType.MODIFY_NODE:
+	// 			editorJSX = < TreeNodeEditor />
+	// 			break
+	// 		case EditionType.DELETE_NODE:
+	// 			editorJSX = <>DELETE NODE</>
+	// 			break
+	// 		case EditionType.MODIFY_NODE_STYLE:
+	// 			editorJSX = < NodeStyleEditor />
+	// 			break
+	// 		default:
+	// 			editorJSX = <> NONE </>
+	// 	}
+	// }
 
 	return (
 		<div className={`main-editor-wrapper ${autoStyle}`}>
-			{editor}
+			{editorJSX}
 		</div>
 	)
 
 
 
-	// if (systemMode === SystemMode.EDIT && editingNode !== undefined)
+	// if (isEditMode(systemMode) && editingNode !== undefined)
 	// 	switch (editingNode.target.nodeType) {
 	// 		case NodeType.NODE:
 	// 			return (

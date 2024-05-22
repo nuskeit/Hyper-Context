@@ -1,88 +1,142 @@
 .main-editor-wrapper {
-	max-height: 25%;
+	height: max(20rem, 33%);
 	// min-height: 20rem;
 	position: absolute;
 	top: auto;
-	bottom: 2rem;
-	left: 2rem;
-	right: 2rem;
+	left: 4%;
+	right: 4%;
+	bottom: 4%;
 
 	overflow: hidden;
-	border: solid .3rem #444;
+	border: solid .3rem #243;
 	border-radius: 1rem;
 
-	//border: solid .1rem #000;
-	background-color: #785;
-	margin: 0rem;
+	background-color: #354b;
+	margin: 0;
 
 	display: flex;
 	flex-direction: column;
 
-	* {
-		font-size: .6rem;
-	}
+	// div input {
+	// 	font-size: 1rem;
+	// }
+
 
 	.title {
 		//border: solid .5rem #a00;
 		flex: 1 1 auto;
-		background-color: #444;
+		background-color: #0105;
 		font-size: 1rem;
 	}
 
-	.form-grid {
-		max-height: 100%;
-		min-height: 0;
-		//border: solid .5rem #f00;
-		flex: 1 1 auto;
-		display: flex;
-		flex-flow: column wrap;
-		align-content: flex-start;
-		width: 100%;
-		padding-right: .1rem;
+	.form-container {
+		position: relative;
+		flex: 0 1 auto;
 		overflow: hidden;
-		overflow-x: auto;
+		width: 100%;
 
-		.input-group {
-			// padding: .1rem;
+		.form-grid {
+			height: 100%;
+			width: 100%;
+			//border: solid .5rem #f00;
+			//		border:solid .05rem purple;
 			display: flex;
-			flex-direction: row;
-			flex: 0 0 auto;
-			margin-left: .1rem;
-			margin-top: .1rem;
+			flex-flow: column wrap;
 			align-content: flex-start;
+			justify-items: flex-start;
+			justify-self: flex-start;
+			text-align: left;
+			overflow: hidden;
+			overflow-x: auto;
+			padding-bottom: min(.1rem, 1%);
 
-			textarea,
-			input {
-				background: #fff4;
-				border: solid #555 .05rem;
-				resize: none;
-				width: 5rem;
+			button {
+				background-color: #535;
 			}
 
-			align-items: center;
-			text-align:right;
-
-			div:nth-child(1) {
-				// min-width: 8rem;
-				flex: 1 0 auto;
-				//margin: .1rem;
-				margin-left: 0;
-				margin-top: 0;
-				// align-self: center;
-			}
-
-			div:nth-child(2) {
-				// min-width: 8rem;
+			.input-group {
+				display: flex;
+				flex-flow: column nowrap;
 				flex: 0 1 auto;
-				//margin: .1rem;
-				margin-left: 0;
-				margin-top: 0;
+				margin-left: min(.3rem, .5%);
+				margin-top: min(.3rem, .5%);
+				align-content: flex-start;
+				// border-top: solid .1rem #7779;
+				// border-left: solid .1rem #7779;
+				border: none;
+				background-color: #222;
+				border-radius: .2rem;
+				font-size: .9rem;
+				box-shadow: .1rem .1rem .1rem #0006;
+				width: max(20%, 10rem);
 
-				&>textarea {
-					height: 4rem;
+				div.left-label {
+					// min-width: 8rem;
+					flex: 0 1 auto;
+					//margin: .1rem;
+					margin: min(.1rem, 1%);
+					margin-bottom: 0;
+					padding: min(.1rem, 1%);
+					padding-bottom: 0;
+					// align-self: center;
+					color: #aaa;
+					border-radius: .15rem .15rem 0 0;
+
+					background-color: #023;
+					white-space: nowrap;
+				}
+
+				div.editable {
+					// min-width: 8rem;
+					flex: 1 0 auto;
+					//margin: .1rem;
+					margin: min(.1rem, 1%);
+					margin-top: 0;
+					border-radius: 0 0 .15rem .15rem;
+					background-color: #243;
+					// background-color: #f00;
+					// background-color: red;
+
+
+
+					textarea,
+					input {
+						min-width: 0;
+						height: 100%;
+						width: 100%;
+						border: solid #0000 .1rem;
+						background: none;
+						color: #aaa;
+
+						//resize: none;
+						//width: 5rem;
+						&:focus {
+							outline: none;
+							background-color: #aaa;
+							color: #000;
+						}
+					}
+
+
+					textarea {
+						min-height: 4rem;
+						max-height: 12rem;
+						min-width: 100%;
+						max-width: 34rem;
+						margin-right: .2rem;
+					}
+
+					input {
+						border: none;
+					}
 				}
 			}
+
+			.input-group-no-width {
+				width: unset;
+			}
 		}
+
 	}
 
 
@@ -90,15 +144,16 @@
 
 	.form-controls-trip {
 		flex: 0 0 1.4rem;
-		background-color: #3335;
-		border-radius: 1.4rem;
+		background-color: #0105;
+		border-radius: 0 0 .7rem .7rem;
 
 		&>button {
+			font-size: 1rem;
 			margin: .2rem;
 			width: 8rem;
-			height: 1rem;
-			background-color: #444;
-			border-radius: 1rem;
+			height: 1.5rem;
+			background-color: #122;
+			border-radius: 0 0 .5rem .5rem;
 		}
 	}
 
@@ -106,10 +161,20 @@
 
 
 	&--open {
+		visibility: visible;
 		// height: 10rem;
 	}
 
 	&--close {
+		visibility: hidden;
 		// max-height: 0;
 	}
+
+	button {
+		font-size: 1rem;
+		height: 1.5rem;
+		background-color: #333;
+	}
+
+
 }

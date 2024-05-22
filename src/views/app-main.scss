@@ -45,11 +45,9 @@
 			//border: solid .5rem #0cf;
 		}
 		
-		.main-editor {
-			flex: 1 0 auto;
-			max-height: 15rem;
+		.main-editor_w {
+			flex: 1 1 auto;
 			////border: solid .0rem #0f0;
-			position: relative;
 			overflow: hidden;
 			background-color: #888;
 			margin: 0;

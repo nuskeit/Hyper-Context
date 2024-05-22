@@ -7,14 +7,14 @@ div.board {
 			#54f4 10%,
 			#f454 12%,
 			#f454 22%,
-			#54f4 24%
-			), repeating-linear-gradient(90deg,
+			#54f4 24%), repeating-linear-gradient(90deg,
 			#54f4 0%,
 			#54f4 10%,
 			#f454 12%,
 			#f454 22%,
-			#54f4 24%
-			);
+			#54f4 24%);
+
+
 
 	svg.board {
 		//	border: solid .3rem yellow;
@@ -64,6 +64,17 @@ div.board {
 				text-anchor: start;
 			}
 
+
+			.enter{
+				animation: enter .3s ease-in  normal;
+
+				@keyframes enter {
+					0%{transform: translate(0, -20rem) scale(0) rotate(0deg);}
+					70%{transform: translate(0rem, 3rem) scale(1.2) rotate(0deg);}
+					100%{transform: translate(0, 0) scale(1) rotate(0deg);}
+				}				
+				
+			}
 
 		}
 
