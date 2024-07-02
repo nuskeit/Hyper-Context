@@ -183,6 +183,7 @@ export default function (
 		return pathSequence
 	}
 
+	// DEBUG:
 	// const debugPoints = () => {
 	// 	return points.map((e, i) => <circle cx={e[1]} cy={e[2]} r="5" key={i} stroke="#0f0" fill="#f00" />)
 	// }

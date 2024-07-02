@@ -17,3 +17,7 @@
 		Make possible to chain and group multiple timelines.
 
 
+[DONE]	Create a TimedNodeElement que quepa en la timeline y proyecte sus cajitas hacia afuera.
+		Tamaño de la timeline = Todo el ancho del viewbox
+
+[DONE	Distribución de los hijos: en principio, como el arbol. Se activan al clicker.

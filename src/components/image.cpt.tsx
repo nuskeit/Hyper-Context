@@ -1,5 +1,5 @@
+import { FC, useEffect, useState } from "react"
 import { getImgUrl } from "../custom-hooks/use-images"
-import React, { FC, useState, useEffect } from "react"
 
 interface ILoadingImg {
 	url: string,
@@ -38,26 +38,7 @@ const LoadingImg: FC<ILoadingImg> = ({
 		};
 
 		image.onload = function () {
-
-
-			// setTimeout(() => {
-				setIsLoad(true)
-			// }, 1000);
-
-
-			/*
-			//and you can get the image data
-			
-			
-						imgData = {
-											src: this.src,
-											width:this.width,
-											height:this.height
-											}
-			
-			 */
-
-
+			setIsLoad(true)
 		}
 
 		image.src = url
@@ -72,8 +53,7 @@ const LoadingImg: FC<ILoadingImg> = ({
 
 
 	if (!isLoad) {
-		// return <text x={width / 2} y={height / 2} className={classLoading} fontSize="30" fill="red" textAnchor="middle">Loading...</text>
-		return <image opacity={.3} x={width/2-width/8} y={height/2-height/8} href={loadingUrl} className={classOk} width={width/4} height={height/4} />
+		return <image opacity={.3} x={width / 2 - width / 8} y={height / 2 - height / 8} href={loadingUrl} className={classOk} width={width / 4} height={height / 4} />
 	}
 
 	if (error) {

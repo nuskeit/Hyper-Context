@@ -1,10 +1,9 @@
 .node-toolstrip {
-	//fill: orange;
 
 	text.button {
-		stroke:#000;
+		stroke: #000;
 		stroke-width: .2rem;
-		fill:#000;
+		fill: #000;
 	}
 
 	rect.button {
@@ -28,23 +27,6 @@
 		&:focus-visible {
 			stroke-width: 1.2px;
 		}
-
-
-
-
-		// &>rect {
-		// 	stroke: black;
-		// 	stroke-width: 0;
-		// 	fill-opacity: .8;
-		// }
-
-		// text {
-		// 	transform-origin: 1.3rem -.45rem;
-		// 	//			transform: rotate(45deg) translate(500, 500);
-		// 	//			animation: rotate 2s linear;
-		// 	// animation: name duration timing-function delay iteration-count direction fill-mode;
-		// 	// animation-iteration-count: infinite;
-		// }
 
 		@keyframes rotate {
 			from {

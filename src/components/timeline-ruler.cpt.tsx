@@ -1,5 +1,5 @@
 import { ReactNode, useMemo } from "react"
-import { I_TreeNode, I_NodeGroup, I_Positioned, I_TimedNode } from "../types/types"
+import { I_NodeGroup, I_TimedNode, I_TreeNode } from "../types/types"
 import { getDateString } from "../util/util"
 
 export default function TimelineRuler({
@@ -58,16 +58,13 @@ export default function TimelineRuler({
 								<stop offset="95%" stopColor="#3333" />
 							</linearGradient>
 						</defs>
-						{/* <line className="timeline-node-ruler-mark" x1={0} y1={e.y} x2={0} y2={positionedNode.height + 60 + 20 * (i % 2)} /> */}
 						<line className="timeline-node-ruler-mark simple-shadow" x1={0} y1={e.y} x2={0} y2={group.groupLayout.value.y + positionedNode.nodeLayout.value.height + tagSeparation - 20 + 20 * (i % 2)} />
 
 						<g transform={`translate(0 ${group.groupLayout.value.y + positionedNode.nodeLayout.value.height + tagSeparation + 50 * (i % 2)})`}>
-							{/* <g transform={`translate(0 ${e.y - 25})`}> */}
 							<g className="timeline-node-ruler-tag" transform="rotate(-15)">
 								<text y="8" className="timeline-node-ruler-tag-text">{positionedNode.nodeLayout.value.height}-{dateTagEnd()}</text>
 							</g>
 						</g>
-						{/* <text className="timeline-node-ruler-tag" y={positionedNode.height + 80 + 20} transform="rotate(-90, 10, 310)">{dateTagEnd()}</text> */}
 
 					</g>
 				)

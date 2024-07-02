@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import usePositionedTimeline from "../../custom-hooks/auto-arrange/use-positioned-timeline";
-import { I_TimedNode, I_Timeline, NodeKey } from "../../types/types";
+import { I_Timeline, NodeKey } from "../../types/types";
 import TimelineRuler from "../timeline-ruler.cpt";
 import NodeCpt from "./node.cpt";
 
@@ -16,19 +16,8 @@ function TimelineCpt({
 	showChildrenKey: NodeKey
 }) {
 
-
 	const [isLoading, setIsLoading] = useState(true)
 	const [group, positionedTimeline, positionedChildren] = usePositionedTimeline(node as I_Timeline)
-
-	const childrenClickHandler = (n: I_TimedNode) => {
-		// if (showChildren && selectedChild?.key === n.key) {
-		// 	showChildrenHandler(undefined)
-		// } else {
-		// 	showChildrenHandler(n)
-		// }
-		// if (!showChildren)
-		showChildrenHandler(n.key)
-	}
 
 	const childrenJSX = () => {
 		console.log('showChildrenKey', showChildrenKey);

@@ -1,6 +1,6 @@
-import { ReactComponentElement, useCallback, useEffect, useMemo, useRef, useState } from "react"
-import "./color.ctl.scss"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { left } from "../../../util/text"
+import "./color.ctl.scss"
 import { PaletteCtl } from "./palette.ctl"
 export function ColorCtl({
 	value,
@@ -12,28 +12,6 @@ export function ColorCtl({
 	const [showPalette, setShowPalette] = useState<boolean>(false)
 	const [localColor, setLocalColor] = useState<string>("#000000")
 	const [localOpacity, setLocalOpacity] = useState<string>("ff")
-	// const [mouseDown, setMouseDown] = useState<boolean>(false)
-
-	// const fixColor = (color: string) => {
-	// 	let valColor = color
-	// 	let valAlpha = "ff"
-	// 	if (color.length < 4)
-	// 		valColor = color.padEnd(4, "0")
-	// 	else if (color.length === 4)
-	// 		valColor = color[0] + color[1] + color[1] + color[2] + color[2] + color[3] + color[3]
-	// 	else if (color.length === 5) {
-	// 		valColor = color[0] + color[1] + color[1] + color[2] + color[2] + color[3] + color[3]
-	// 		valAlpha = color[4]
-	// 	} else if (color.length === 7) {
-	// 		valColor = color
-	// 	} else if (color.length > 7) {
-	// 		valColor = left(color, 7)
-	// 		valAlpha = color.substring(7)
-	// 	}
-	// 	setLocalColor(valColor)
-	// 	setLocalOpacity(valAlpha)
-
-	// }
 
 	const fixColor = (color: string) => {
 		let valColor = color
@@ -50,11 +28,11 @@ export function ColorCtl({
 				valColor = left(color, 7)
 				valAlpha = color.substring(7)
 			} else {
-				valColor = "#444444"
+				valColor = ""
 				valAlpha = "00"
 			}
 		} else {
-			valColor = "#444444"
+			valColor = "#000000"
 			valAlpha = "00"
 		}
 		setLocalColor(valColor)
@@ -64,15 +42,6 @@ export function ColorCtl({
 	useEffect(() => {
 		fixColor(value)
 	}, [value]);
-
-
-	// useEffect(() => {
-	// 	let val = localColor
-	// 	if (localColor.length !== 4)
-	// 		val = localColor.padEnd(7, "0")
-	// 	setValue(val + localOpacity);
-	// }, [localColor, localOpacity]);
-
 
 	const changeColorHandler = (e: any) => {
 		if (localColor.length < 7 || e.nativeEvent.data === null)
@@ -132,19 +101,6 @@ export function ColorCtl({
 	}
 
 
-	// const changeOpacityHandler = (val: number) => {
-	// 	setLocalOpacity(val)
-	// 	const valHex=Number(val).toString(16)
-	// 	console.log('val', val, valHex);
-	// 	if (localColor.length === 4)
-	// 		setValue(localColor + valHex)
-	// 	else if (localColor.length > 4 && localColor.length < 6)
-	// 		setValue(left(localColor, 4) + valHex)
-	// 	else
-	// 		setValue(left(localColor, 7) + valHex)
-	// }
-
-
 	const expandHandler = () => {
 		setShowPalette(!showPalette)
 	}
@@ -157,7 +113,6 @@ export function ColorCtl({
 		if (showPalette)
 			return (
 				<div className={`palette-control palette-control-visible`}>
-					{/* <PaletteCtl cols={27} rows={19} selectedColor={localColor + localOpacity} onChange={selectColorHandler} onClose={palleteCloseHandler} /> */}
 					<PaletteCtl cols={27} rows={19} editColor={localColor} editOpacity={localOpacity} onChange={selectColorHandler} onClose={palleteCloseHandler} />
 				</div>)
 		else
@@ -180,21 +135,4 @@ export function ColorCtl({
 	)
 }
 
-
-function bounds(number: number, min: number, max: number): number {
-	return Math.max(Math.min(number, max), min)
-}
-
-function right(text: string, len: number): string {
-	return text.substring(Math.max(text.length - len, 0))
-}
-
-function padL(text: string, len: number, char: string = "0"): string {
-	return right(char.repeat(len) + text, len)
-}
-
-function pad(text: string): string {
-	return text.padStart(2, "0")
-	// return padL(text, 2, "0")
-}
 

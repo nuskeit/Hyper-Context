@@ -79,8 +79,6 @@ export default function FullStoryCpt() {
 				<div className="full-story-body" onClick={e => e.stopPropagation()}>
 					<div className="full-story-title">{activeFullStory.fullStoryNode?.name}</div>
 					<div className="full-story-text">
-						{/* <img src={node.images[0]} /> */}
-						{/* {content} */}
 						{textWithImages()}
 					</div>
 				</div>

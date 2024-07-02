@@ -1,7 +1,7 @@
-import { ReactComponentElement, useEffect, useMemo, useRef, useState } from "react"
-import "./palette.ctl.scss"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { left } from "../../../util/text"
-// import colorPickerBg from "../../../assets/bg/color-picker-bg.png"
+import "./palette.ctl.scss"
+
 export function PaletteCtl({
 	cols,
 	rows,
@@ -19,50 +19,12 @@ export function PaletteCtl({
 }) {
 	const [localColor, setLocalColor] = useState<string>("#777777")
 	const [localOpacity, setLocalOpacity] = useState<string>("ff")
-	// const [mouseDown, setMouseDown] = useState<boolean>(false)
-
-	// const fixColor = (color: string) => {
-	// 	let valColor = color
-	// 	let valAlpha = "ff"
-	// 	if (valColor.indexOf("#") > -1) {
-	// 		if (color.length === 4)
-	// 			valColor = color[0] + color[1].repeat(2) + color[2].repeat(2) + color[3].repeat(2)
-	// 		else if (color.length === 5) {
-	// 			valColor = color[0] + color[1].repeat(2) + color[2].repeat(2) + color[3].repeat(2)
-	// 			valAlpha = color[4]
-	// 		} else if (color.length === 7) {
-	// 			valColor = color
-	// 		} else if (color.length > 7) {
-	// 			valColor = left(color, 7)
-	// 			valAlpha = color.substring(7)
-	// 		}
-	// 		setLocalColor(valColor)
-	// 		setLocalOpacity(valAlpha)
-	// 	}
-	// }
 
 	useEffect(() => {
-		console.log('PALETTE ENTER EFFECT',editColor,editOpacity);
+		console.log('PALETTE ENTER EFFECT', editColor, editOpacity);
 		setLocalColor(editColor)
 		setLocalOpacity(editOpacity)
 	}, []);
-
-	// useEffect(() => {
-	// 	onChange(localColor, localOpacity)
-	// }, [localColor, localOpacity]);
-
-	// useEffect(() => {
-	// 	let val = localColor
-	// 	if (localColor.length < 4)
-	// 		val = localColor.padEnd(4, "0")
-	// 	else if (localColor.length === 4)
-	// 		val = localColor[0] + localColor[1] + localColor[1] + localColor[2] + localColor[2] + localColor[3] + localColor[3]
-	// 	else if (localColor.length > 4)
-	// 		val = localColor.padEnd(7, "0")
-	// 	onChange(val, localOpacity.padStart(2, "0"));
-	// 	// onChange(val, (localOpacity === "ff" ? "" : localOpacity).padStart(2,"0"));
-	// }, [localColor, localOpacity]);
-
 
 	let colorSelStart = 0, colorSelEnd = 0
 	const colorTextKeyDownHandler = (e: any) => {
@@ -71,7 +33,6 @@ export function PaletteCtl({
 	}
 
 	const changeColorHandler = (e: any) => {
-		console.log('FFFFFFFFFFFFFFFFFFFFFFFFFFFFF');
 		if (localColor.length - (colorSelEnd - colorSelStart) < 7
 			|| e.nativeEvent.data === null
 			|| e.target.selectionStart !== e.target.selectionEnd) {
@@ -109,24 +70,21 @@ export function PaletteCtl({
 			}
 	}
 
-
 	let mouseDown = useRef(false)
 	const mouseDownHandler = (color: string) => {
 		console.log('click MOOO DOWN');
-		// setMouseDown(true)
 		mouseDown.current = true
 		setLocalColor(color);
 		onChange(color, localOpacity)
 	}
 
-	const mouseUpHandler = (e: Event) => {
+	const mouseUpHandler = (e: any) => {
 		e.stopPropagation()
 		console.log('MOOOO UPP');
-		// setMouseDown(false)
 		mouseDown.current = false
 	}
 
-	const mouseMoveHandler = (e: Event) => {
+	const mouseMoveHandler = (e: any) => {
 		e.stopPropagation()
 		if (mouseDown.current)
 			console.log('MOUSE DOWN', mouseDown.current)
@@ -137,14 +95,14 @@ export function PaletteCtl({
 	const colorBitTemplate = (c: string, key: string | number) => {
 		return <div key={key} title={c} className="color-box"
 			onMouseDown={() => mouseDownHandler(c)}
-			// onMouseUp={mouseUpHandler}
-			// onMouseEnter={mouseMoveHandler}
+			onMouseUp={mouseUpHandler}
+			onMouseEnter={mouseMoveHandler}
 			style={{ backgroundColor: c }}>&#x200B;</div>
 	}
 
 	const rowTemplate = (row: any, key: string | number) => {
 		return <div key={key} className="palette-row"
-		// onMouseLeave={mouseUpHandler}
+			onMouseLeave={mouseUpHandler}
 		>{row}</div>
 	}
 
@@ -221,7 +179,6 @@ export function PaletteCtl({
 			row.push(colorBitTemplate(color, -(j + 1)))
 
 			palette.push(rowTemplate(row, j + 1))
-			//palette.push(<div key={j} className="palette-row" onMouseLeave={mouseUpHandler}>{row}</div>)
 		}
 
 		return (
@@ -316,23 +273,9 @@ export function PaletteCtl({
 
 function bounds(number: number, min: number, max: number): number {
 	return Math.max(Math.min(number, max), min)
-	// if (number < min)
-	// 	return min
-	// if (number > max)
-	// 	return max
-	// return number
-}
-
-function right(text: string, len: number): string {
-	return text.substring(Math.max(text.length - len, 0))
-}
-
-function padL(text: string, len: number, char: string = "0"): string {
-	return right(char.repeat(len) + text, len)
 }
 
 function pad(text: string): string {
 	return text.padStart(2, "0")
-	// return padL(text, 2, "0")
 }
 

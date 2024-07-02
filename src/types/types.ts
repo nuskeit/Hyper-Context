@@ -11,16 +11,6 @@ export interface I_Positioned<T> extends I_Position {
 	element: T
 }
 
-/*export class Style {
-	styleOrDefault(styleJSName: string, defaultValue: string = ""): string {
-		if (Object.hasOwn(this, styleJSName))
-			// @ts-ignore
-			return this[styleJSName]
-		return defaultValue
-	}
-}
-*/
-
 export interface I_Style { }
 
 export interface I_Styled<T> {
@@ -130,37 +120,6 @@ export interface I_TimedNode extends I_TreeNode {
 	row: number
 }
 
-// export class TimedNode implements I_TimedNode, I_Card {
-// 	readonly key: string
-// 	name: string = ""
-// 	nodeType: NodeType = NodeType.TIMED
-// 	title: string = ""
-// 	shortText: string = ""
-// 	fullStory?: FullStory
-// 	thumbnail: string = ""
-// 	width: number = 100
-// 	height: number = 100 //REVISAR SI POSICION Y TAMAÑO DEBEN MOVERSE!
-// 	row: number = 1
-// 	x: number = 0
-// 	y: number = 0
-// 	start: number = 0
-// 	end: number = 0
-// 	group: I_NodeGroup | undefined
-// 	options?: I_Nodeoptions = {
-// 		spacingX: 0,
-// 		connection: {
-// 			offsetStart: 0,
-// 			offsetEnd: 0,
-// 			curveDistributionCoeficient: .5,
-// 			fixedStart: 0
-// 		}
-// 	}
-// 	constructor(key: string) {
-// 		this.key = key
-// 	}
-// }
-
-
 export const config = {
 	offsetX: 100,
 	offsetY: 100
@@ -201,25 +160,6 @@ export interface I_TextblockImage {
 	caption: string
 }
 
-
-
-// STYLES
-
-// export class nodeStyle {
-// 	title: { fontFamily: string, fontSize: string } = { fontFamily: "", fontSize: "" }
-// 	shortText: { fontFamily: string, fontSize: string } = { fontFamily: "", fontSize: "" }
-
-// 	shape: {
-// 		rx: string
-// 		ry: string
-// 		backgroundColor: string
-// 	} = {
-// 			rx: "",
-// 			ry: "",
-// 			backgroundColor: "",
-// 		}
-// }
-
 export interface I_Vector2 {
 	x: number
 	y: number
@@ -251,15 +191,6 @@ export const EditionType = {
 	DELETE: "DELETE",
 } as const
 export type EditionType = typeof EditionType[keyof typeof EditionType]
-
-// export class Editable<T> {
-// 	editionType: EditionType
-// 	target: T
-// 	constructor(target: T, editionType: EditionType) {
-// 		this.target = target
-// 		this.editionType = editionType
-// 	}
-// }
 
 export interface I_Editable<T> {
 	editionType: EditionType

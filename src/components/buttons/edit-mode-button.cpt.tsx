@@ -1,13 +1,12 @@
-import { isEditMode } from "../../util/util"
-import useNodeEditorContext from "../../contexts/use-node-editor-context"
+import useNodeEditorContext, { useNodeEditorSetter } from "../../contexts/use-node-editor-context"
 import useSystemModeContext from "../../contexts/use-system-mode-context"
 import { SystemMode } from "../../types/types"
+import { isEditMode } from "../../util/util"
 import './edit-mode-button.scss'
-// import { useEditingNode } from "../contexts/use-node-editing-context"
 
 export default function EditModeButton() {
 	const [systemMode, setSystemMode] = useSystemModeContext()
-	const [editingNode, setEditingNode] = useNodeEditorContext()
+	const  setEditingNode = useNodeEditorSetter()
 
 	function handleClick() {
 		if (systemMode === SystemMode.DEFAULT)

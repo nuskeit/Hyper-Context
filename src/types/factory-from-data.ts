@@ -1,9 +1,9 @@
-import { cssJsonToJs, generateNewKey } from "../util/util"
 import { getImgUrl } from "../custom-hooks/use-images"
 import { right } from "../util/text"
+import { cssJsonToJs, generateNewKey } from "../util/util"
+import { I_TreeNode_dto } from "./data-types"
 import { createStyled } from "./factory"
 import { Book, CardItemType, EditionType, FullStory, I_Background, I_Board, I_Card, I_CardItem, I_ConnectionOptions, I_Editable, I_Hashtable, I_Layout, I_Margin, I_NodeGroup, I_Nodeoptions, I_Position, I_Positioned, I_Styled, I_Textblock, I_TextblockImage, I_TimedNode, I_Timeline, I_TreeNode, NodeType, SetterDelegate, ViewBox } from "./types"
-import { I_TreeNode_dto } from "./data-types"
 
 
 
@@ -31,8 +31,6 @@ export function createWindowServices(data?: { viewBox: ViewBox, zoomLevel?: numb
 		localStorage.setItem("viewBox", "-2000,0,4000,5000")
 	const vbox = localStorage.getItem("viewBox")?.split(",")
 	return {
-		// viewBox: withDefaultValue(data, "viewBox", [-2000, 0, 4000, 5000]),
-		// viewBox: withDefaultValue(data, "viewBox", [-1113,0,2227,2784]),		
 		viewBox: withDefaultValue(data, "viewBox", vbox),
 		zoomLevel: withDefaultValue(data, "zoomLevel", 1),
 		scrollPos: withDefaultValue(data, "scrollPos", 0),

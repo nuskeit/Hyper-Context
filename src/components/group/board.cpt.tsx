@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import useWindowControls from "../../custom-hooks/use-window-controls";
-import { I_TreeNode } from "../../types/types";
 import EditModeButton from "../buttons/edit-mode-button.cpt";
 import './board.scss';
 import GroupCpt from "./group.cpt";
@@ -9,13 +8,7 @@ export default function () {
 	const svgRef = useRef(null)
 	const [viewBoxZoomPan, scrollAction, zoomAction, austoAdjustViewBox] = useWindowControls()
 
-	const clickHandler = (n: I_TreeNode) => {
-		//changeOrigin(n)
-	}
-
-
 	function handleScrolling(event: WheelEvent) {
-		// event.preventDefault()
 		event.stopPropagation()
 		if (event.altKey)
 			zoomAction(-event.deltaY)

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import useBookStateContext, { getChildrenFromBook } from "../contexts/use-book-context"
-import { I_TreeNode, NodeKey } from "../types/types"
+import { NodeKey } from "../types/types"
 
 export default function <T>(nodeKey: NodeKey) {
 	const [book, bookDispatch] = useBookStateContext()

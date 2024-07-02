@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { I_CardItem } from "../../types/types"
-import "./editors.scss"
-import { ColorCtl } from "./style-editor/color.ctl";
+import { I_CardItem } from "../../types/types";
 import { isNumeric } from "../../util/util";
+import "./editors.scss";
+import { ColorCtl } from "./style-editor/color.ctl";
+import NumberCtl from "./style-editor/number.ctl";
 
 export default function (
 	{
@@ -24,7 +25,6 @@ export default function (
 			...localItem
 		}
 
-		// @t s-ignore
 		o["cardItemContent"]["value"] = e.target.value
 
 		setLocalItem(o)
@@ -59,22 +59,10 @@ export default function (
 		onChange(o)
 	}
 
-	// async function dispatchAsync(o: any) {
-	// 	bookDispatch({ type: ActionType.UPDATE_NODE, payload: { treeNode: o } })
-	// }
-
-	// async function dispatchAsync() {
-	// 	editingItem?.setterDelegate(localEditingItem)
-	// }
-
-	// function handleChange_(e: React.ChangeEvent<HTMLInputElement>) {
-
-	// 	//		setEditingNode({ ...localEditingNode, target: { ...localEditingNode, card: { ...localEditingNode.card, name: {...localEditingNode.card.name, value:e.target.value} } } })
-	// }
-
 	function handleClick(e: React.MouseEvent<HTMLElement>) {
 		console.log("HANDLE CLICK", localItem);
 
+		// IMPLEMENT PERSISTANCE LATER. CODE COMMENTED FFR
 		// bookDispatch({ type: ActionType.UPDATE_NODE, payload: { cardItem: localEditingItem } })
 		// setEditingItem(undefined)
 
@@ -90,6 +78,22 @@ export default function (
 					value={(element as any)[field] || ""}
 					onChange={(e) => handleChangeLayout(field, e)}
 				/></div>
+			</div>
+		)
+	}
+
+	const layoutEditorNumber = (label: string, field: string) => {
+		let element = localItem.cardItemLayout.value
+
+		return (
+			<div className="input-group">
+				<div className="left-label">{label}:</div>
+				<div className="editable">
+					<NumberCtl
+						value={(element as any)[field] || ""}
+						onChange={(e) => handleChangeLayout(field, e)}
+						step={10}
+					/></div>
 			</div>
 		)
 	}
@@ -138,10 +142,10 @@ export default function (
 						/></div>
 					</div>
 
-					{layoutEditorPlainText("X", "x")}
-					{layoutEditorPlainText("Y", "y")}
-					{layoutEditorPlainText("Width", "width")}
-					{layoutEditorPlainText("Height", "height")}
+					{layoutEditorNumber("X", "x")}
+					{layoutEditorNumber("Y", "y")}
+					{layoutEditorNumber("Width", "width")}
+					{layoutEditorNumber("Height", "height")}
 
 					{styleEditorPlainText(ElementType.CONTENT, "Font Size", "fontSize")}
 					{styleEditorPlainText(ElementType.CONTENT, "Line Height", "lineHeight")}

@@ -1,13 +1,13 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from "react"
+import { useEffect, useLayoutEffect, useMemo, useState } from "react"
+import CardItemEditor from "../../components/editors/card-item-editor"
+import { useGeneralEditorSpaceSetter } from "../../contexts/use-general-editor-space"
+import useItemEditorContext from "../../contexts/use-item-editor-context"
 import useSystemModeContext from "../../contexts/use-system-mode-context"
 import { createEditable, createRect } from "../../types/factory-from-data"
 import { EditionType, I_CardItem, I_Rect, I_Vector2 } from "../../types/types"
-import { getStylePropValue, ifExists, isEditMode } from "../../util/util"
+import { getStylePropValue, isEditMode } from "../../util/util"
 import TextSvg from "../svg/text.svg"
 import "./card-item.scss"
-import useItemEditorContext from "../../contexts/use-item-editor-context"
-import useGeneralEditorSpace, { useGeneralEditorSpaceSetter } from "../../contexts/use-general-editor-space"
-import CardItemEditor from "../../components/editors/card-item-editor"
 import { HighlightContour } from "./highlight-contour"
 
 export default function CardItemCpt({
@@ -16,13 +16,10 @@ export default function CardItemCpt({
 	cardItem: I_CardItem
 }) {
 
-	const [isLoading, setIsLoading] = useState(true)
-
 	const [systemMode] = useSystemModeContext()
 
 	const [inferedTextRect, setInferedTextRect] = useState<I_Rect>(createRect())
 	const [rectangle, setRectangle] = useState<I_Rect>(createRect())
-	const [textBBox, setTextBBox] = useState<I_Rect>(createRect())
 	const [textPos, setTextPos] = useState<I_Vector2>(createRect())
 	const [editingCardItem, setEditingCardItem] = useItemEditorContext()
 
@@ -33,20 +30,18 @@ export default function CardItemCpt({
 
 	useEffect(() => {
 		if (!isEditMode(systemMode)) {
-			// onSelect(undefined)
 			setEditingCardItem(undefined)
 			setEditor(undefined)
 		}
 	}, [systemMode]);
 
-	// DEBUG
-	useLayoutEffect(() => {
-		// console.log('cardItem.key',cardItem.key,cardItem.cardItemContent.value);
-		if (localItem.key === "start-2") {
-			handleSelectItem(localItem)
-		}
-
-	}, []);
+	// // DEBUG: AUTOSELECTS THE FIRST ELEMENT
+	// useLayoutEffect(() => {
+	// 	// console.log('cardItem.key',cardItem.key,cardItem.cardItemContent.value);
+	// 	if (localItem.key === "start-2") {
+	// 		handleSelectItem(localItem)
+	// 	}
+	// }, []);
 
 	useEffect(() => {
 		// Updates the rect when the text changes
@@ -74,10 +69,8 @@ export default function CardItemCpt({
 			y: (r.height / 2 - newBBox.height / 2) - newBBox.y,
 		}
 
-		setTextBBox(newBBox)
 		setRectangle(r)
 		setTextPos(t)
-		setIsLoading(false)
 	}
 
 	function handleTextChange(newBBox: I_Rect) {
@@ -96,16 +89,10 @@ export default function CardItemCpt({
 	}
 
 
-	// const editModeStyle = () => isEditMode(systemMode) ? "-selected" : ""
-	// const isSelected = () => Object.is(localItem, editingCardItem?.target) ? "-selected" : ""
-	// const isSelected = () => localItem.key === editingCardItem?.target.key ? "-selected" : ""
 	const isSelected = () => localItem.key === editingCardItem?.target.key
 
-
 	const handleMouseDown = (e: React.MouseEvent<SVGGElement>) => {
-		// e.stopPropagation()
 		if (isEditMode(systemMode))
-			//onSelect(localItem)
 			handleSelectItem(localItem)
 	}
 
@@ -114,13 +101,11 @@ export default function CardItemCpt({
 	}
 
 	const handleSelectItem = (ci: I_CardItem) => {
-		// if (Object.is(ci, editingCardItem?.target)) {
 		if (ci.key === editingCardItem?.target.key) {
 			setEditingCardItem(undefined)
 			setEditor(undefined)
 		} else {
 			setEditingCardItem(createEditable<I_CardItem>(ci, EditionType.MODIFY))
-			// setEditor(<CardItemEditor cardItem={localItem} onChange={handleChangesMadeInEditor} />)
 			setEditor(getEditor(localItem))
 		}
 	}
@@ -151,9 +136,6 @@ export default function CardItemCpt({
 			return <>
 				<HighlightContour width={rectangle.width} height={rectangle.height} margin={20} />
 			</>
-		// return <polygon className="edit-mode-selected"
-		// 	points={rndRect(rectangle.width, rectangle.height)}
-		// />
 		return <></>
 	}
 
@@ -173,24 +155,9 @@ export default function CardItemCpt({
 
 				{/* EDIT RECT */}
 				{editContour()}
-				{/* <rect className={`edit-mode${isSelected()}`}
-					x={0}
-					y={0}
-					width={rectangle.width}
-					height={rectangle.height}
-					rx={ifExists(rectangleStyle, "rx", 0)}
-					ry={ifExists(rectangleStyle, "ry", 0)}
-				/> */}
 
 
 				<g transform={`translate(${textPos.x}, ${textPos.y})`} >
-					{/* <rect x={textBBox.x}
-						y={textBBox.y}
-						width={`${textBBox.width}`}
-						height={`${textBBox.height}`}
-						style={{ transform: "", fill: "#00f0", stroke: "#f0f", strokeWidth: "3", strokeDasharray: "15 10" }}
-						fill="#00f0"
-					/> */}
 					{textJSX}
 				</g>
 			</g>

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
-import { createMargin, createNodeGroup, createPositionedElement, createTimedNode } from "../../types/factory-from-data"
-import { I_Hashtable, I_Margin, I_NodeGroup, I_Positioned, I_Rect, I_TimedNode, I_Timeline, I_TreeNode } from "../../types/types"
-import useGlobalOptions from "../use-global-options"
-import useChildren from "../use-children"
-import useGroup from "../use-group"
+import { createMargin, createNodeGroup, createTimedNode } from "../../types/factory-from-data"
+import { I_Hashtable, I_Margin, I_NodeGroup, I_Rect, I_TimedNode, I_Timeline } from "../../types/types"
 import { ifExists } from "../../util/util"
+import useChildren from "../use-children"
+import useGlobalOptions from "../use-global-options"
+import useGroup from "../use-group"
 
 export default function usePositionedTimeline(timeline: I_Timeline) {
 
@@ -142,15 +142,6 @@ const positionItemsInsideTimeline = (timeline: I_Timeline, timedChildren: I_Time
 
 	return [newPositionedTimedChildren, childrensGroup]
 }
-
-
-
-
-
-
-
-
-
 
 
 

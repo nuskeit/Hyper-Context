@@ -46,12 +46,11 @@ export default function () {
 										<div className={`main-editor`}>
 											<MainEditor />
 										</div>
-										{/* <div className="main-editor" > */}
-										{/* </div> */}
+
 
 										<FullStoryCpt />
 
-										{/* <FullStoryProjectorCpt /> */}
+
 									</div>
 
 								</ViewBoxContext>

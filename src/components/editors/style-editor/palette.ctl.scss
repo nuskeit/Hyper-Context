@@ -20,7 +20,6 @@
 		align-items: center;
 
 		.palette-controls {
-			// align-self: center;
 			display: flex;
 			flex-flow: row nowrap;
 			width: min(100%, 40rem);
@@ -104,13 +103,9 @@
 				display: flex;
 				flex-flow: row nowrap;
 				flex: 1 1 auto;
-				//border-bottom: solid .05rem pink;
 
 				.color-box {
 					flex: 1 1 auto;
-					// width: 0.8rem;
-					// height: 0.8rem;
-					// margin: .025rem;
 					margin-right: min(.5%, .05rem);
 					margin-bottom: min(.5%, .05rem);
 				}

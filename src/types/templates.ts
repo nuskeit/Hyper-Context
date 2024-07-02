@@ -18,8 +18,8 @@ export function createNodeTemplate(): I_TreeNode {
 			style: {
 				rx: 50,
 				ry: 50,
-				fill: "#0003",
-				stroke: "#000",
+				fill: "#00000033",
+				stroke: "#000000",
 				strokeWidth: 4,
 			}
 		},
@@ -30,7 +30,7 @@ export function createNodeTemplate(): I_TreeNode {
 					cardItemContent: {
 						value: "NEW NODE",
 						style: {
-							fill: "#000",
+							fill: "#000000",
 							fontSize: 100
 						}
 					},
@@ -41,7 +41,7 @@ export function createNodeTemplate(): I_TreeNode {
 						style: {
 							rx: 30,
 							ry: 30,
-										fill: "orange"
+							fill: "#ffaa00"
 						}
 					}
 				}

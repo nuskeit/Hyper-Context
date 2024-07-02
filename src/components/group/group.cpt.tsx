@@ -10,12 +10,10 @@ export default function GroupCpt({
 	minY,
 	groupParentKey,
 	parentNode
-	// children
 }: {
 	minY: number
 	groupParentKey: NodeKey
 	parentNode?: I_TreeNode
-	// children: ReactElement<any, string | JSXElementConstructor<any>>[]
 }) {
 
 	const [arrangedGroup, arrangedChildrenNodes, nextMinY] = usePositionedNodeChildren(groupParentKey, minY)
@@ -34,7 +32,7 @@ export default function GroupCpt({
 					height={arrangedGroup.groupLayout.value.height}
 					className="level-group simple-shadow"
 					style={{
-						// @ts-ignore 
+						// @ts-ignore : linter knows nothing about SVG
 						rx: "60",
 						ry: "60",
 						strokeWidth: "4",
@@ -55,12 +53,10 @@ export default function GroupCpt({
 		}
 	}
 
-	//	const children_r = useCallback(() => {
 	const children_r = () => {
 
 		return arrangedChildrenNodes.map((n, i) => {
 			if (isTimelineNode(n))
-				//		return <text x="-1500" y="500" fontSize="200">TIMELINE</text>
 
 				return (
 					<TimelineCpt key={i}
@@ -69,12 +65,6 @@ export default function GroupCpt({
 						showChildrenHandler={showChildrenHandler}
 						showChildrenKey={selectedChildKey}
 					/>
-					// <TimelineCpt key={i}
-					// 	minY={nextMinY}
-					// 	positionedNode={n}
-					// 	showChildrenHandler={ ()=>{}}
-					// 	showChildren={showChildren(n.key)}
-					// />
 				)
 			else
 				return (<g key={i}>
@@ -87,11 +77,10 @@ export default function GroupCpt({
 				</g>
 				)
 		})
-	} //, [arrangedChildrenNodes, selectedChildKey]);
+	}
 
 
 	const connections = parentNode?.key !== undefined && arrangedChildrenNodes.map((e, i) => {
-		// if (!isTimedNode(e)) //PROPABLY SHOULD'T BE HERE // neither this comment, I know, shut up
 		let el1 = { ...parentNode?.nodeLayout.value }
 		if (parentNode.nodeType === NodeType.TIMED)
 			el1.x = parentNode?.nodeLayout.value.x + parentNode?.nodeLayout.value.width / 2
@@ -101,7 +90,6 @@ export default function GroupCpt({
 			key={i} />
 	})
 
-	// const showChildren = (key: NodeKey) => { return true }
 	const showChildren = (key: NodeKey) => { return selectedChildKey === key }
 
 	if (arrangedGroup === undefined)

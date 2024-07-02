@@ -10,3 +10,8 @@ Check out these mini-charts:
 
 
 Change book.board.nodes[nodeKey] for useGetNode(nodeKey) or something like that
+
+
+
+remember also node navigation state when it's a timed node. 
+

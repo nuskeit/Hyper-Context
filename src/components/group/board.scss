@@ -17,10 +17,8 @@ div.board {
 
 
 	svg.board {
-		//	border: solid .3rem yellow;
 		width: 100%;
 		height: 100%;
-		// background-image: url('../../assets/bg/doodles3.png');
 		background-repeat: repeat;
 		background-size: 20%;
 		padding: 0;
@@ -33,13 +31,10 @@ div.board {
 
 		.board-node {
 			cursor: pointer;
-			// font-weight: bold;
-			// transform-origin: 50%, 50%;
 
 			.board-node-base {
 				fill: none;
 				stroke-width: 5;
-				// stroke: #a0a4;
 				rx: 10;
 				ry: 10;
 			}
@@ -118,11 +113,9 @@ div.board {
 				stroke: #fff;
 				stroke-width: .1rem;
 				fill: #fff;
-				//font-weight: bold;
 			}
 
 			.timed-node-base {
-				// fill: #0003;
 				stroke-width: 3;
 				stroke: #0005;
 				rx: .3rem;
@@ -174,11 +167,6 @@ div.board {
 			stroke-dasharray: 500 100 80;
 			stroke-dashoffset: 0%;
 			fill: none;
-			// transition-property: stroke-dashoffset;
-			// transition-duration: 1s;
-			// transition: stroke-dashoffset 7.5s linear;
-
-			// animation: connection2 .5s linear;
 
 			stroke: #fffa;
 			stroke-width: 7;

@@ -1,15 +1,12 @@
 import { useContext } from "react";
+import { I_TreeNode } from "types/types";
 import { Book, I_NodeGroup, NodeKey } from "../types/types";
 import { BookContext, BookContextDispatch } from "./book-context";
-import { Action } from "../custom-hooks/use-book-state";
-import { I_TreeNode } from "types/types";
 
 export default function useBookStateContext() {
 
 	const book = useBookState()
 	const bookDispatch = useBookStateDispatch()
-	// const ctx: [Book, React.Dispatch<Action>] = [book, bookDispatch]
-	// return ctx
 	return [book, bookDispatch]
 }
 

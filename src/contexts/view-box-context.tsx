@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
-import { ViewBox, WindowServices } from "../types/types";
 import { createWindowServices } from "../types/factory-from-data";
+import { WindowServices } from "../types/types";
 
 export const WindowServicesContext = createContext<WindowServices>(createWindowServices())
 export const WindowServicesContextSetter = createContext((vb: WindowServices) => { })

@@ -1,11 +1,6 @@
 g.actions-strip-button {
 
 	transform-origin: 2.5rem 2.5rem;
-	// animation: actionstrip-button-enter .5s;
-
-	.actionstrip-button-shape {
-		// animation: name duration timing-function delay iteration-count direction fill-mode;
-	}
 
 	image.actionstrip-button-image {
 		opacity: .3;
@@ -17,16 +12,12 @@ g.actions-strip-button {
 		transition: all .2s;
 		font-size: 2rem;
 		opacity: 0;
-		// transform: translate(6rem, -5rem) rotate(90deg);
-		// transform: translate(3rem, -5rem) rotate(90deg);
 		transform: translate(.5rem, -5rem) rotate(90deg);
 	}
 
 	&:hover {
 		text.actionstrip-button-tag {
 			opacity: 1;
-			// transform: translate(-10rem, -5rem) rotate(90deg);
-			// transform: translate(-1rem, -5rem) rotate(90deg);
 		}
 
 		image.actionstrip-button-image {

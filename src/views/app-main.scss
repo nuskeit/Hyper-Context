@@ -16,7 +16,6 @@
 		margin: 0;
 		display: flex;
 		flex-direction: row;
-		// background-color: red;
 	}
 
 	.main-content {
@@ -27,14 +26,13 @@
 		position: relative;
 		padding: 0;
 		margin: 0;
-		
-		.main-top-menu{
+
+		.main-top-menu {
 			flex: 0 0 1.5rem;
 			position: relative;
 			overflow: hidden;
-			//border: solid .5rem #090;
 		}
-		
+
 		.main-board {
 			flex: 1 1 auto;
 			position: relative;
@@ -42,12 +40,10 @@
 			padding: 0;
 			margin: 0;
 			overflow: hidden;
-			//border: solid .5rem #0cf;
 		}
-		
+
 		.main-editor_w {
 			flex: 1 1 auto;
-			////border: solid .0rem #0f0;
 			overflow: hidden;
 			background-color: #888;
 			margin: 0;

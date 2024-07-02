@@ -17,7 +17,6 @@ export function getDateString(epoch: number): string {
 	else
 		d = new Date(epoch)
 	return d.toLocaleDateString()
-	// return padL(d.getDate().toString(),2,"0") + "-" + padL((d.getMonth() + 1).toString(), 2,"0") + "-" + d.getFullYear().toString()
 }
 
 /**
@@ -86,7 +85,6 @@ export function centeredLayout(l: I_Vector2 & I_Size2): I_Vector2 & I_Size2 {
 
 
 export function generateNewKey(): string {
-	// return Math.round(Math.random() * new Date().getTime()).toString()
 	const chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
 		'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w',
 		'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
@@ -108,3 +106,7 @@ export function isEditMode(systemMode: SystemMode) {
 }
 
 export const isNumeric = (s: string) => /^[+-]?\d+(\.\d+)?$/.test(s)
+
+export function right(text: string, len: number): string {
+	return text.substring(Math.max(text.length - len, 0))
+}

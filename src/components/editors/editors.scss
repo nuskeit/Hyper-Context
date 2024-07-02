@@ -1,6 +1,5 @@
 .main-editor-wrapper {
 	height: max(20rem, 33%);
-	// min-height: 20rem;
 	position: absolute;
 	top: auto;
 	left: 4%;
@@ -17,13 +16,7 @@
 	display: flex;
 	flex-direction: column;
 
-	// div input {
-	// 	font-size: 1rem;
-	// }
-
-
 	.title {
-		//border: solid .5rem #a00;
 		flex: 1 1 auto;
 		background-color: #0105;
 		font-size: 1rem;
@@ -38,8 +31,6 @@
 		.form-grid {
 			height: 100%;
 			width: 100%;
-			//border: solid .5rem #f00;
-			//		border:solid .05rem purple;
 			display: flex;
 			flex-flow: column wrap;
 			align-content: flex-start;
@@ -61,8 +52,6 @@
 				margin-left: min(.3rem, .5%);
 				margin-top: min(.3rem, .5%);
 				align-content: flex-start;
-				// border-top: solid .1rem #7779;
-				// border-left: solid .1rem #7779;
 				border: none;
 				background-color: #222;
 				border-radius: .2rem;
@@ -71,14 +60,11 @@
 				width: max(20%, 10rem);
 
 				div.left-label {
-					// min-width: 8rem;
 					flex: 0 1 auto;
-					//margin: .1rem;
 					margin: min(.1rem, 1%);
 					margin-bottom: 0;
 					padding: min(.1rem, 1%);
 					padding-bottom: 0;
-					// align-self: center;
 					color: #aaa;
 					border-radius: .15rem .15rem 0 0;
 
@@ -87,17 +73,11 @@
 				}
 
 				div.editable {
-					// min-width: 8rem;
 					flex: 1 0 auto;
-					//margin: .1rem;
 					margin: min(.1rem, 1%);
 					margin-top: 0;
 					border-radius: 0 0 .15rem .15rem;
 					background-color: #243;
-					// background-color: #f00;
-					// background-color: red;
-
-
 
 					textarea,
 					input {
@@ -108,8 +88,6 @@
 						background: none;
 						color: #aaa;
 
-						//resize: none;
-						//width: 5rem;
 						&:focus {
 							outline: none;
 							background-color: #aaa;
@@ -139,9 +117,6 @@
 
 	}
 
-
-
-
 	.form-controls-trip {
 		flex: 0 0 1.4rem;
 		background-color: #0105;
@@ -162,12 +137,10 @@
 
 	&--open {
 		visibility: visible;
-		// height: 10rem;
 	}
 
 	&--close {
 		visibility: hidden;
-		// max-height: 0;
 	}
 
 	button {
@@ -175,6 +148,4 @@
 		height: 1.5rem;
 		background-color: #333;
 	}
-
-
 }

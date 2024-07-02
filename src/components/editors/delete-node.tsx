@@ -1,9 +1,8 @@
 import { useState } from "react"
+import useBookStateContext from "../../contexts/use-book-context"
 import useNodeEditorContext from "../../contexts/use-node-editor-context"
 import { ActionType } from "../../custom-hooks/use-book-state"
-import useBookStateContext from "../../contexts/use-book-context"
 import "./editors.scss"
-import { createStyled } from "../../types/factory"
 
 export default function () {
 	const [editingNode, setEditingNode] = useNodeEditorContext()
@@ -23,7 +22,6 @@ export default function () {
 		<div className="editor">
 			<div>Node Editor</div>
 			<div>
-				{/* <input type="text" value={name} onChange={e => setName(e.target.value)} /> */}
 				<input type="text" value={editingNode?.target.name || ""} onChange={handleChange} />
 				<button onClick={handleClick} />
 			</div>

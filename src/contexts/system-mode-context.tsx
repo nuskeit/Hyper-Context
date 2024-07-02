@@ -1,8 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
 import { SystemMode } from "../types/types";
 
-
-
 export const SystemModeContext = createContext<SystemMode>(SystemMode.EDIT)
 export const SystemModeContextSetter = createContext((m: SystemMode) => { })
 

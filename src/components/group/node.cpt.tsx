@@ -1,14 +1,14 @@
-import { useEffect, useRef, useState } from "react";
-import useNodeEditorContext, { useEditingNode } from "../../contexts/use-node-editor-context";
+import { useEffect, useMemo, useRef, useState } from "react";
+import useNodeEditorContext from "../../contexts/use-node-editor-context";
 import useSystemModeContext from "../../contexts/use-system-mode-context";
+import { createEditableNode } from "../../types/factory-from-data";
 import { isTimedNode } from "../../types/type-safety";
 import { EditionType, I_Timeline, I_TreeNode, SystemMode } from "../../types/types";
+import { isEditMode } from "../../util/util";
 import NodeToolstripCpt from "../menus/node-toolstrip.cpt";
 import GroupCpt from "./group.cpt";
 import LayoutTimedNodeCpt from "./layout-timed-node.cpt";
 import LayoutTreeNodeCpt from "./layout-tree-node.cpt";
-import { isEditMode } from "../../util/util";
-import { createEditableNode } from "../../types/factory-from-data";
 
 function NodeCpt({
 	minY,
@@ -78,48 +78,46 @@ function NodeCpt({
 		&& editingNode?.target.key === node.key
 		&& (
 			<g transform={`translate(${node.nodeLayout.value.x}, ${node.nodeLayout.value.y + node.nodeLayout.value.height / 2})`}>
-				{/* <rect style={{ pointerEvents: "none" }}
-					fill="#0000" stroke="#fff" strokeDasharray="25" strokeWidth={4}
+				<rect style={{ pointerEvents: "none" }}
+					fill="#f00" stroke="#fff" strokeDasharray="25" strokeWidth={4}
 					x={-node.nodeLayout.value.width / 2}
 					y={-node.nodeLayout.value.height / 2}
-					width={node.nodeLayout.value.width}
-					height={node.nodeLayout.value.height} /> */}
+					width={node.nodeLayout.value.width + 200}
+					height={node.nodeLayout.value.height} />
 				<text fontSize={50} x={-node.nodeLayout.value.width / 2} y={-node.nodeLayout.value.height / 2 - 50}>
 					{node.name}
 				</text>
 			</g>
 		)
 
-
-
-	// return useMemo(() => {
-	if (isLoading || node === undefined) return <></>
-	else if (isTimedNode(node)) {
-		return <>
-			<LayoutTimedNodeCpt
-				node={node as I_Timeline}
-				handleLocalClick={handleLocalClick} >
-				<g transform={`translate(0 ${-300})`} >
-					{editorStrip()}
-				</g>
-				{groupJSX}
-			</LayoutTimedNodeCpt>
-		</>
-	} else {
-		return <>
-			<LayoutTreeNodeCpt
-				node={node}
-				handleLocalClick={handleLocalClick}
-			>
-				{groupJSX}
-			</LayoutTreeNodeCpt>
-			{editorStrip()}
-			{/* SHOW ONLY ON EDIT MODE */}
-			{editMode}
-			<text fontSize={150} x={250} y={500}>{conta.current++}</text>
-		</>
-	}
-	// }, [node, positionedChildren, isLoading])
+	return useMemo(() => {
+		if (isLoading || node === undefined) return <></>
+		else if (isTimedNode(node)) {
+			return <>
+				<LayoutTimedNodeCpt
+					node={node as I_Timeline}
+					handleLocalClick={handleLocalClick} >
+					<g transform={`translate(0 ${-300})`} >
+						{editorStrip()}
+					</g>
+					{groupJSX}
+				</LayoutTimedNodeCpt>
+			</>
+		} else {
+			return <>
+				<LayoutTreeNodeCpt
+					node={node}
+					handleLocalClick={handleLocalClick}
+				>
+					{groupJSX}
+				</LayoutTreeNodeCpt>
+				{editorStrip()}
+				{/* SHOW ONLY ON EDIT MODE */}
+				{editMode}
+				<text fontSize={150} x={node.nodeLayout.value.x} y={node.nodeLayout.value.y}>{conta.current++}</text>
+			</>
+		}
+	}, [showChildren, isLoading, systemMode])
 
 }
 
